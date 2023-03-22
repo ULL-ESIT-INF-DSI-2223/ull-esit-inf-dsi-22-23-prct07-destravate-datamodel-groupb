@@ -1,2 +1,20 @@
-# ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupb
-ull-esit-inf-dsi-22-23-prct07-destravate-datamodel-groupb created by GitHub Classroom
+# Informe Práctica Grupal, Grupo B
+
+## Componentes
+  - Juan Carlos Rey Medina
+    - alu0101410869
+  - Cristopher Alexandro Medina Peschiutta
+    - alu0101333281
+  - Ancor González Carballo
+    - alu0101327679
+
+## Introducción
+
+## Tareas Previas
+
+## Protyecto
+
+## Conclusión
+
+## Referencias
+
