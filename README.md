@@ -1,4 +1,6 @@
-# Informe Práctica Grupal, Grupo B
+# Informe Práctica 7 
+
+Informe de la practica 7, la primera practica de DSI grupal
 
 ## Componentes
   - Juan Carlos Rey Medina
