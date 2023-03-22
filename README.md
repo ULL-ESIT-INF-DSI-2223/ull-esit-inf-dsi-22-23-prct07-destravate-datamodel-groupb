@@ -1,8 +1,6 @@
 # Informe Práctica 7 
 
-Informe de la practica 7, la primera practica de DSI grupal
-
-## Componentes
+## Grupo B
   - Juan Carlos Rey Medina
     - alu0101410869
   - Cristopher Alexandro Medina Peschiutta
