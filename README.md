@@ -12,7 +12,7 @@
 
 ## Tareas Previas
 
-## Protyecto
+## Proyecto
 
 ## Conclusión
 
