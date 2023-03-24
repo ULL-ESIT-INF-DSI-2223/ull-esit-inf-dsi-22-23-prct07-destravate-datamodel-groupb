@@ -3,7 +3,7 @@ import { expect } from "chai";
 import { Ruta } from "../src/rutas";
 import { Coordenadas } from "../src/coordenadas";
 
-describe("Ruta", () => {
+describe("Clase Ruta", () => {
   const ruta = new Ruta(
     1,
     "Ruta de prueba",
