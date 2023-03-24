@@ -10,7 +10,7 @@ export class Ruta {
   private _longitud: number; // Longitud de la ruta en metros
   private _desnivelMedio: number; // Desnivel medio de la ruta en metros
   private _usuarios: number[]; // Lista de identificadores de usuarios que han realizado la ruta
-  private _tipoActividad: string; // Tipo de actividad de la ruta (senderismo, ciclismo, etc.)
+  private _tipoActividad: "bicicleta" | "correr"; // Tipo de actividad de la ruta (bicicleta o corriendo)
   private _calificacionMedia: number; // Calificación media de la ruta por los usuarios que la han realizado
 
   /**
@@ -26,7 +26,8 @@ export class Ruta {
     @param calificacionMedia - Calificación media de la ruta por los usuarios que la han realizado.
    */
   constructor(id: number, nombre: string, geolocalizacionInicio: Coordenadas, geolocalizacionFin: Coordenadas, 
-    longitud: number, desnivelMedio: number, usuarios: number[], tipoActividad: string, calificacionMedia: number) {
+    longitud: number, desnivelMedio: number, usuarios: number[], tipoActividad: "bicicleta" | "correr", 
+    calificacionMedia: number) {
       this._id = id;
       this._nombre = nombre;
       this._geolocalizacionInicio = geolocalizacionInicio;
@@ -154,7 +155,7 @@ export class Ruta {
    * Devuelve el tipo de actividad.
    * @returns Tipo de actividad.
   */
-  get tipoActividad(): string {
+  get tipoActividad(): "bicicleta" | "correr" {
     return this._tipoActividad;
   }
 
@@ -162,7 +163,7 @@ export class Ruta {
    * Establece el nuevo tipo de actividad.
    * @param geolocalizacionInicio Nuevo tipo de actividad.
   */
-  set tipoActividad(tipoActividad: string) {
+  set tipoActividad(tipoActividad: "bicicleta" | "correr") {
     this._tipoActividad = tipoActividad;
   }
 
