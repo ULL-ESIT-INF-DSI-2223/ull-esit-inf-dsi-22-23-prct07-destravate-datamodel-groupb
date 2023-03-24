@@ -2,13 +2,15 @@ export class Ruta {
     private _nombre: string;
     private _distancia: number;
     private _duracion: number;
-    private _coordenadas: Coordenadas[];
-  
+    private _coordenadas: Coordenadas[]; // coordenada inicial es el prinncipio y la final es la final
+    private _desnivel: number = 0
+
     constructor(nombre: string, distancia: number, duracion: number, coordenadas: Coordenadas[]) {
       this._nombre = nombre;
       this._distancia = distancia;
       this._duracion = duracion;
       this._coordenadas = coordenadas;
+      this.setDesnivel()
     }
   
     get nombre(): string {
@@ -42,15 +44,26 @@ export class Ruta {
     set coordenadas(coordenadas: Coordenadas[]) {
       this._coordenadas = coordenadas;
     }
+
+    setDesnivel(){
+      this._desnivel = this.coordenadas[0].altitud - this.coordenadas[this.coordenadas.length - 1 ].altitud 
+      this._desnivel < 0 ? this._desnivel = this.desnivel * -1 : undefined
+    }
+
+    get desnivel(){
+      return this._desnivel
+    } 
   }
   
   export class Coordenadas {
     private _latitud: number;
     private _longitud: number;
+    private _altitud: number;
   
-    constructor(latitud: number, longitud: number) {
+    constructor(latitud: number, longitud: number, altitud: number) {
       this._latitud = latitud;
       this._longitud = longitud;
+      this._altitud = altitud
     }
   
     get latitud(): number {
@@ -68,29 +81,14 @@ export class Ruta {
     set longitud(longitud: number) {
       this._longitud = longitud;
     }
+
+    get altitud(): number{
+      return this._altitud
+    }
+
+    set altitud(altitud: number){
+      this._altitud = altitud
+    }
   }
   
-  const rutas: Ruta[] = [
-    new Ruta(
-      "Ruta 1",
-      10,
-      60,
-      [
-        new Coordenadas(10.1234, -72.3456),
-        new Coordenadas(10.2345, -72.4567),
-        new Coordenadas(10.3456, -72.5678),
-      ]
-    ),
-    new Ruta(
-      "Ruta 2",
-      8,
-      45,
-      [
-        new Coordenadas(10.5678, -72.7890),
-        new Coordenadas(10.6789, -72.8901),
-        new Coordenadas(10.7890, -73.0012),
-      ]
-    ),
-    // ... más rutas
-  ];
-  
+

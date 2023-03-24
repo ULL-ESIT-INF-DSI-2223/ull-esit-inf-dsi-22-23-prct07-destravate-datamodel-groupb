@@ -30,6 +30,7 @@
     "typedoc": "^0.23.28"
   },
   "dependencies": {
+    "inquirer": "^9.1.5",
     "prompt-sync": "^4.2.0"
   }
 }
