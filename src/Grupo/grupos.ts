@@ -1,6 +1,6 @@
-import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
-import { Ruta } from "./rutas";
-import { Usuario } from "./usuario";
+import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento";
+import { Ruta } from "../Ruta/rutas";
+import { Usuario } from "../Usuario/usuario";
 
 /**
  * Tipo que representa al historial de rutas realizadas por un grupo.

@@ -9,12 +9,12 @@ export function add(firstNumber: number, secondNumber: number) {
   return firstNumber + secondNumber;
 }
 
-import { Usuario } from "./usuario";
-import { Ruta } from "./rutas";
-import { Coordenadas } from "./coordenadas";
-import { Reto } from "./retos";
-import { Grupo } from "./grupos";
-import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
+import { Usuario } from "./Usuario/usuario";
+import { Ruta } from "./Ruta/rutas";
+import { Coordenadas } from "./Ruta/coordenadas";
+import { Reto } from "./Reto/retos";
+import { Grupo } from "./Grupo/grupos";
+import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 
 export const estadisticas = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
 

@@ -1,5 +1,5 @@
-import { Coordenadas } from "../src/coordenadas";
-import { Usuario } from "./usuario";
+import { Coordenadas } from "./coordenadas";
+import { Usuario } from "../Usuario/usuario";
 /**
   Clase que representa una ruta de actividad al aire libre.
   */
