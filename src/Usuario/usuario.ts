@@ -1,8 +1,8 @@
-import { Ruta } from "./rutas";
-import { Coordenadas } from "./coordenadas";
-import { Reto } from "./retos";
+import { Ruta } from "../Ruta/rutas";
+import { Coordenadas } from "../Ruta/coordenadas";
+import { Reto } from "../Reto/retos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
-import { Grupo } from "./grupos";
+import { Grupo } from "../Grupo/grupos";
 
 /**
  * clase para la craciond e usuarios

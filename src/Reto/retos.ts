@@ -1,5 +1,5 @@
-import { Ruta } from "./rutas";
-import { Usuario } from "./usuario";
+import { Ruta } from "../Ruta/rutas";
+import { Usuario } from "../Usuario/usuario";
 
 /**
  * Clase que representa a un reto. Un reto es un conjunto de rutas.

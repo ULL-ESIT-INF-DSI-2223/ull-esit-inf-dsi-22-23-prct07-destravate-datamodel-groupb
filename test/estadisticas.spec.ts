@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import { EstadisticasEntrenamiento } from "../src/estadisticas_entrenamiento";
+import { EstadisticasEntrenamiento } from "../src/Usuario/estadisticas_entrenamiento";
 import { estadistica } from "../src/index"
 
 describe("index test", () => {
