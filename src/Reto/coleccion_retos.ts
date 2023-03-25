@@ -56,7 +56,7 @@ export class ColeccionRetos implements Coleccion<Reto> {
      * @param orden Orden ascendente o descendente.
      */
     buscarKilometros(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.kilometros - a.kilometros);
+        this._listaElementos.sort((a, b) => a.kilometros - b.kilometros);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }
@@ -67,7 +67,7 @@ export class ColeccionRetos implements Coleccion<Reto> {
      * @param orden Orden ascendente o descendente.
      */
     buscarCantidadUsuarios(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.usuarios.length - a.usuarios.length);
+        this._listaElementos.sort((a, b) => a.usuarios.length - b.usuarios.length);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }

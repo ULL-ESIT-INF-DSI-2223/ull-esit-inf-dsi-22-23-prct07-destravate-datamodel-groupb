@@ -6,7 +6,7 @@ import { Grupo } from "./Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 
 export const estadistica_1 = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
-export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100])
+export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100]);
 
 export const ruta_1 = new Ruta(
   1,
@@ -41,7 +41,7 @@ export const reto_1 = new Reto(
 export const reto_2 = new Reto(
   152,
   "Reto de nuevo",
-  [ruta_1, ruta_2],
+  [ruta_1],
   "correr",
   []
 );
@@ -55,8 +55,7 @@ export const userUno = new Usuario(
   [ruta_1, ruta_2],
   [reto_1],
   32,
-  1,
-  []
+  [],
 );
 export const userDos = new Usuario(
   "Filemon",
@@ -83,11 +82,11 @@ export const grupo_1 = new Grupo(
 export const grupo_2 = new Grupo(
   1,
   "suerte por la orejas",
-  [userDos, userUno],
-  estadistica_2,
+  [userUno],
+  estadistica_1,
   [],
-  [ruta_1],
-  [["23-03-1999", [userUno, userDos], ruta_2]]
+  [ruta_1, ruta_2],
+  [["23-03-1999", [userUno], ruta_2]]
 );
 
 export  const reto = new Reto(152, "Reto de prueba", [ruta_1, ruta_2], "correr", []);

@@ -64,7 +64,7 @@ export class ColeccionRutas implements Coleccion<Ruta> {
      * @param orden Orden ascendente o descendente.
      */
     buscarCantidadUsuarios(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.usuarios.length - a.usuarios.length);
+        this._listaElementos.sort((a, b) => a.usuarios.length - b.usuarios.length);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }
@@ -75,7 +75,7 @@ export class ColeccionRutas implements Coleccion<Ruta> {
      * @param orden Orden ascendente o descendente.
      */
     buscarLongitud(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.longitud - a.longitud);
+        this._listaElementos.sort((a, b) => a.longitud - b.longitud);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }
@@ -86,7 +86,7 @@ export class ColeccionRutas implements Coleccion<Ruta> {
      * @param orden Orden ascendente o descendente.
      */
     buscarCalificacion(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.calificacionMedia - a.calificacionMedia);
+        this._listaElementos.sort((a, b) => a.calificacionMedia - b.calificacionMedia);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }

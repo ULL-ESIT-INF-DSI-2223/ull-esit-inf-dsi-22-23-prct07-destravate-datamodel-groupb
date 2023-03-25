@@ -56,16 +56,16 @@ export class ColeccionGrupos implements Coleccion<Grupo> {
      * @param orden Orden ascendente o descendente.
      * @param tipo Semanal, mensual o anual.
      */
-    buscarKilomteros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
+    buscarKilometros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
         switch (tipo) {
             case "sem":
-                this._listaElementos.sort((a, b) => b.estadisticasGrupal.estadisticaSemanal[0] - a.estadisticasGrupal.estadisticaSemanal[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasGrupal.estadisticaSemanal[0] - b.estadisticasGrupal.estadisticaSemanal[0]);
                 break;
             case "mes":
-                this._listaElementos.sort((a, b) => b.estadisticasGrupal.estadisticaMensual[0] - a.estadisticasGrupal.estadisticaMensual[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasGrupal.estadisticaMensual[0] - b.estadisticasGrupal.estadisticaMensual[0]);
                 break;
             default:
-                this._listaElementos.sort((a, b) => b.estadisticasGrupal.estadisticaAnual[0] - a.estadisticasGrupal.estadisticaAnual[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasGrupal.estadisticaAnual[0] - b.estadisticasGrupal.estadisticaAnual[0]);
                 break;
         }
         if(orden == "desc") {
@@ -78,7 +78,7 @@ export class ColeccionGrupos implements Coleccion<Grupo> {
      * @param orden Orden ascendente o descendente.
      */
     buscarCantidadMiembros(orden: "asc" | "desc") {
-        this._listaElementos.sort((a, b) => b.participantes.length - a.participantes.length);
+        this._listaElementos.sort((a, b) => a.participantes.length - b.participantes.length);
         if(orden == "desc") {
             this._listaElementos.reverse()
         }

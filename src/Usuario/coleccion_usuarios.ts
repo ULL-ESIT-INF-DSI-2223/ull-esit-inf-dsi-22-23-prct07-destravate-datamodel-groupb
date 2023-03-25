@@ -59,13 +59,13 @@ export class ColeccionUsuarios implements Coleccion<Usuario> {
     buscarKilomteros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
         switch (tipo) {
             case "sem":
-                this._listaElementos.sort((a, b) => b.estadisticasEntrenamiento.estadisticaSemanal[0] - a.estadisticasEntrenamiento.estadisticaSemanal[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasEntrenamiento.estadisticaSemanal[0] - b.estadisticasEntrenamiento.estadisticaSemanal[0]);
                 break;
             case "mes":
-                this._listaElementos.sort((a, b) => b.estadisticasEntrenamiento.estadisticaMensual[0] - a.estadisticasEntrenamiento.estadisticaMensual[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasEntrenamiento.estadisticaMensual[0] - b.estadisticasEntrenamiento.estadisticaMensual[0]);
                 break;
             default:
-                this._listaElementos.sort((a, b) => b.estadisticasEntrenamiento.estadisticaAnual[0] - a.estadisticasEntrenamiento.estadisticaAnual[0]);
+                this._listaElementos.sort((a, b) => a.estadisticasEntrenamiento.estadisticaAnual[0] - b.estadisticasEntrenamiento.estadisticaAnual[0]);
                 break;
         }
         if(orden == "desc") {

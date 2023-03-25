@@ -31,9 +31,9 @@ describe("Clase ColeccionRutas", () => {
     });
     it("buscarLongitud()", () => {
         coleccion_rutas.buscarLongitud("asc");
-        expect(coleccion_rutas._listaElementos).to.deep.equal([ruta_2, ruta_1]);
-        coleccion_rutas.buscarLongitud("desc");
         expect(coleccion_rutas._listaElementos).to.deep.equal([ruta_1, ruta_2]);
+        coleccion_rutas.buscarLongitud("desc");
+        expect(coleccion_rutas._listaElementos).to.deep.equal([ruta_2, ruta_1]);
     });
     it("buscarCalificacion()", () => {
         coleccion_rutas.buscarCalificacion("asc");
