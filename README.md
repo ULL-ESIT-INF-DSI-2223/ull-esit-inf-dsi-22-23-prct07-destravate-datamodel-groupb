@@ -19,12 +19,7 @@
 
 El codigo de esta clase es:
 
-```
-import { Coordenadas } from "../src/coordenadas";
-import { Usuario } from "./usuario";
-/**
-  Clase que representa una ruta de actividad al aire libre.
-  */
+```ts
 export class Ruta {
   private _id: number; // Identificador único de la ruta
   private _nombre: string; // Nombre de la ruta
@@ -36,18 +31,6 @@ export class Ruta {
   private _tipoActividad: "bicicleta" | "correr"; // Tipo de actividad de la ruta (bicicleta o corriendo)
   private _calificacionMedia: number; // Calificación media de la ruta por los usuarios que la han realizado
 
-  /**
-    Crea una instancia de la clase Ruta.
-    @param id - Identificador único de la ruta.
-    @param nombre - Nombre de la ruta.
-    @param geolocalizacionInicio - Coordenadas de la ubicación de inicio de la ruta.
-    @param geolocalizacionFin - Coordenadas de la ubicación de fin de la ruta.
-    @param longitud - Longitud de la ruta en metros.
-    @param desnivelMedio - Desnivel medio de la ruta en metros.
-    @param usuarios - Lista de identificadores de usuarios que han realizado la ruta.
-    @param tipoActividad - Tipo de actividad de la ruta (senderismo, ciclismo, etc.).
-    @param calificacionMedia - Calificación media de la ruta por los usuarios que la han realizado.
-   */
   constructor(
     id: number,
     nombre: string,
@@ -70,146 +53,72 @@ export class Ruta {
     this._calificacionMedia = calificacionMedia;
   }
 
-  /**
-    Devuelve el identificador único de la ruta.
-    @returns Identificador único de la ruta.
-    */
   get id(): number {
     return this._id;
   }
 
-  /**
-    Establece el identificador único de la ruta.
-    @param id Identificador único de la ruta.
-    */
   set id(id: number) {
     this._id = id;
   }
 
-  /**
-    Devuelve el nombre de la ruta.
-    @returns Nombre de la ruta.
-    */
   get nombre(): string {
     return this._nombre;
   }
-
-  /**
-    Establece el nombre de la ruta.
-    @param nombre - Nombre de la ruta.
-    */
   set nombre(nombre: string) {
     this._nombre = nombre;
   }
-
-  /**
-   * Devuelve la geolocalización de inicio.
-   * @returns Geolocalización de inicio.
-   */
   get geolocalizacionInicio(): Coordenadas {
     return this._geolocalizacionInicio;
   }
 
-  /**
-   * Establece una nueva geolocalización de inicio.
-   * @param geolocalizacionInicio Nueva geolocalización de inicio.
-   */
   set geolocalizacionInicio(geolocalizacionInicio: Coordenadas) {
     this._geolocalizacionInicio = geolocalizacionInicio;
   }
 
-  /**
-   * Devuelve la geolocalización de final.
-   * @returns Geolocalización de final.
-   */
   get geolocalizacionFin(): Coordenadas {
     return this._geolocalizacionFin;
   }
 
-  /**
-   * Establece una nueva geolocalización de final.
-   * @param geolocalizacionInicio Nueva geolocalización de final.
-   */
   set geolocalizacionFin(geolocalizacionFin: Coordenadas) {
     this._geolocalizacionFin = geolocalizacionFin;
   }
 
-  /**
-   * Devuelve la longitud de la ruta.
-   * @returns Longitud de la ruta.
-   */
   get longitud(): number {
     return this._longitud;
   }
 
-  /**
-   * Establece una nueva longitud de la ruta.
-   * @param geolocalizacionInicio Nueva longitud de la ruta.
-   */
   set longitud(longitud: number) {
     this._longitud = longitud;
   }
 
-  /**
-   * Devuelve el desnivel medio.
-   * @returns Desnivel medio.
-   */
   get desnivelMedio(): number {
     return this._desnivelMedio;
   }
 
-  /**
-   * Establece el nuevo desnivel medio.
-   * @param geolocalizacionInicio Nuevo desnivel medio.
-   */
   set desnivelMedio(desnivelMedio: number) {
     this._desnivelMedio = desnivelMedio;
   }
 
-  /**
-   * Devuelve los usuarios que realizan la ruta.
-   * @returns Usuarios que realizan la ruta.
-   */
   get usuarios(): Usuario[] {
     return this._usuarios;
   }
 
-  /**
-   * Establece una nueva lista de usuarios que realizan la ruta.
-   * @param geolocalizacionInicio Nueva lista de usuarios que realizan la ruta.
-   */
   set usuarios(usuarios: Usuario[]) {
     this._usuarios = usuarios;
   }
 
-  /**
-   * Devuelve el tipo de actividad.
-   * @returns Tipo de actividad.
-   */
   get tipoActividad(): "bicicleta" | "correr" {
     return this._tipoActividad;
   }
 
-  /**
-   * Establece el nuevo tipo de actividad.
-   * @param geolocalizacionInicio Nuevo tipo de actividad.
-   */
   set tipoActividad(tipoActividad: "bicicleta" | "correr") {
     this._tipoActividad = tipoActividad;
   }
 
-  /**
-   * Devuelve la calificación media de la ruta.
-   * @returns Calificación media de la ruta.
-   */
   get calificacionMedia(): number {
     return this._calificacionMedia;
   }
 
-  /**
-   * Establece una nueva calificación media de la ruta.
-   * @param geolocalizacionInicio Nueva calificación media de la ruta.
-   */
   set calificacionMedia(calificacionMedia: number) {
     this._calificacionMedia = calificacionMedia;
   }
@@ -225,7 +134,7 @@ La clase depende de otras dos clases llamadas "Coordenadas" y "Usuario". La clas
 
 Los test realizados para esta clase son:
 
-```
+```ts
 describe("Clase Ruta", () => {
   it("Cambiar Id de ruta", () => {
     ruta.id = 5;
@@ -330,72 +239,38 @@ describe("Clase Ruta", () => {
 ### Clase Coordenadas
 El codigo de esta clase es:
 
-```
-/**
-
-    Clase Coordenadas representa las coordenadas geográficas de un punto en la Tierra
-    */
+```ts
 export class Coordenadas {
   private _latitud: number;
   private _longitud: number;
   private _altitud: number;
-  /**
 
-    Crea una instancia de Coordenadas
-    @param latitud La latitud del punto en grados decimales
-    @param longitud La longitud del punto en grados decimales
-    @param altitud La altitud del punto en metros
-    */
   constructor(latitud: number, longitud: number, altitud: number) {
     this._latitud = latitud;
     this._longitud = longitud;
     this._altitud = altitud;
   }
-  /**
 
-    Obtiene la latitud del punto
-    @returns La latitud del punto en grados decimales
-    */
   get latitud(): number {
     return this._latitud;
   }
-  /**
 
-    Establece la latitud del punto
-    @param latitud La nueva latitud del punto en grados decimales
-    */
   set latitud(latitud: number) {
     this._latitud = latitud;
   }
-  /**
 
-    Obtiene la longitud del punto
-    @returns La longitud del punto en grados decimales
-    */
   get longitud(): number {
     return this._longitud;
   }
-  /**
 
-    Establece la longitud del punto
-    @param longitud La nueva longitud del punto en grados decimales
-    */
   set longitud(longitud: number) {
     this._longitud = longitud;
   }
-  /**
 
-    Obtiene la altitud del punto
-    @returns La altitud del punto en metros
-    */
   get altitud(): number {
     return this._altitud;
   }
-  /**
 
-    Establece la altitud del punto
-    @param altitud La nueva altitud del punto en metros
-    */
   set altitud(altitud: number) {
     this._altitud = altitud;
   }
@@ -413,10 +288,7 @@ En resumen, este código define una clase útil para representar y manipular coo
 
 Los test realizados para esta clase son:
 
-```
-import { expect } from "chai";
-import { Coordenadas } from "../src/coordenadas";
-
+```ts
 const coordenadas = new Coordenadas(0, 0, 0);
 
 describe("coordenadas test", () => {
@@ -447,14 +319,7 @@ describe("coordenadas test", () => {
 ### Clase Usuario
 El codigo de esta clase es:
 
-```
-import { Ruta } from "./rutas";
-import { Reto } from "./retos";
-import { Grupo } from "./grupos";
-
-/**
- * clase para la craciond e usuarios
- */
+```ts
 export class Usuario {
   private _id: number;
   private _nombre: string;
@@ -466,16 +331,6 @@ export class Usuario {
   private _retosActivos: Reto[];
   // collecion de rutas con fecha
 
-  /**
-   * constructor de la clase Usuario
-   * @param nombre nombre del usuario
-   * @param tipoActividad el tipo de la actividad que realiza el usuario, puede ser "bicicleta" o "paseo"
-   * @param amigos array con los id de los usuarios agregados como amigos
-   * @param grupos agrupaciones de IDs de usuarios
-   * @param rutas ids de las rutas favoritas del usuario
-   * @param retos ids de los retos activos del usuario
-   * @param id id del usuario, si no se proporciona uno, se generará automaticamente
-   */
   constructor(
     nombre: string,
     tipoActividad: "bicicleta" | "correr",
@@ -493,67 +348,35 @@ export class Usuario {
     this._retosActivos = retos;
     id < 0 ? (this._id = id) : (this._id = this.getRandomArbitrary(0, 50));
   }
-  /**
-   * metodo para generar un id
-   * @param min valor minimio que puede adquirir un id
-   * @param max valor maximo que puede adquirir un id
-   * @returns numero aleatorio generado dentro del rango de valores
-   */
+
   getRandomArbitrary(min: number, max: number) {
     return Math.random() * (max - min) + min;
   }
 
-  /**
-   * getter para obteenr el nombre del usuario
-   * @returns nombre del usuario
-   */
   get nombre(): string {
     return this._nombre;
   }
-  /**
-   * metodo para cambiar el nombre del usuario
-   * @param nombre nuevo nombre del usuario
-   */
+
   set nombre(nombre: string) {
     this._nombre = nombre;
   }
 
-  /**
-   * metodo para obtner el tipo de actividad del usuario
-   * @returns el tipo de actividad
-   */
   get tipoActividad(): "bicicleta" | "correr" {
     return this._tipoActividad;
   }
 
-  /**
-   * metood para cambiar el tipo de actividad del usuario
-   * @param tipoActividad el nuevo tipo de actividad del usuario
-   */
   set tipoActividad(tipoActividad: "bicicleta" | "correr") {
     this._tipoActividad = tipoActividad;
   }
 
-  /**
-   * metodo para obtener los ids de los amigos del usuario
-   * @returns array de ids de los amigos del usuario
-   */
   get amigos(): Usuario[] {
     return this._amigos;
   }
 
-  /**
-   * metodo para definir los amigos del usuario
-   */
   set amigos(amigos: Usuario[]) {
     this._amigos = amigos;
   }
 
-  /**
-   * metodo para añadir un amigo a la lista
-   * @param amigo id del amigo  añadir
-   * @returns true si lo ha añadido, false si no lo ha añadido
-   */
   addAmigo(amigo: Usuario): boolean {
     const index = this.amigos.indexOf(amigo);
     if (index == -1) {
@@ -565,11 +388,6 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para eliminar un amigo de la lista
-   * @param amigo id del amigo
-   * @returns true si lo ha eliminado, false si no lo ah eliminado
-   */
   deleteAmigo(amigo: Usuario): boolean {
     const index = this.amigos.indexOf(amigo);
     if (index != -1) {
@@ -580,27 +398,15 @@ export class Usuario {
       return false;
     }
   }
-  /**
-   * metodo par obtener los grupos de amigos del usuario
-   * @returns grupos de maigos del usuario
-   */
+
   get grupos(): Grupo[] {
     return this._grupos;
   }
-  /**
-   * metodo para definir los grupos de amigos del usuario
-   * @param grupos nuvos grupos del usuario
-   */
+
   set grupos(grupos: Grupo[]) {
     this._grupos = grupos;
   }
 
-  /**
-   * metodo para añadir un grupo de amigos al usuario
-   * @param grupo grupo a añadir
-   * @returns false si el grupo ya existe, true si lo añadió
-   * esta funcion no funciona correcta mente hasta que se implemente la clase grupo
-   */
   addGrupo(grupo: Grupo): boolean {
     const index = this.grupos.indexOf(grupo);
     if (index == -1) {
@@ -612,12 +418,6 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para eliminar un grupo del usuario
-   * @param grupo grupo a eliminar
-   * @returns false si no existe el grupo, true si lo elimina
-   * metodo no funciona correcto hasta que se implemente clase grupo
-   */
   deleteGrupo(grupo: Grupo): boolean {
     const index = this.grupos.indexOf(grupo);
     if (index != -1) {
@@ -629,27 +429,14 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para obtener las rutas de un usuario
-   * @returns rutas favoritas del usuario
-   */
   get rutas(): Ruta[] {
     return this._rutasFavoritas;
   }
 
-  /**
-   * metodo para definir las rutas de un usuario
-   * @param nuevas rutas favoritas del usuario
-   */
   set rutas(rutas: Ruta[]) {
     this._rutasFavoritas = rutas;
   }
 
-  /**
-   * metodo para añadir una ruta a la lista de rutas favoritas de un usuario
-   * @param ruta id de la ruta a añadir en el array
-   * @returns false si no ha podido añadir la ruta a la lista o true si ah conseguido añadirla
-   */
   addRuta(ruta: Ruta): boolean {
     const index = this.rutas.indexOf(ruta);
     if (index == -1) {
@@ -661,11 +448,6 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para eliminar una ruta de la lista de favoritos de un usuario
-   * @param ruta id de la ruta a eliminar
-   * @returns true si la ha eliminado o false si no la eliminó
-   */
   deleteRuta(ruta: Ruta): boolean {
     const index = this.rutas.indexOf(ruta);
     if (index != -1) {
@@ -677,27 +459,14 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para obtener los retos activos del usuario
-   * @returns array de los ids de los retos que estés activos
-   */
   get retos(): Reto[] {
     return this._retosActivos;
   }
 
-  /**
-   * metodo apra defnir los retos activos del usuario
-   * @param retos nuevos retos del usuario
-   */
   set retos(retos: Reto[]) {
     this._retosActivos = retos;
   }
 
-  /**
-   * metodo para añadir un reto a la lista
-   * @param reto  id del reto a añadir
-   * @returns true si lo añadió correctamente y false si no
-   */
   addReto(reto: Reto): boolean {
     const index = this.retos.indexOf(reto);
     if (index == -1) {
@@ -709,11 +478,6 @@ export class Usuario {
     }
   }
 
-  /**
-   * metodo para eliminar un reto de la lista de retos activos
-   * @param reto id del reto a eliminar
-   * @returns true si lo eliminó o false si no lo eliminó
-   */
   deleteReto(reto: Reto): boolean {
     const index = this.retos.indexOf(reto);
     if (index != -1) {
@@ -735,14 +499,7 @@ La clase Usuario también importa las clases Ruta, Reto y Grupo desde otros arch
 
 Los test realizados para esta clase son:
 
-```
-import "mocha";
-import { expect } from "chai";
-
-import {userDos, userUno,grupo_2, grupo,ruta_1, ruta_2,reto_2,reto_1} from "../src/index"
-
-
-
+```ts
 describe("Clase Usuario", () => {
   it("Set nombre de usuario", () => {
     userUno.nombre = "María";
@@ -858,21 +615,9 @@ describe("Clase Usuario", () => {
 ### Clase Grupo
 El codigo de esta clase es:
 
-```
-import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
-import { Ruta } from "./rutas";
-import { Usuario } from "./usuario";
-
-/**
- * Tipo que representa al historial de rutas realizadas por un grupo.
- * Cada tupla contiene la fecha de realización, IDs de los usuarios e ID de ruta.
- */
+```ts
 export type historialRutasGrupal = [string, Usuario[], Ruta][];
 
-/**
- * Clase que representa a un grupo.
- * Un grupo esta conformada por diversos usuarios que realizan actividades en conjunto.
- */
 export class Grupo {
   private _id: number;
   private _nombre: string;
@@ -882,16 +627,6 @@ export class Grupo {
   private _rutasFavoritas: Ruta[];
   private _historialRutas: historialRutasGrupal;
 
-  /**
-   * Constructor de clase.
-   * @param id ID del grupo.
-   * @param nombre Nombre del grupo.
-   * @param participantes IDs de los participantes del grupo.
-   * @param estadisticasGrupal Estadísticas grupales.
-   * @param clasificacion Clasificación de usuarios.
-   * @param rutasFavoritas Rutas favortias del grupo.
-   * @param historialRutas Historial de rutas realizadas.
-   */
   constructor(
     id: number,
     nombre: string,
@@ -910,114 +645,58 @@ export class Grupo {
     this._historialRutas = historialRutas;
   }
 
-  /**
-   * Devuelve el ID del grupo.
-   * @returns ID del grupo.
-   */
   get id(): number {
     return this._id;
   }
 
-  /**
-   * Establece un nuevo ID del grupo.
-   * @param nuevoId Nuevo ID del grupo.
-   */
   set id(nuevoId: number) {
     this._id = nuevoId;
   }
 
-  /**
-   * Devuelve el nombre del grupo.
-   * @returns Nombre del grupo.
-   */
   get nombre(): string {
     return this._nombre;
   }
 
-  /**
-   * Establece un nuevo nombre del grupo.
-   * @param nuevoNombre Nuevo nombre del grupo.
-   */
   set nombre(nuevoNombre: string) {
     this._nombre = nuevoNombre;
   }
 
-  /**
-   * Devuelve los ID de los participantes del grupo.
-   * @returns ID de los participantes del grupo.
-   */
   get participantes(): Usuario[] {
     return this._participantes;
   }
 
-  /**
-   * Establece una nueva lista de IDs de participantes del grupo.
-   * @param nuevosParticipantes Nueva lista de IDs de participantes del grupo.
-   */
   set participantes(nuevosParticipantes: Usuario[]) {
     this._participantes = nuevosParticipantes;
   }
 
-  /**
-   * Devuelve las estadísticas de entrenamiento del grupo.
-   * @returns Estadísticas de entrenamiento del grupo.
-   */
   get estadisticasGrupal(): EstadisticasEntrenamiento {
     return this._estadisticasGrupal;
   }
 
-  /**
-   * Establece nuevas estadísticas del grupo.
-   * @param nuevasEstadisticas Nuevas estadísticas del grupo.
-   */
   set estadisticasGrupal(nuevasEstadisticas: EstadisticasEntrenamiento) {
     this._estadisticasGrupal = nuevasEstadisticas;
   }
 
-  /**
-   * Devuelve la clasificacion de los usuarios del grupo.
-   * @returns Clasificación de los usuarios del grupo.
-   */
   get clasificacion(): number[] {
     return this._clasificacion;
   }
 
-  /**
-   * Establece una nueva clasificación del grupo.
-   * @param nuevaClasificacion Nueva clasificación del grupo.
-   */
   set clasificacion(nuevaClasificacion: number[]) {
     this._clasificacion = nuevaClasificacion;
   }
 
-  /**
-   * Devuelve las rutas favoritas del grupo.
-   * @returns Rutas favoritas del grupo.
-   */
   get rutasFavoritas(): Ruta[] {
     return this._rutasFavoritas;
   }
 
-  /**
-   * Establece nuevas rutas favoritas del grupo.
-   * @param nuevasRutas Nuevas rutas favoritas del grupo.
-   */
   set rutasFavoritas(nuevasRutas: Ruta[]) {
     this._rutasFavoritas = nuevasRutas;
   }
 
-  /**
-   * Devuelve el historial de rutas del grupo.
-   * @returns Historial de rutas del grupo.
-   */
   get historialRutas(): historialRutasGrupal {
     return this._historialRutas;
   }
 
-  /**
-   * Establece un nuevo historial de rutas del grupo.
-   * @param nuevoHistorial Nuevo historial de rutas del grupo.
-   */
   set historialRutas(nuevoHistorial: historialRutasGrupal) {
     this._historialRutas = nuevoHistorial;
   }
@@ -1041,12 +720,7 @@ En resumen, esta clase permite modelar un grupo de usuarios que realizan activid
 
 Los test realizados para esta clase son:
 
-```
-import "mocha";
-import { expect } from "chai";
-import { grupo, userDos, ruta_1, ruta_2 } from "../src/index"
-import { EstadisticasEntrenamiento } from "../src/estadisticas_entrenamiento";
-
+```ts
 describe("grupo test", () => {
   it("set id", () => {
     grupo.id = 6;
@@ -1108,22 +782,12 @@ describe("grupo test", () => {
 ### Clase EstadisticaEntrenamiento
 El codigo de esta clase es:
 
-```
-/**
- * Clase que representa a las estadísticas de entrenamiento por semana, mes y año.
- * Almacena los km recorridos y el desnivel total acumulado.
- */
+```ts
 export class EstadisticasEntrenamiento {
   private _estadisticaSemanal: [number, number];
   private _estadisticaMensual: [number, number];
   private _estadisticaAnual: [number, number];
 
-  /**
-   * Constructor de clase.
-   * @param estadistcaSemanal Estadística referente a la semana.
-   * @param estadisticaMensual Estadística referente al mes.
-   * @param estadisticaAnual Estadística referente al año.
-   */
   constructor(
     estadistcaSemanal: [number, number],
     estadisticaMensual: [number, number],
@@ -1134,50 +798,26 @@ export class EstadisticasEntrenamiento {
     this._estadisticaAnual = estadisticaAnual;
   }
 
-  /**
-   * Devuelve la estadística semanal.
-   * @returns Estadística semanal.
-   */
   get estadisticaSemanal(): [number, number] {
     return this._estadisticaSemanal;
   }
 
-  /**
-   * Establece la estadística semanal.
-   * @returns Estadística semanal.
-   */
   set estadisticaSemanal(nuevaSemanal: [number, number]) {
     this._estadisticaSemanal = nuevaSemanal;
   }
 
-  /**
-   * Devuelve la estadística mensual.
-   * @returns Estadística mensual.
-   */
   get estadisticaMensual(): [number, number] {
     return this._estadisticaMensual;
   }
 
-  /**
-   * Establece la estadística mensual.
-   * @returns Estadística mensual.
-   */
   set estadisticaMensual(nuevaMensual: [number, number]) {
     this._estadisticaMensual = nuevaMensual;
   }
 
-  /**
-   * Devuelve la estadística anual.
-   * @returns Estadística anual.
-   */
   get estadisticaAnual(): [number, number] {
     return this._estadisticaAnual;
   }
 
-  /**
-   * Establece la estadística anual.
-   * @returns Estadística anual.
-   */
   set estadisticaAnual(nuevaAnual: [number, number]) {
     this._estadisticaAnual = nuevaAnual;
   }
@@ -1192,11 +832,7 @@ En resumen, la clase proporciona una manera conveniente de almacenar y manipular
 
 Los test realizados para esta clase son:
 
-```
-import "mocha";
-import { expect } from "chai";
-import { estadistica } from "../src/index"
-
+```ts
 describe("index test", () => {
   it("set estadistica semanal", () => {
     estadistica.estadisticaSemanal = [1,2]
