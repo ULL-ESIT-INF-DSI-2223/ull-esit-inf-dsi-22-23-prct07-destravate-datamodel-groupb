@@ -116,7 +116,7 @@ export class Reto {
   /**
    * metodo para cambiar la cantidad de kilometros
    */
-  set kilometos(kilometros: number) {
+  set kilometros(kilometros: number) {
     this._kilometros = kilometros;
   }
 

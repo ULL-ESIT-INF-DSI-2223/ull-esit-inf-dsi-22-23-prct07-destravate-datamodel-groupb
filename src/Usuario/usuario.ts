@@ -1,9 +1,10 @@
 import { Ruta } from "../Ruta/rutas";
 import { Reto } from "../Reto/retos";
 import { Grupo } from "../Grupo/grupos";
+import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 
 /**
- * clase para la craciond e usuarios
+ * Clase para la creación de usuarios
  */
 export class Usuario {
   private _id: number;
@@ -11,7 +12,7 @@ export class Usuario {
   private _tipoActividad: "bicicleta" | "correr";
   private _amigos: Usuario[];
   private _grupos: Grupo[];
-  // private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
+  private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
   private _rutasFavoritas: Ruta[];
   private _retosActivos: Reto[];
   // collecion de rutas con fecha
@@ -30,7 +31,8 @@ export class Usuario {
     nombre: string,
     tipoActividad: "bicicleta" | "correr",
     amigos: Usuario[],
-    grupos: Grupo[], // cambiar a tipo grupo
+    grupos: Grupo[],
+    estadisticasEntrenamiento: EstadisticasEntrenamiento,
     rutas: Ruta[],
     retos: Reto[],
     id = -1
@@ -39,6 +41,7 @@ export class Usuario {
     this._tipoActividad = tipoActividad;
     this._amigos = amigos;
     this._grupos = grupos;
+    this._estadisticasEntrenamiento = estadisticasEntrenamiento;
     this._rutasFavoritas = rutas;
     this._retosActivos = retos;
     id < 0 ? (this._id = id) : (this._id = this.getRandomArbitrary(0, 50));
@@ -177,6 +180,20 @@ export class Usuario {
       console.log("Grupo no existente en la colecion");
       return false;
     }
+  }
+
+  /** 
+   * Devuelve las estadísticas de entrenamiento.
+  */
+  get estadisticasEntrenamiento(): EstadisticasEntrenamiento {
+    return this._estadisticasEntrenamiento;
+  }
+
+  /** 
+   * Establece nuevas estadísticas de entrenamiento.
+  */
+  set estadisticasEntrenamiento(nuevasEstadisticas: EstadisticasEntrenamiento) {
+    this._estadisticasEntrenamiento = nuevasEstadisticas;
   }
 
   /**
