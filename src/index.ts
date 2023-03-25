@@ -25,7 +25,7 @@ const reto_1 = new Reto(152, "Reto de prueba", [ruta_1, ruta_2], "correr", []);
 const reto_2 = new Reto(152, "Reto de nuevo", [ruta_1, ruta_2], "correr", []);
 
 
-let userUno = new Usuario(
+const userUno = new Usuario(
   "Mortadelo",
   "bicicleta",
   [],
@@ -37,7 +37,7 @@ let userUno = new Usuario(
   [reto_1],
   32
 );
-let user = new Usuario(
+const user = new Usuario(
   "Filemon",
   "correr",
   [userUno],

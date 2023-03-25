@@ -34,7 +34,7 @@ export class Usuario {
     grupos: number[][], // cambiar a tipo grupo
     rutas: Ruta[],
     retos: Reto[],
-    id: number = -1
+    id = -1
   ) {
     this._nombre = nombre;
     this._tipoActividad = tipoActividad;
