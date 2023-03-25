@@ -1,7 +1,5 @@
 import { Ruta } from "./rutas";
-import { Coordenadas } from "./coordenadas";
 import { Reto } from "./retos";
-import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 import { Grupo } from "./grupos";
 
 /**

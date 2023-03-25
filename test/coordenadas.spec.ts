@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { Coordenadas } from "../src/coordenadas";
 
-let coordenadas = new Coordenadas(0, 0, 0);
+const coordenadas = new Coordenadas(0, 0, 0);
 
 describe("coordenadas test", () => {
   it("latitud set", () => {

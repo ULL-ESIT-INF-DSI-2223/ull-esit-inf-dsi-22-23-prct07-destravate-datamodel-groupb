@@ -1,6 +1,5 @@
 import "mocha";
 import { expect } from "chai";
-import { Ruta } from "../src/rutas";
 import { Coordenadas } from "../src/coordenadas";
 import { ruta, userUno } from "../src/index"
 
