@@ -56,7 +56,7 @@ export class ColeccionUsuarios implements Coleccion<Usuario> {
      * @param orden Orden ascendente o descendente.
      * @param tipo Semanal, mensual o anual.
      */
-    buscarKilomteros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
+    buscarKilometros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
         switch (tipo) {
             case "sem":
                 this._listaElementos.sort((a, b) => a.estadisticasEntrenamiento.estadisticaSemanal[0] - b.estadisticasEntrenamiento.estadisticaSemanal[0]);
