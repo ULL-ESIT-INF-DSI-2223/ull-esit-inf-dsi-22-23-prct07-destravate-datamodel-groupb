@@ -1,25 +1,49 @@
 import { Coleccion } from "../coleccion";
 import { Grupo } from "./grupos";
 
+/**
+ * Clase que representa a una colección de grupos.
+ */
 export class ColeccionGrupos implements Coleccion<Grupo> {
     _listaElementos: Grupo[];
 
+    /**
+     * Constructor de clase.
+     * @param listaElementos Lista de elementos de la colección. 
+     */
     constructor(listaElementos: Grupo[]) {
         this._listaElementos = listaElementos;
     }
 
+    /**
+     * Añade un nuevo elemento a la colección.
+     * @param item Elemento a añadir.
+     */
     add(item: Grupo): void {
         this._listaElementos.push(item);
     }
 
+    /**
+     * Elimina un elemento de la colección.
+     * @param index índice del elemento a eliminar.
+     */
     remove(index: number): void {
         this._listaElementos.splice(index, 1);
     }
 
+    /**
+     * Modifica un elemento de la colección.
+     * @param index índice del elemento a modificar.
+     * @param item Elemento con nuevas características.
+     */
     modify(index: number, item: Grupo): void {
         this._listaElementos[index] = item;
     }
 
+    /**
+     * Ordena los elementos de la colección según su nombre.
+     * @param orden Orden ascendente o descendente.
+     */
     buscarNombre(orden: "asc" | "desc") {
         this._listaElementos.sort((a, b) => a.nombre.localeCompare(b.nombre));
         if(orden == "desc") {
@@ -27,6 +51,11 @@ export class ColeccionGrupos implements Coleccion<Grupo> {
         }
     }
 
+    /**
+     * Ordena los elementos de la colección según los kilómetros realizados semanales, mensuales o anuales.
+     * @param orden Orden ascendente o descendente.
+     * @param tipo Semanal, mensual o anual.
+     */
     buscarKilomteros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
         switch (tipo) {
             case "sem":
@@ -44,6 +73,10 @@ export class ColeccionGrupos implements Coleccion<Grupo> {
         }
     }
 
+    /**
+     * Ordena los elementos de la colección según la cantidad de miembros.
+     * @param orden Orden ascendente o descendente.
+     */
     buscarCantidadMiembros(orden: "asc" | "desc") {
         this._listaElementos.sort((a, b) => b.participantes.length - a.participantes.length);
         if(orden == "desc") {
