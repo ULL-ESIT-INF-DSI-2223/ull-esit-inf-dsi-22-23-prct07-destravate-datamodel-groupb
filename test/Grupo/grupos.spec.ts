@@ -1,7 +1,7 @@
 import "mocha";
 import { expect } from "chai";
-import { grupo, userDos, ruta_1, ruta_2 } from "../src/index"
-import { EstadisticasEntrenamiento } from "../src/Usuario/estadisticas_entrenamiento";
+import { grupo, userDos, ruta_1, ruta_2 } from "../../src/index"
+import { EstadisticasEntrenamiento } from "../../src/Usuario/estadisticas_entrenamiento";
 
 describe("grupo test", () => {
   it("set id", () => {

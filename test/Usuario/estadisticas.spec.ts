@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import { estadistica } from "../src/index"
+import { estadistica } from "../../src/index"
 
 describe("index test", () => {
   it("set estadistica semanal", () => {
@@ -9,7 +9,6 @@ describe("index test", () => {
   it("get estadistica semanal", () => {
     expect(estadistica.estadisticaSemanal ).to.deep.equal([1,2])
   });
-  
   it("set estadistica mensual", () => {
     estadistica.estadisticaMensual = [1,2]
   });
@@ -22,5 +21,4 @@ describe("index test", () => {
   it("get estadistica anual", () => {
     expect(estadistica.estadisticaAnual).to.deep.equal([1,2])
   });
-  
 });

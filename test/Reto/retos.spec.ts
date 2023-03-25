@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import {reto, ruta_1, ruta_2, userUno}from "../src/index"
+import {reto, ruta_1, ruta_2, userUno}from "../../src/index"
 
 describe("Clase Reto", () => {
 
@@ -41,7 +41,7 @@ describe("Clase Reto", () => {
   });
 
   it("Cambiar Kilómetros totales del reto", () => {
-    reto.kilometos = 15;
+    reto.kilometros = 15;
   });
 
   it("Usuarios que realizan el reto", () => {

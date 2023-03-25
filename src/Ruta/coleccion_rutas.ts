@@ -84,6 +84,10 @@ export class ColeccionRutas implements Coleccion<Ruta> {
         }
     }
 
+    /**
+     * Ordena los elementos de la colección según el tipo de actividad.
+     * @param orden Orden ascendente o descendente.
+     */
     buscarTipoActividad(orden: "asc" | "desc") {
         this._listaElementos.sort((a, b) => a.tipoActividad.localeCompare(b.tipoActividad));
         if(orden == "desc") {

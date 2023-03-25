@@ -1,9 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 
-import {userDos, userUno,grupo_2, grupo,ruta_1, ruta_2,reto_2,reto_1} from "../src/index"
-
-
+import {userDos, userUno,grupo_2, grupo,ruta_1, ruta_2,reto_2,reto_1} from "../../src/index"
 
 describe("Clase Usuario", () => {
   it("Set nombre de usuario", () => {
