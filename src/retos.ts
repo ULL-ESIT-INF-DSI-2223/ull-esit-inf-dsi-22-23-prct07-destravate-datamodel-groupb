@@ -9,7 +9,7 @@ export class Reto {
     private _rutas: Ruta[];
     private _tipo: "bicicleta" | "correr";
     private _kilometros = 0; // Kilómetros totales del reto
-    private _usuarios: number[]; // Esto cambiar por la clase usuarios
+    private _usuarios: number[];
 
     /**
      * Constructor de clase.
@@ -17,7 +17,7 @@ export class Reto {
      * @param nombre Nombre del reto.
      * @param rutas Rutas que componen el reto.
      * @param tipo Tipo de reto. Puede ser en bicicleta o correr.
-     * @param usuarios Usuarios que realizan el reto.
+     * @param usuarios Id de los usuarios que realizan el reto.
      */
     constructor(id: number, nombre: string, rutas: Ruta[], tipo: "bicicleta" | "correr", usuarios: number[]) {
         this._id = id;
@@ -110,7 +110,7 @@ export class Reto {
      * Devuelve la lista de usuarios que realizan el reto.
      * @returns Lista de usuarios que realizan el reto.
      */
-    get usuarios(): number[] { // A cambiar cuando se implemente la clase usuarios
+    get usuarios(): number[] {
         return this._usuarios;
     }
 
@@ -118,7 +118,7 @@ export class Reto {
      * Establece una nueva lista de usuarios que realizan el reto.
      * @param nuevos_usuarios Nueva lista de usuarios que realizan el reto.
      */
-    set usuarios(nuevos_usuarios: number[]) { // A cambiar cuando se implemente la clase usuarios
+    set usuarios(nuevos_usuarios: number[]) {
         this._usuarios = nuevos_usuarios;
     }
 }
