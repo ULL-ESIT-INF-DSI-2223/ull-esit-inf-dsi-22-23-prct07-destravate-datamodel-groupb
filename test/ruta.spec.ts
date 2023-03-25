@@ -2,22 +2,11 @@ import "mocha";
 import { expect } from "chai";
 import { Ruta } from "../src/rutas";
 import { Coordenadas } from "../src/coordenadas";
-import { Reto } from "../src/retos";
-import { userUno } from "./usuario.spec";
+import { ruta, userUno } from "../src/index"
+
+
 
 describe("Clase Ruta", () => {
-  const ruta = new Ruta(
-    1,
-    "Ruta de prueba",
-    new Coordenadas(0, 0, 0),
-    new Coordenadas(1, 1, 1),
-    10,
-    100,
-    [],
-    "bicicleta",
-    4.5
-  );
-
   it("Cambiar Id de ruta", () => {
     ruta.id = 5;
   });
@@ -29,7 +18,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambiar Nombre de ruta", () => {
-    ruta.nombre = "Ruta cambio"
+    ruta.nombre = "Ruta cambio";
   });
   it("Nombre de ruta", () => {
     expect(ruta.nombre).to.equal("Ruta cambio");
@@ -39,7 +28,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Geolocalización de inicio", () => {
-    ruta.geolocalizacionInicio = new Coordenadas(1,1,1)
+    ruta.geolocalizacionInicio = new Coordenadas(1, 1, 1);
   });
   it("Geolocalización de inicio", () => {
     expect(ruta.geolocalizacionInicio.latitud).to.equal(1);
@@ -53,7 +42,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Geolocalización final", () => {
-    ruta.geolocalizacionFin = new Coordenadas(2,2,2)
+    ruta.geolocalizacionFin = new Coordenadas(2, 2, 2);
   });
   it("Geolocalización final", () => {
     expect(ruta.geolocalizacionFin.latitud).to.equal(2);
@@ -67,7 +56,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Longitud de ruta", () => {
-    ruta.longitud = 20
+    ruta.longitud = 20;
   });
   it("Longitud de ruta", () => {
     expect(ruta.longitud).to.equal(20);
@@ -77,7 +66,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Desnivel medio", () => {
-    ruta.desnivelMedio = 30
+    ruta.desnivelMedio = 30;
   });
   it("Desnivel medio", () => {
     expect(ruta.desnivelMedio).to.equal(30);
@@ -87,7 +76,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Lista de usuarios", () => {
-    ruta.usuarios = [userUno]
+    ruta.usuarios = [userUno];
   });
   it("Lista de usuarios", () => {
     expect(ruta.usuarios).to.deep.equal([userUno]);
@@ -97,7 +86,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Tipo de actividad", () => {
-    ruta.tipoActividad = "correr"
+    ruta.tipoActividad = "correr";
   });
   it("Tipo de actividad", () => {
     expect(ruta.tipoActividad).to.equal("correr");
@@ -107,7 +96,7 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Calificación media de ruta", () => {
-    ruta.calificacionMedia = 5
+    ruta.calificacionMedia = 5;
   });
   it("Calificación media de ruta", () => {
     expect(ruta.calificacionMedia).to.equal(5);

@@ -2,6 +2,7 @@ import { Ruta } from "./rutas";
 import { Coordenadas } from "./coordenadas";
 import { Reto } from "./retos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
+import { Grupo } from "./grupos";
 
 /**
  * clase para la craciond e usuarios
@@ -11,7 +12,7 @@ export class Usuario {
   private _nombre: string;
   private _tipoActividad: "bicicleta" | "correr";
   private _amigos: Usuario[];
-  private _grupos: number[][];
+  private _grupos: Grupo[];
   // private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
   private _rutasFavoritas: Ruta[];
   private _retosActivos: Reto[];
@@ -31,7 +32,7 @@ export class Usuario {
     nombre: string,
     tipoActividad: "bicicleta" | "correr",
     amigos: Usuario[],
-    grupos: number[][], // cambiar a tipo grupo
+    grupos: Grupo[], // cambiar a tipo grupo
     rutas: Ruta[],
     retos: Reto[],
     id = -1
@@ -135,14 +136,14 @@ export class Usuario {
    * metodo par obtener los grupos de amigos del usuario
    * @returns grupos de maigos del usuario
    */
-  get grupos(): number[][] {
+  get grupos(): Grupo[] {
     return this._grupos;
   }
   /**
    * metodo para definir los grupos de amigos del usuario
    * @param grupos nuvos grupos del usuario
    */
-  set grupos(grupos: number[][]) {
+  set grupos(grupos: Grupo[]) {
     this._grupos = grupos;
   }
 
@@ -152,7 +153,7 @@ export class Usuario {
    * @returns false si el grupo ya existe, true si lo añadió
    * esta funcion no funciona correcta mente hasta que se implemente la clase grupo
    */
-  addGrupo(grupo: number[]): boolean {
+  addGrupo(grupo: Grupo): boolean {
     const index = this.grupos.indexOf(grupo);
     if (index == -1) {
       this._grupos.push(grupo);
@@ -169,7 +170,7 @@ export class Usuario {
    * @returns false si no existe el grupo, true si lo elimina
    * metodo no funciona correcto hasta que se implemente clase grupo
    */
-  deleteGrupo(grupo: number[]): boolean {
+  deleteGrupo(grupo: Grupo): boolean {
     const index = this.grupos.indexOf(grupo);
     if (index != -1) {
       this._grupos.splice(index, 1);
