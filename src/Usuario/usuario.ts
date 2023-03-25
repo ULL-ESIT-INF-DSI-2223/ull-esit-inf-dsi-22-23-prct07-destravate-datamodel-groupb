@@ -1,14 +1,6 @@
-<<<<<<< HEAD:src/usuario.ts
-import { Ruta } from "./rutas";
-import { Reto } from "./retos";
-import { Grupo } from "./grupos";
-=======
 import { Ruta } from "../Ruta/rutas";
-import { Coordenadas } from "../Ruta/coordenadas";
 import { Reto } from "../Reto/retos";
-import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 import { Grupo } from "../Grupo/grupos";
->>>>>>> ca5615e1bc7618614551b0ad0005701ec48ca5dc:src/Usuario/usuario.ts
 
 /**
  * clase para la craciond e usuarios
