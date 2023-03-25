@@ -40,10 +40,10 @@ export class Reto {
 
     /**
      * Establece un nuevo Id de la ruta.
-     * @param nuevo_id Nuevo Id de la ruta.
+     * @param nuevoId Nuevo Id de la ruta.
      */
-    set id(nuevo_id: number) {
-        this._id = nuevo_id;
+    set id(nuevoId: number) {
+        this._id = nuevoId;
     }
 
     /**
@@ -56,10 +56,10 @@ export class Reto {
 
     /**
      * Establece un nuevo nombre de ruta.
-     * @param nuevo_nombre Nuevo nombre de ruta.
+     * @param nuevoNombre Nuevo nombre de ruta.
      */
-    set nombre(nuevo_nombre: string) {
-        this._nombre = nuevo_nombre;
+    set nombre(nuevoNombre: string) {
+        this._nombre = nuevoNombre;
     }
 
     /**
@@ -72,10 +72,10 @@ export class Reto {
 
     /**
      * Establece un nuevo conjunto de rutas del reto.
-     * @param nuevas_rutas Nuevo conjunto de rutas del reto.
+     * @param nuevasRutas Nuevo conjunto de rutas del reto.
      */
-    set rutas(nuevas_rutas: Ruta[]) {
-        this._rutas = nuevas_rutas;
+    set rutas(nuevasRutas: Ruta[]) {
+        this._rutas = nuevasRutas;
         this._kilometros = 0;
         this._rutas.forEach((ruta) => {
             this._kilometros += ruta.longitud;
@@ -94,8 +94,8 @@ export class Reto {
      * Establece un nuevo tipo de reto.
      * @param nuevo_tipo Nuevo tipo de reto.
      */
-    set tipo(nuevo_tipo: "bicicleta" | "correr") {
-        this._tipo = nuevo_tipo;
+    set tipo(nuevoTipo: "bicicleta" | "correr") {
+        this._tipo = nuevoTipo;
     }
 
     /**
@@ -118,7 +118,7 @@ export class Reto {
      * Establece una nueva lista de usuarios que realizan el reto.
      * @param nuevos_usuarios Nueva lista de usuarios que realizan el reto.
      */
-    set usuarios(nuevos_usuarios: number[]) {
-        this._usuarios = nuevos_usuarios;
+    set usuarios(nuevosUsuarios: number[]) {
+        this._usuarios = nuevosUsuarios;
     }
 }

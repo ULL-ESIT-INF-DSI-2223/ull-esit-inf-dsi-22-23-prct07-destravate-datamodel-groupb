@@ -1,10 +1,12 @@
+import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
+
 export class Grupo {
     private _id: number;
     private _nombre: string;
     private _participantes: number[];
-    // estadísticas grupal
-    // clasificación usuarios
-    // rutas favoritas del grupo
+    private _estadisticasGrupal: EstadisticasEntrenamiento;
+    private _clasificacion: number[];
+    private _rutasFavoritas: number[];
     // histórico rutas realizadas en conjunto
 
     constructor(id: number, nombre: string, participantes: number[]) {

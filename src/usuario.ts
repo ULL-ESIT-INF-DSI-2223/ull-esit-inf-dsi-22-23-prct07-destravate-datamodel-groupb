@@ -1,6 +1,7 @@
 import { Ruta } from "./rutas";
 import { Coordenadas } from "./coordenadas";
 import { Reto } from "./retos";
+import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 
 /**
  * clase para la craciond e usuarios
@@ -11,7 +12,7 @@ export class Usuario {
   private _tipoActividad: "bicicleta" | "correr";
   private _amigos: number[];
   private _grupos: number[][];
-  //estadisticas
+  private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
   private _rutasFavoritas: number[];
   private _retosActivos: number[];
   // collecion de rutas con fecha
