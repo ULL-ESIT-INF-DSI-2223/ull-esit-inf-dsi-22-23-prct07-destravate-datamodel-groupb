@@ -13,8 +13,8 @@ import { Usuario } from "./usuario";
 import { Ruta } from "./rutas";
 import { Coordenadas } from "./coordenadas";
 import { Reto } from "./retos";
-
-
+import * as inquirer from 'inquirer';
+import * as lowdb from "lowdb";
 
 const ruta_1 = new Ruta(1, "Ruta de prueba", new Coordenadas(0, 0, 0), new Coordenadas(1, 1, 1), 10, 55,
 [], "correr", 4.5);
