@@ -10,11 +10,11 @@ export class Usuario {
   private _id: number;
   private _nombre: string;
   private _tipoActividad: "bicicleta" | "correr";
-  private _amigos: number[];
+  private _amigos: Usuario[];
   private _grupos: number[][];
-  private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
-  private _rutasFavoritas: number[];
-  private _retosActivos: number[];
+  // private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
+  private _rutasFavoritas: Ruta[];
+  private _retosActivos: Reto[];
   // collecion de rutas con fecha
 
   /**
@@ -22,7 +22,7 @@ export class Usuario {
    * @param nombre nombre del usuario
    * @param tipoActividad el tipo de la actividad que realiza el usuario, puede ser "bicicleta" o "paseo"
    * @param amigos array con los id de los usuarios agregados como amigos
-   * @param grupos agrupaciones de IDs de usuarios 
+   * @param grupos agrupaciones de IDs de usuarios
    * @param rutas ids de las rutas favoritas del usuario
    * @param retos ids de los retos activos del usuario
    * @param id id del usuario, si no se proporciona uno, se generará automaticamente
@@ -30,10 +30,10 @@ export class Usuario {
   constructor(
     nombre: string,
     tipoActividad: "bicicleta" | "correr",
-    amigos: number[],
-    grupos: number[][],
-    rutas: number[],
-    retos: number[],
+    amigos: Usuario[],
+    grupos: number[][], // cambiar a tipo grupo
+    rutas: Ruta[],
+    retos: Reto[],
     id: number = -1
   ) {
     this._nombre = nombre;
@@ -89,14 +89,14 @@ export class Usuario {
    * metodo para obtener los ids de los amigos del usuario
    * @returns array de ids de los amigos del usuario
    */
-  get amigos(): number[] {
+  get amigos(): Usuario[] {
     return this._amigos;
   }
 
   /**
    * metodo para definir los amigos del usuario
    */
-  set amigos(amigos: number[]) {
+  set amigos(amigos: Usuario[]) {
     this._amigos = amigos;
   }
 
@@ -105,7 +105,7 @@ export class Usuario {
    * @param amigo id del amigo  añadir
    * @returns true si lo ha añadido, false si no lo ha añadido
    */
-  addAmigo(amigo: number): boolean {
+  addAmigo(amigo: Usuario): boolean {
     const index = this.amigos.indexOf(amigo);
     if (index == -1) {
       this._amigos.push(amigo);
@@ -121,7 +121,7 @@ export class Usuario {
    * @param amigo id del amigo
    * @returns true si lo ha eliminado, false si no lo ah eliminado
    */
-  deleteAmigo(amigo: number): boolean {
+  deleteAmigo(amigo: Usuario): boolean {
     const index = this.amigos.indexOf(amigo);
     if (index != -1) {
       this._amigos.splice(index, 1);
@@ -147,10 +147,44 @@ export class Usuario {
   }
 
   /**
+   * metodo para añadir un grupo de amigos al usuario
+   * @param grupo grupo a añadir
+   * @returns false si el grupo ya existe, true si lo añadió
+   * esta funcion no funciona correcta mente hasta que se implemente la clase grupo
+   */
+  addGrupo(grupo: number[]): boolean {
+    const index = this.grupos.indexOf(grupo);
+    if (index == -1) {
+      this._grupos.push(grupo);
+      return true;
+    } else {
+      console.log("Grupo ya existente");
+      return false;
+    }
+  }
+
+  /**
+   * metodo para eliminar un grupo del usuario
+   * @param grupo grupo a eliminar
+   * @returns false si no existe el grupo, true si lo elimina
+   * metodo no funciona correcto hasta que se implemente clase grupo
+   */
+  deleteGrupo(grupo: number[]): boolean {
+    const index = this.grupos.indexOf(grupo);
+    if (index != -1) {
+      this._grupos.splice(index, 1);
+      return true;
+    } else {
+      console.log("Grupo no existente en la colecion");
+      return false;
+    }
+  }
+
+  /**
    * metodo para obtener las rutas de un usuario
    * @returns rutas favoritas del usuario
    */
-  get rutas(): number[] {
+  get rutas(): Ruta[] {
     return this._rutasFavoritas;
   }
 
@@ -158,7 +192,7 @@ export class Usuario {
    * metodo para definir las rutas de un usuario
    * @param nuevas rutas favoritas del usuario
    */
-  set rutas(rutas: number[]) {
+  set rutas(rutas: Ruta[]) {
     this._rutasFavoritas = rutas;
   }
 
@@ -167,7 +201,7 @@ export class Usuario {
    * @param ruta id de la ruta a añadir en el array
    * @returns false si no ha podido añadir la ruta a la lista o true si ah conseguido añadirla
    */
-  addRuta(ruta: number): boolean {
+  addRuta(ruta: Ruta): boolean {
     const index = this.rutas.indexOf(ruta);
     if (index == -1) {
       this._rutasFavoritas.push(ruta);
@@ -183,7 +217,7 @@ export class Usuario {
    * @param ruta id de la ruta a eliminar
    * @returns true si la ha eliminado o false si no la eliminó
    */
-  deleteRuta(ruta: number): boolean {
+  deleteRuta(ruta: Ruta): boolean {
     const index = this.rutas.indexOf(ruta);
     if (index != -1) {
       this.rutas.splice(index, 1);
@@ -198,16 +232,16 @@ export class Usuario {
    * metodo para obtener los retos activos del usuario
    * @returns array de los ids de los retos que estés activos
    */
-  get retos(): number[] {
-    return this._retosActivos
+  get retos(): Reto[] {
+    return this._retosActivos;
   }
 
   /**
    * metodo apra defnir los retos activos del usuario
    * @param retos nuevos retos del usuario
    */
-  set retos(retos: number[]){
-    this._retosActivos = retos
+  set retos(retos: Reto[]) {
+    this._retosActivos = retos;
   }
 
   /**
@@ -215,7 +249,7 @@ export class Usuario {
    * @param reto  id del reto a añadir
    * @returns true si lo añadió correctamente y false si no
    */
-  addReto(reto: number): boolean {
+  addReto(reto: Reto): boolean {
     const index = this.retos.indexOf(reto);
     if (index == -1) {
       this._retosActivos.push(reto);
@@ -231,7 +265,7 @@ export class Usuario {
    * @param reto id del reto a eliminar
    * @returns true si lo eliminó o false si no lo eliminó
    */
-  deleteReto(reto: number): boolean {
+  deleteReto(reto: Reto): boolean {
     const index = this.retos.indexOf(reto);
     if (index != -1) {
       this.retos.splice(index, 1);
@@ -241,5 +275,4 @@ export class Usuario {
       return false;
     }
   }
-
 }

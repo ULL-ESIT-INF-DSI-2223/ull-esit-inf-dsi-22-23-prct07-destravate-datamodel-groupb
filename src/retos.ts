@@ -1,4 +1,6 @@
 import { Ruta } from "./rutas";
+import { Usuario } from "./usuario";
+
 
 /**
  * Clase que representa a un reto. Un reto es un conjunto de rutas.
@@ -9,7 +11,7 @@ export class Reto {
     private _rutas: Ruta[];
     private _tipo: "bicicleta" | "correr";
     private _kilometros = 0; // Kilómetros totales del reto
-    private _usuarios: number[];
+    private _usuarios: Usuario[];
 
     /**
      * Constructor de clase.
@@ -19,7 +21,7 @@ export class Reto {
      * @param tipo Tipo de reto. Puede ser en bicicleta o correr.
      * @param usuarios Id de los usuarios que realizan el reto.
      */
-    constructor(id: number, nombre: string, rutas: Ruta[], tipo: "bicicleta" | "correr", usuarios: number[]) {
+    constructor(id: number, nombre: string, rutas: Ruta[], tipo: "bicicleta" | "correr", usuarios: Usuario[]) {
         this._id = id;
         this._nombre = nombre;
         this._rutas = rutas;
@@ -107,10 +109,17 @@ export class Reto {
     }
 
     /**
+     * metodo para cambiar la cantidad de kilometros
+     */
+    set kilometos(kilometros: number){
+        this._kilometros = kilometros
+    }
+
+    /**
      * Devuelve la lista de usuarios que realizan el reto.
      * @returns Lista de usuarios que realizan el reto.
      */
-    get usuarios(): number[] {
+    get usuarios(): Usuario[] {
         return this._usuarios;
     }
 
@@ -118,7 +127,7 @@ export class Reto {
      * Establece una nueva lista de usuarios que realizan el reto.
      * @param nuevos_usuarios Nueva lista de usuarios que realizan el reto.
      */
-    set usuarios(nuevosUsuarios: number[]) {
+    set usuarios(nuevosUsuarios: Usuario[]) {
         this._usuarios = nuevosUsuarios;
     }
 }

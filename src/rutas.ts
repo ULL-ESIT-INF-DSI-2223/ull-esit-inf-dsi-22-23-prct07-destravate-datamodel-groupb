@@ -1,4 +1,5 @@
 import { Coordenadas } from "../src/coordenadas";
+import { Usuario } from "./usuario";
 /**
   Clase que representa una ruta de actividad al aire libre.
   */
@@ -9,7 +10,7 @@ export class Ruta {
   private _geolocalizacionFin: Coordenadas; // Coordenadas de la ubicación de fin de la ruta
   private _longitud: number; // Longitud de la ruta en metros
   private _desnivelMedio: number; // Desnivel medio de la ruta en metros
-  private _usuarios: number[]; // Lista de identificadores de usuarios que han realizado la ruta
+  private _usuarios: Usuario[]; // Lista de identificadores de usuarios que han realizado la ruta
   private _tipoActividad: "bicicleta" | "correr"; // Tipo de actividad de la ruta (bicicleta o corriendo)
   private _calificacionMedia: number; // Calificación media de la ruta por los usuarios que la han realizado
 
@@ -26,7 +27,7 @@ export class Ruta {
     @param calificacionMedia - Calificación media de la ruta por los usuarios que la han realizado.
    */
   constructor(id: number, nombre: string, geolocalizacionInicio: Coordenadas, geolocalizacionFin: Coordenadas, 
-    longitud: number, desnivelMedio: number, usuarios: number[], tipoActividad: "bicicleta" | "correr", 
+    longitud: number, desnivelMedio: number, usuarios: Usuario[], tipoActividad: "bicicleta" | "correr", 
     calificacionMedia: number) {
       this._id = id;
       this._nombre = nombre;
@@ -139,7 +140,7 @@ export class Ruta {
    * Devuelve los usuarios que realizan la ruta.
    * @returns Usuarios que realizan la ruta.
   */
-  get usuarios(): number[] {
+  get usuarios(): Usuario[] {
     return this._usuarios;
   }
 
@@ -147,7 +148,7 @@ export class Ruta {
    * Establece una nueva lista de usuarios que realizan la ruta.
    * @param geolocalizacionInicio Nueva lista de usuarios que realizan la ruta.
   */
-  set usuarios(usuarios: number[]) {
+  set usuarios(usuarios: Usuario[]) {
     this._usuarios = usuarios;
   }
 
