@@ -3,8 +3,6 @@ import { expect } from "chai";
 import { Coordenadas } from "../../src/Ruta/coordenadas";
 import { ruta, userUno } from "../../src/index"
 
-
-
 describe("Clase Ruta", () => {
   it("Cambiar Id de ruta", () => {
     ruta.id = 5;

@@ -15,6 +15,14 @@ export class ColeccionRutas implements Coleccion<Ruta> {
         this._listaElementos = listaElementos;
     }
 
+    /** 
+     * Devuelve la lista de rutas del sistema.
+     * @returns Lista de rutas.
+    */
+    get listaRutas(): Ruta[] {
+        return this._listaElementos;
+    }
+
     /**
      * Añade un nuevo elemento a la colección.
      * @param item Elemento a añadir.

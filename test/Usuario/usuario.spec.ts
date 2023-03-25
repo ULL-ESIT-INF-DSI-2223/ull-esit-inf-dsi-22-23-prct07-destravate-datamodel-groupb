@@ -1,7 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 
-import {userDos, userUno,grupo_2, grupo,ruta_1, ruta_2,reto_2,reto_1} from "../../src/index"
+import {userDos, userUno, grupo_2, grupo_1, ruta_1, ruta_2, reto_2, reto_1} from "../../src/index"
 
 describe("Clase Usuario", () => {
   it("Set nombre de usuario", () => {
@@ -47,7 +47,7 @@ describe("Clase Usuario", () => {
   });
 
   it("Set grupos de amigos", () => {
-    userUno.grupos = [grupo];
+    userUno.grupos = [grupo_1];
   });
   it("add grupo true", () => {
     expect(userUno.addGrupo(grupo_2)).to.be.true;
@@ -62,7 +62,7 @@ describe("Clase Usuario", () => {
     expect(userUno.deleteGrupo(grupo_2)).to.be.false;
   });
   it("Get grupos bien", () => {
-    expect(userUno.grupos).to.deep.equal([grupo]);
+    expect(userUno.grupos).to.deep.equal([grupo_1]);
   });
   it("Get grupos mal", () => {
     expect(userUno.grupos).to.not.be.equal([1, 2]);

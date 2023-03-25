@@ -3,8 +3,6 @@ import { expect } from "chai";
 import {reto, ruta_1, ruta_2, userUno}from "../../src/index"
 
 describe("Clase Reto", () => {
-
-
   it("Id del reto", () => {
     expect(reto.id).to.equal(152);
   });

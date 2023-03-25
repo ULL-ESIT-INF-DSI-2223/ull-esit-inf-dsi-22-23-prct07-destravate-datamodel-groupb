@@ -3,6 +3,7 @@ import { Reto } from "../Reto/retos";
 import { Grupo } from "../Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 
+export type HistorialRutas = [string, Ruta][]
 /**
  * Clase para la creación de usuarios
  */
@@ -15,7 +16,7 @@ export class Usuario {
   private _estadisticasEntrenamiento: EstadisticasEntrenamiento;
   private _rutasFavoritas: Ruta[];
   private _retosActivos: Reto[];
-  // collecion de rutas con fecha
+  private _historialRutas: HistorialRutas;
 
   /**
    * constructor de la clase Usuario
@@ -23,6 +24,7 @@ export class Usuario {
    * @param tipoActividad el tipo de la actividad que realiza el usuario, puede ser "bicicleta" o "paseo"
    * @param amigos array con los id de los usuarios agregados como amigos
    * @param grupos agrupaciones de IDs de usuarios
+   * @param estadisticasEntrenamiento estadisticas de entrenamiento
    * @param rutas ids de las rutas favoritas del usuario
    * @param retos ids de los retos activos del usuario
    * @param id id del usuario, si no se proporciona uno, se generará automaticamente
@@ -35,7 +37,8 @@ export class Usuario {
     estadisticasEntrenamiento: EstadisticasEntrenamiento,
     rutas: Ruta[],
     retos: Reto[],
-    id = -1
+    id = -1,
+    historialRutas: HistorialRutas
   ) {
     this._nombre = nombre;
     this._tipoActividad = tipoActividad;
@@ -44,6 +47,7 @@ export class Usuario {
     this._estadisticasEntrenamiento = estadisticasEntrenamiento;
     this._rutasFavoritas = rutas;
     this._retosActivos = retos;
+    this._historialRutas = historialRutas;
     id < 0 ? (this._id = id) : (this._id = this.getRandomArbitrary(0, 50));
   }
   /**
@@ -290,5 +294,19 @@ export class Usuario {
       console.log("Reto no existente en la colecion");
       return false;
     }
+  }
+
+  /**  
+   * Devuelve el historial de rutas del usuario.
+  */
+  get historialRutas(): HistorialRutas {
+    return this._historialRutas;
+  }
+
+  /**
+   * Establece el historial de rutas del usuario.
+   */
+  set historialRutas(nuevoHistorial: HistorialRutas) {
+    this._historialRutas = nuevoHistorial;
   }
 }

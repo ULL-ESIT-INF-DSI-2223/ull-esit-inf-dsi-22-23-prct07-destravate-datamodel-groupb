@@ -1,14 +1,3 @@
-/**
- * funcion que suma __desde__ 2 numeros y devuelve el resultado
- * @param firstNumber  primer numero a operar
- * @param secondNumber segundo numero a operar
- * @param remainingNumbers resto de numeros a opear
- * @returns resultado de la suma de todos los numeros
- */
-export function add(firstNumber: number, secondNumber: number) {
-  return firstNumber + secondNumber;
-}
-
 import { Usuario } from "./Usuario/usuario";
 import { Ruta } from "./Ruta/rutas";
 import { Coordenadas } from "./Ruta/coordenadas";
@@ -16,11 +5,8 @@ import { Reto } from "./Reto/retos";
 import { Grupo } from "./Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 
-export const estadisticas = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
-
-export const estadistica = new EstadisticasEntrenamiento([20,30],[50,60],[90,100])
-
-
+export const estadistica_1 = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
+export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100])
 
 export const ruta_1 = new Ruta(
   1,
@@ -60,31 +46,35 @@ export const reto_2 = new Reto(
   []
 );
 
-
-
 export const userUno = new Usuario(
   "Mortadelo",
   "bicicleta",
   [],
   [],
+  estadistica_1,
   [ruta_1, ruta_2],
   [reto_1],
-  32
+  32,
+  1,
+  []
 );
 export const userDos = new Usuario(
   "Filemon",
   "correr",
   [userUno],
   [],
+  estadistica_2,
   [ruta_2],
-  [reto_2]
+  [reto_2],
+  2,
+  []
 );
 
-export const grupo = new Grupo(
+export const grupo_1 = new Grupo(
   1,
   "acrobacias",
   [userDos, userUno],
-  estadisticas,
+  estadistica_2,
   [],
   [ruta_1],
   [["23-03-2023", [userUno, userDos], ruta_1]]
@@ -94,7 +84,7 @@ export const grupo_2 = new Grupo(
   1,
   "suerte por la orejas",
   [userDos, userUno],
-  estadisticas,
+  estadistica_2,
   [],
   [ruta_1],
   [["23-03-1999", [userUno, userDos], ruta_2]]
