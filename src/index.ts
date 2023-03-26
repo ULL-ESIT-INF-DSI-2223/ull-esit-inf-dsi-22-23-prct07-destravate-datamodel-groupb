@@ -112,3 +112,5 @@ export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
 export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
 export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
 export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2]);
+
+promptUsuario()
