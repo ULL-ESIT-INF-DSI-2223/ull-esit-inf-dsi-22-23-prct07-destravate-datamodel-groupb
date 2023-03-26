@@ -159,8 +159,10 @@ export const user1 = new Usuario(
   [ruta_1, ruta_2],
   [reto_1],
   [],
-  32
+  1
 );
+
+
 export const user2 = new Usuario(
   "Filemon",
   "correr",

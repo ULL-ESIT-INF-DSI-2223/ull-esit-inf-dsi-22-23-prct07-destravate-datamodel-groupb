@@ -2,6 +2,7 @@ import { Ruta } from "../Ruta/rutas";
 import { Reto } from "../Reto/retos";
 import { Grupo } from "../Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
+import { coleccionUsuarios } from ".."
 
 export type HistorialRutas = [string, Ruta][];
 /**
@@ -82,6 +83,7 @@ export class Usuario {
    * metodo para cambiar el nombre del usuario
    * @param nombre nuevo nombre del usuario
    */
+  // eslint-disable-next-line @typescript-eslint/adjacent-overload-signatures
   set nombre(nombre: string) {
     this._nombre = nombre;
   }

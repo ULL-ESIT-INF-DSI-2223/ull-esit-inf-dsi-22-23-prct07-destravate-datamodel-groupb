@@ -14,7 +14,7 @@ enum Comandos {
   Salir = "Salir al menú principal",
 }
 
-export async function promptAdd() {
+export async function promptAddG() {
   console.clear();
   coleccionGrupos.showGrupo();
   const datos = await inquirer.prompt([
@@ -55,7 +55,7 @@ export async function promptAdd() {
     },
   ]);
 
-  const id: number = Number(datos["addId"]);
+  const id = Number(datos["addId"]);
   const nombre: string = datos["addNombre"];
   // Añadir participantes
   const usuarios: Usuario[] = [];
@@ -99,9 +99,10 @@ export async function promptAdd() {
   }
   coleccionGrupos.addGrupo(new Grupo(id, nombre, usuarios, entrenamiento, clasificacion, rutas, historial));
   console.log("Grupo creado.");
+  promptGrupo();
 }
 
-export async function promptRemove() {
+export async function promptRemoveG() {
     console.clear();
     coleccionGrupos.showGrupo();
     const dato = await inquirer.prompt({
@@ -119,7 +120,7 @@ export async function promptRemove() {
     }
   }
 
-export async function promptModify() {
+export async function promptModifyG() {
     console.clear();
     coleccionGrupos.showGrupo();
     const datos = await inquirer.prompt([
@@ -165,7 +166,7 @@ export async function promptModify() {
       },
     ]);
   
-    const id: number = Number(datos["addId"]);
+    const id = Number(datos["addId"]);
     const nombre: string = datos["addNombre"];
     // Añadir participantes
     const usuarios: Usuario[] = [];
@@ -217,7 +218,7 @@ export async function promptModify() {
     }
 }
 
-export async function promptSort() {
+export async function promptSortG() {
   console.clear();
   coleccionGrupos.showGrupo();
   const datos = await inquirer.prompt([
@@ -269,16 +270,16 @@ export function promptGrupo(): void {
     .then((answers) => {
       switch (answers["command"]) {
         case Comandos.Añadir:
-          promptAdd();
+          promptAddG();
           break;
         case Comandos.Eliminar:
-          promptRemove();
+          promptRemoveG();
           break;
         case Comandos.Modificar:
-          promptModify();
+          promptModifyG();
           break;
         case Comandos.Ordenar:
-          promptSort();
+          promptSortG();
           break;
         case Comandos.Salir:
           mainPrompt();

@@ -5,6 +5,7 @@ import { coleccionRetos } from ".";
 import { coleccionRutas } from ".";
 import { coleccionUsuarios } from ".";
 import { promptAdd, promptModify } from "./Usuario/prompt_usuario";
+import { promptAddG } from "./Grupo/prompt_grupo";
 import { promptSort } from "./Ruta/prompt_ruta";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 
@@ -239,7 +240,7 @@ export class Gestor {
                     this.menuGrupos();
                     break;
                 case OpcionesGrupo.Crear:
-                    
+                    promptAddG();
                     break;
                 case OpcionesGrupo.Borrar:
                     

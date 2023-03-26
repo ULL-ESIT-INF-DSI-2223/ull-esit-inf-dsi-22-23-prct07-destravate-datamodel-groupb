@@ -851,7 +851,7 @@ El constructor de la clase toma varios argumentos, incluyendo nombre, tipoActivi
 
 La clase Usuario también importa las clases Ruta, Reto y Grupo desde otros archivos llamados rutas.ts, retos.ts y grupos.ts, respectivamente.
 
-### Clase JsonColeccionUsuarios
+### Clase EstadisticasEntrenamiento
 El codigo de esta clase es:
 
 ```ts
@@ -935,6 +935,7 @@ Este es un código que define una clase llamada "EstadisticasEntrenamiento" que 
 El constructor de la clase toma tres argumentos que corresponden a las estadísticas de entrenamiento para la semana, mes y año respectivamente. Estas estadísticas se asignan a las propiedades correspondientes en la instancia creada.
 
 La clase tiene también tres métodos "get" y tres métodos "set" que permiten acceder y modificar las estadísticas de entrenamiento para cada periodo de tiempo. Cada método "get" devuelve una tupla que contiene los km recorridos y el desnivel total acumulado para el periodo de tiempo correspondiente. Cada método "set" toma una tupla como argumento y actualiza las estadísticas correspondientes en la instancia de la clase.
+
 
 ### Clase ColeccionUsuarios
 El codigo de esta clase es:
@@ -1654,60 +1655,684 @@ El tipo historialRutasGrupal es una tupla que contiene la fecha de realización,
 
 En resumen, esta clase permite modelar un grupo de usuarios que realizan actividades en conjunto y permite almacenar información relevante como las estadísticas de entrenamiento, la clasificación de los usuarios, las rutas favoritas y el historial de rutas realizadas.
 
-Los test realizados para esta clase son:
-
-### Clase EstadisticaEntrenamiento
+### Clase ColeccionGrupos
 El codigo de esta clase es:
 
 ```ts
-export class EstadisticasEntrenamiento {
-  private _estadisticaSemanal: [number, number];
-  private _estadisticaMensual: [number, number];
-  private _estadisticaAnual: [number, number];
+import { Coleccion } from "../coleccion";
+import { Grupo } from "./grupos";
 
-  constructor(
-    estadistcaSemanal: [number, number],
-    estadisticaMensual: [number, number],
-    estadisticaAnual: [number, number]
-  ) {
-    this._estadisticaSemanal = estadistcaSemanal;
-    this._estadisticaMensual = estadisticaMensual;
-    this._estadisticaAnual = estadisticaAnual;
+/**
+ * Clase que representa a una colección de grupos.
+ */
+export class ColeccionGrupos implements Coleccion<Grupo> {
+  _listaElementos: Grupo[];
+
+  /**
+   * Constructor de clase.
+   * @param listaElementos Lista de elementos de la colección.
+   */
+  constructor(listaElementos: Grupo[]) {
+    this._listaElementos = listaElementos;
   }
 
-  get estadisticaSemanal(): [number, number] {
-    return this._estadisticaSemanal;
+  /**
+   * Añade un nuevo elemento a la colección.
+   * @param item Elemento a añadir.
+   */
+  add(item: Grupo): void {
+    this._listaElementos.push(item);
   }
 
-  set estadisticaSemanal(nuevaSemanal: [number, number]) {
-    this._estadisticaSemanal = nuevaSemanal;
+  /**
+   * Elimina un elemento de la colección.
+   * @param index índice del elemento a eliminar.
+   */
+  remove(index: number): void {
+    this._listaElementos.splice(index, 1);
   }
 
-  get estadisticaMensual(): [number, number] {
-    return this._estadisticaMensual;
+  /**
+   * Modifica un elemento de la colección.
+   * @param index índice del elemento a modificar.
+   * @param item Elemento con nuevas características.
+   */
+  modify(index: number, item: Grupo): void {
+    this._listaElementos[index] = item;
   }
 
-  set estadisticaMensual(nuevaMensual: [number, number]) {
-    this._estadisticaMensual = nuevaMensual;
+  /**
+   * Ordena los elementos de la colección según su nombre.
+   * @param orden Orden ascendente o descendente.
+   */
+  buscarNombre(orden: "asc" | "desc") {
+    this._listaElementos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
   }
 
-  get estadisticaAnual(): [number, number] {
-    return this._estadisticaAnual;
+  /**
+   * Ordena los elementos de la colección según los kilómetros realizados semanales, mensuales o anuales.
+   * @param orden Orden ascendente o descendente.
+   * @param tipo Semanal, mensual o anual.
+   */
+  buscarKilometros(orden: "asc" | "desc", tipo: "sem" | "mes" | "año") {
+    switch (tipo) {
+      case "sem":
+        this._listaElementos.sort(
+          (a, b) =>
+            a.estadisticasGrupal.estadisticaSemanal[0] -
+            b.estadisticasGrupal.estadisticaSemanal[0]
+        );
+        break;
+      case "mes":
+        this._listaElementos.sort(
+          (a, b) =>
+            a.estadisticasGrupal.estadisticaMensual[0] -
+            b.estadisticasGrupal.estadisticaMensual[0]
+        );
+        break;
+      default:
+        this._listaElementos.sort(
+          (a, b) =>
+            a.estadisticasGrupal.estadisticaAnual[0] -
+            b.estadisticasGrupal.estadisticaAnual[0]
+        );
+        break;
+    }
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
   }
 
-  set estadisticaAnual(nuevaAnual: [number, number]) {
-    this._estadisticaAnual = nuevaAnual;
+  /**
+   * Ordena los elementos de la colección según la cantidad de miembros.
+   * @param orden Orden ascendente o descendente.
+   */
+  buscarCantidadMiembros(orden: "asc" | "desc") {
+    this._listaElementos.sort(
+      (a, b) => a.participantes.length - b.participantes.length
+    );
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
   }
 }
 ```
 
-El código define una clase llamada "EstadisticasEntrenamiento" que representa las estadísticas de entrenamiento por semana, mes y año. La clase tiene tres propiedades privadas "_estadisticaSemanal", "_estadisticaMensual" y "_estadisticaAnual" que almacenan los km recorridos y el desnivel total acumulado en una tupla de dos números.
-
-El constructor de la clase toma tres parámetros que corresponden a las estadísticas semanales, mensuales y anuales, y los asigna a las propiedades correspondientes. La clase también tiene tres pares de getters y setters que permiten obtener y establecer las estadísticas semanales, mensuales y anuales.
-
-En resumen, la clase proporciona una manera conveniente de almacenar y manipular las estadísticas de entrenamiento en diferentes periodos de tiempo.
+Este código define la clase "ColeccionGrupos", que implementa la interfaz "Coleccion" para un tipo específico de objeto "Grupo". La clase contiene métodos para añadir, eliminar y modificar elementos de la colección, así como métodos para ordenar los elementos según diferentes criterios (por ejemplo, el nombre del grupo, la cantidad de miembros o los kilómetros realizados). Estos métodos utilizan el atributo "_listaElementos", que es una matriz de objetos "Grupo" y se inicializa en el constructor de la clase.
 
  
+### Clase JsonColeccionGrupos
+El codigo de esta clase es:
+
+```ts
+import { Grupo, historialRutasGrupal } from "./grupos";
+import { ColeccionGrupos } from "./coleccion_grupos";
+import { Usuario } from "../Usuario/usuario";
+import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento";
+import { Ruta } from "../Ruta/rutas";
+import * as lowdb from "lowdb";
+import * as FileSync from "lowdb/adapters/FileSync";
+
+type SchemaType = {
+    grupo: { _id: number,
+             _nombre: string,
+             _participantes: Usuario[],
+             _estadisticasGrupal: EstadisticasEntrenamiento,
+             _clasificacion: number[],
+             _rutasFavoritas: Ruta[],
+             _historialRutas: historialRutasGrupal }[]
+}
+
+export class JsonColeccionGrupos extends ColeccionGrupos {
+    private database: lowdb.LowdbSync<SchemaType>;
+
+    constructor(listaGrupos: Grupo[]) {
+        super([]);
+        this.database = lowdb(new FileSync("./Grupos.json"));
+        if(this.database.has("grupo").value()) {
+            const dbItems = this.database.get("grupo").value();
+            dbItems.forEach(item => this._listaElementos.push(new Grupo(item._id, item._nombre, item._participantes, 
+                item._estadisticasGrupal, item._clasificacion, item._rutasFavoritas, item._historialRutas)));
+        } else {
+            this.database.set("grupo", listaGrupos).write();
+            listaGrupos.forEach(item => this._listaElementos.push(item));
+        }
+    }
+
+    addGrupo(grupo: Grupo) {
+        super.add(grupo);
+        this.storeGrupos();
+    }
+
+    removeGrupo(index: number) {
+        super.remove(index);
+        this.storeGrupos();
+    }
+
+    modifyGrupo(index: number, item: Grupo) {
+        super.modify(index, item);
+        this.storeGrupos();
+    }
+
+    buscarGrupo(atributo: string, orden: "asc" | "desc", factor: "sem" | "mes" | "año") {
+        switch (atributo) {
+            case "nombre":
+                super.buscarNombre(orden);
+                break;
+            case "kilometros":
+                super.buscarKilometros(orden, factor);
+                break;
+            case "cantidad":
+                super.buscarCantidadMiembros(orden);
+                break;
+            default:
+                break;
+        }
+        this.storeGrupos();
+        this.showGrupo();
+    }
+
+    showGrupo() {
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.clasificacion));
+    }
+
+    private storeGrupos() {
+        this.database.set("grupo", [...this._listaElementos.values()]).write();
+    }
+}
+```
+
+El código es una implementación de la clase JsonColeccionGrupos, que extiende la clase abstracta ColeccionGrupos y agrega funcionalidades para almacenar la información de los grupos en un archivo JSON utilizando la librería lowdb.
+
+La clase JsonColeccionGrupos tiene un constructor que recibe una lista de grupos y los almacena en la base de datos si no existe previamente. La clase también tiene los métodos addGrupo, removeGrupo y modifyGrupo que agregan, eliminan y modifican grupos respectivamente en la lista de elementos. Además, la clase tiene el método buscarGrupo que busca grupos en la lista de acuerdo a diferentes atributos, como el nombre, la cantidad de kilómetros o la cantidad de miembros.
+
+Finalmente, la clase tiene el método showGrupo que imprime la información de todos los grupos en la lista. La clase también tiene un método privado storeGrupos que guarda la información de los grupos en la base de datos después de cada cambio en la lista de elementos.
+
+### Fichero prompt_grupo
+El codigo de esta clase es:
+
+```ts
+import { Grupo, historialRutasGrupal } from "./grupos";
+import { Ruta } from "../Ruta/rutas";
+import { Usuario } from "../Usuario/usuario";
+import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento";
+import { mainPrompt } from "../main";
+import { coleccionRetos, coleccionRutas, coleccionGrupos, coleccionUsuarios } from "..";
+import * as inquirer from "inquirer";
+
+enum Comandos {
+  Añadir = "Añadir grupo",
+  Eliminar = "Eliminar grupo",
+  Modificar = "Modificar grupo",
+  Ordenar = "Ordenar lista",
+  Salir = "Salir al menú principal",
+}
+
+export async function promptAddG(param: number) {
+  console.clear();
+  coleccionGrupos.showGrupo();
+  const datos = await inquirer.prompt([
+    {
+      type: "input",
+      name: "addId",
+      message: "Inserte el id: ",
+    },
+    {
+      type: "input",
+      name: "addNombre",
+      message: "Inserte el nombre: ",
+    },
+    {
+      type: "input",
+      name: "addParticipantes",
+      message: "Inserte los participantes: ",
+    },
+    {
+      type: "input",
+      name: "addEstadisticaGrupal",
+      message: "Inserte las estadisticas grupales: ",
+    },
+    {
+      type: "input",
+      name: "addClasificacion",
+      message: "Inserte la clasificacion: ",
+    },
+    {
+      type: "input",
+      name: "addRutasFavoritas",
+      message: "Inserte los id de las rutas favoritas: ",
+    },
+    {
+      type: "input",
+      name: "addHistorial",
+      message: "Inserte el historial de rutas (fecha, id_ruta): ",
+    },
+  ]);
+
+  const id = Number(datos["addId"]);
+  const nombre: string = datos["addNombre"];
+  // Añadir participantes
+  const usuarios: Usuario[] = [];
+  const id_usuarios: number[] = datos["addId"].split(",").map(Number);
+  id_usuarios.forEach((id) =>
+    coleccionUsuarios._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        usuarios.push(item);
+      }
+    })
+  );
+  // Añadir estadistica grupal
+  const datosE: number[] = datos["addEstadisticaGrupal"].split(",").map(Number);
+  const entrenamiento: EstadisticasEntrenamiento =
+    new EstadisticasEntrenamiento(
+      [datosE[0], datosE[1]],
+      [datosE[2], datosE[3]],
+      [datosE[4], datosE[5]]
+    );
+  // Añadir clasificacion
+  const clasificacion: number[] = datos["addClasificacion"].split(",").map(Number);
+  // Añadir rutas favoritas
+  const id_rutas: number[] = datos["addRutasFavoritas"].split(",").map(Number);
+  const rutas: Ruta[] = [];
+  id_rutas.forEach((id) =>
+    coleccionRutas._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        rutas.push(item);
+      }
+    })
+  );
+  // Añadir historial
+  const datos_historial = datos["addHistorial"].split(",");
+  const historial: historialRutasGrupal = [];
+  for (let i = 0; i < datos_historial.length; i += 3) {
+    coleccionRutas._listaElementos.forEach((item) => {
+      if (item.id == datos_historial[i + 1]) {
+        historial.push([datos_historial[i], [], item]);
+      }
+    });
+  }
+  coleccionGrupos.addGrupo(new Grupo(id, nombre, usuarios, entrenamiento, clasificacion, rutas, historial));
+  console.log("Grupo creado.");
+}
+
+export async function promptRemoveG() {
+    console.clear();
+    coleccionGrupos.showGrupo();
+    const dato = await inquirer.prompt({
+      type: "input",
+      name: "addIndex",
+      message: "Inserte el índice del elemento: ",
+    });
+    if (Number(dato["addIndex"]) < coleccionGrupos._listaElementos.length) {
+        coleccionGrupos.removeGrupo(Number(dato["addIndex"]));
+      console.log("Grupo eliminado.");
+      promptGrupo();
+    } else {
+      console.log("ERROR: índice fuera de los límites.");
+      promptGrupo();
+    }
+  }
+
+export async function promptModifyG() {
+    console.clear();
+    coleccionGrupos.showGrupo();
+    const datos = await inquirer.prompt([
+      {
+        type: "input",
+        name: "addId",
+        message: "Inserte el id: ",
+      },
+      {
+        type: "input",
+        name: "addNombre",
+        message: "Inserte el nombre: ",
+      },
+      {
+        type: "input",
+        name: "addParticipantes",
+        message: "Inserte los participantes: ",
+      },
+      {
+        type: "input",
+        name: "addEstadisticaGrupal",
+        message: "Inserte las estadisticas grupales: ",
+      },
+      {
+        type: "input",
+        name: "addClasificacion",
+        message: "Inserte la clasificacion: ",
+      },
+      {
+        type: "input",
+        name: "addRutasFavoritas",
+        message: "Inserte los id de las rutas favoritas: ",
+      },
+      {
+        type: "input",
+        name: "addHistorial",
+        message: "Inserte el historial de rutas (fecha, id_ruta): ",
+      },
+      {
+        type: "input",
+        name: "addIndice",
+        message: "Inserte el indice del elemento: ",
+      },
+    ]);
+  
+    const id = Number(datos["addId"]);
+    const nombre: string = datos["addNombre"];
+    // Añadir participantes
+    const usuarios: Usuario[] = [];
+    const id_usuarios: number[] = datos["addId"].split(",").map(Number);
+    id_usuarios.forEach((id) =>
+      coleccionUsuarios._listaElementos.forEach((item) => {
+        if (item.id == id) {
+          usuarios.push(item);
+        }
+      })
+    );
+    // Añadir estadistica grupal
+    const datosE: number[] = datos["addEstadisticaGrupal"].split(",").map(Number);
+    const entrenamiento: EstadisticasEntrenamiento =
+      new EstadisticasEntrenamiento(
+        [datosE[0], datosE[1]],
+        [datosE[2], datosE[3]],
+        [datosE[4], datosE[5]]
+      );
+    // Añadir clasificacion
+    const clasificacion: number[] = datos["addClasificacion"].split(",").map(Number);
+    // Añadir rutas favoritas
+    const id_rutas: number[] = datos["addRutasFavoritas"].split(",").map(Number);
+    const rutas: Ruta[] = [];
+    id_rutas.forEach((id) =>
+      coleccionRutas._listaElementos.forEach((item) => {
+        if (item.id == id) {
+          rutas.push(item);
+        }
+      })
+    );
+    // Añadir historial
+    const datos_historial = datos["addHistorial"].split(",");
+    const historial: historialRutasGrupal = [];
+    for (let i = 0; i < datos_historial.length; i += 2) {
+      coleccionRutas._listaElementos.forEach((item) => {
+        if (item.id == datos_historial[i + 1]) {
+          historial.push([datos_historial[i], [], item]);
+        }
+      });
+    }
+    if(Number(datos["addIndice"]) < coleccionGrupos._listaElementos.length) {
+        coleccionGrupos.modifyGrupo(Number(datos["addIndice"]), new Grupo(id, nombre, usuarios, entrenamiento, clasificacion, rutas, historial));
+        console.log("Grupo modificado.");
+        promptGrupo();
+    } else {
+        console.log("ERROR: Índice fuera de la colección.");
+        promptGrupo();
+    }
+}
+
+export async function promptSortG() {
+  console.clear();
+  coleccionGrupos.showGrupo();
+  const datos = await inquirer.prompt([
+    {
+      type: "input",
+      name: "addFactor",
+      message: "Inserte el factor de búsqueda (nombre, kilometros o cantidad): ",
+    },
+    {
+      type: "input",
+      name: "addOrden",
+      message: "Inserte el orden de búsqueda (asc o desc): ",
+    },
+    {
+      type: "input",
+      name: "addAtributo",
+      message: "Inserte el atributo de búsqueda (sem, mes o año): ",
+    },
+  ]);
+  if (
+    (datos["addFactor"] == "nombre" || datos["addFactor"] == "kilometros" || datos["addFactor"] == "cantidad") &&
+    (datos["addOrden"] == "asc" || datos["addOrden"] == "desc") &&
+    (datos["addAtributo"] == "sem" ||
+      datos["addAtributo"] == "mes" ||
+      datos["addAtributo"] == "año")
+  ) {
+    coleccionGrupos.buscarGrupo(
+      datos["addFactor"],
+      datos["addOrden"],
+      datos["addAtributo"]
+    );
+    promptGrupo();
+  } else {
+    console.log("ERROR: Parámetros no válidos.");
+    promptGrupo();
+  }
+}
+
+export function promptGrupo(): void {
+  console.clear();
+  coleccionGrupos.showGrupo();
+  inquirer
+    .prompt({
+      type: "list",
+      name: "command",
+      message: "¿Qué deseas hacer?: ",
+      choices: Object.values(Comandos),
+    })
+    .then((answers) => {
+      switch (answers["command"]) {
+        case Comandos.Añadir:
+          promptAddG();
+          break;
+        case Comandos.Eliminar:
+          promptRemoveG();
+          break;
+        case Comandos.Modificar:
+          promptModifyG();
+          break;
+        case Comandos.Ordenar:
+          promptSortG();
+          break;
+        case Comandos.Salir:
+          mainPrompt();
+          break;
+      }
+    });
+}
+```
+
+Este código exporta tres funciones (promptAddG, promptRemoveG y promptModifyG) y un enum (Comandos) para manejar una colección de grupos de usuarios.
+
+Las funciones utilizan la librería inquirer para realizar preguntas interactivas en la terminal y permitir al usuario agregar, eliminar o modificar un grupo de la colección. Para ello, se definen diferentes objetos con los datos necesarios y se utilizan los métodos de las clases correspondientes (coleccionUsuarios, coleccionRutas, coleccionGrupos, etc.) para obtener o modificar los datos necesarios.
+
+Cada una de las funciones define una serie de preguntas que el usuario debe responder, y utiliza los datos obtenidos para crear o modificar un objeto de la clase Grupo. Una vez que el objeto se ha creado o modificado, se añade a la colección correspondiente (coleccionGrupos).
+
+El enum Comandos define una serie de comandos que se utilizan para mostrar un menú de opciones en la función principal del programa (mainPrompt).
+
+### Clase Reto
+El codigo de esta clase es:
+
+```ts
+import { Ruta } from "../Ruta/rutas";
+import { Usuario } from "../Usuario/usuario";
+
+/**
+ * Clase que representa a un reto. Un reto es un conjunto de rutas.
+ */
+export class Reto {
+  private _id: number;
+  private _nombre: string;
+  private _rutas: Ruta[];
+  private _tipo: "bicicleta" | "correr";
+  private _kilometros = 0; // Kilómetros totales del reto
+  private _usuarios: Usuario[];
+
+  /**
+   * Constructor de clase.
+   * @param id Identificación único del reto.
+   * @param nombre Nombre del reto.
+   * @param rutas Rutas que componen el reto.
+   * @param tipo Tipo de reto. Puede ser en bicicleta o correr.
+   * @param usuarios Id de los usuarios que realizan el reto.
+   */
+  constructor(
+    id: number,
+    nombre: string,
+    rutas: Ruta[],
+    tipo: "bicicleta" | "correr",
+    usuarios: Usuario[]
+  ) {
+    this._id = id;
+    this._nombre = nombre;
+    this._rutas = rutas;
+    this._tipo = tipo;
+    if (this._rutas != undefined) {
+      this._rutas.forEach((ruta) => {
+        this._kilometros += ruta.longitud;
+      });
+    } else {
+      this._kilometros = 0;
+    }
+    this._usuarios = usuarios;
+  }
+
+  /**
+   * Devuelve el Id de la ruta.
+   * @returns Id de la ruta.
+   */
+  get id(): number {
+    return this._id;
+  }
+
+  /**
+   * Establece un nuevo Id de la ruta.
+   * @param nuevoId Nuevo Id de la ruta.
+   */
+  set id(nuevoId: number) {
+    this._id = nuevoId;
+  }
+
+  /**
+   * Devuelve el nombre de la ruta.
+   * @returns Nombre de la ruta.
+   */
+  get nombre(): string {
+    return this._nombre;
+  }
+
+  /**
+   * Establece un nuevo nombre de ruta.
+   * @param nuevoNombre Nuevo nombre de ruta.
+   */
+  set nombre(nuevoNombre: string) {
+    this._nombre = nuevoNombre;
+  }
+
+  /**
+   * Devuelve el conjunto de rutas del reto.
+   * @returns Conjunto de rutas del reto.
+   */
+  get rutas(): Ruta[] {
+    return this._rutas;
+  }
+
+  /**
+   * Establece un nuevo conjunto de rutas del reto.
+   * @param nuevasRutas Nuevo conjunto de rutas del reto.
+   */
+  set rutas(nuevasRutas: Ruta[]) {
+    this._rutas = nuevasRutas;
+    this._kilometros = 0;
+    this._rutas.forEach((ruta) => {
+      this._kilometros += ruta.longitud;
+    });
+  }
+
+  /**
+   * Devuelve el tipo de reto.
+   * @returns Tipo de reto.
+   */
+  get tipo(): "bicicleta" | "correr" {
+    return this._tipo;
+  }
+
+  /**
+   * Establece un nuevo tipo de reto.
+   * @param nuevo_tipo Nuevo tipo de reto.
+   */
+  set tipo(nuevoTipo: "bicicleta" | "correr") {
+    this._tipo = nuevoTipo;
+  }
+
+  /**
+   * Devuelve el numero de kilómetros totales del reto.
+   * @returns Numero de kilómetros totales del reto.
+   */
+  get kilometros(): number {
+    return this._kilometros;
+  }
+
+  /**
+   * metodo para cambiar la cantidad de kilometros
+   */
+  set kilometros(kilometros: number) {
+    this._kilometros = kilometros;
+  }
+
+  /**
+   * Devuelve la lista de usuarios que realizan el reto.
+   * @returns Lista de usuarios que realizan el reto.
+   */
+  get usuarios(): Usuario[] {
+    return this._usuarios;
+  }
+
+  /**
+   * Establece una nueva lista de usuarios que realizan el reto.
+   * @param nuevos_usuarios Nueva lista de usuarios que realizan el reto.
+   */
+  set usuarios(nuevosUsuarios: Usuario[]) {
+    this._usuarios = nuevosUsuarios;
+  }
+}
+```
+
+Este código define una clase llamada Reto que representa un reto deportivo. Tiene los siguientes atributos privados:
+
+_id: Identificación única del reto (número).
+_nombre: Nombre del reto (cadena de texto).
+_rutas: Rutas que componen el reto (arreglo de objetos Ruta).
+_tipo: Tipo de reto, que puede ser "bicicleta" o "correr" (cadena de texto).
+_kilometros: Kilómetros totales del reto (número).
+_usuarios: Usuarios que realizan el reto (arreglo de objetos Usuario).
+Además, tiene un constructor que toma estos atributos como parámetros y los inicializa. También tiene varios getters y setters para cada uno de los atributos.
+
+En particular, los setters para _rutas, _tipo y _usuarios recalculan automáticamente _kilometros a partir de las nuevas rutas añadidas, el nuevo tipo de reto o la lista de nuevos usuarios.
+
+### Clase ColeccionRetos
+El codigo de esta clase es:
+
+```ts
+
+```
+
+### Clase JsonColeccionRetos
+El codigo de esta clase es:
+
+```ts
+
+```
+
+### Fichero 
+El codigo de esta clase es:
+
+```ts
+
+```
 
 ## Conclusión
 
