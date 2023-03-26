@@ -68,11 +68,15 @@ export class Usuario {
   }
 
   /**
-   * getter para obteenr el nombre del usuario
+   * getter para obtener el nombre del usuario
    * @returns nombre del usuario
    */
   get nombre(): string {
     return this._nombre;
+  }
+
+  getNombre(): string{
+    return this._nombre
   }
   /**
    * metodo para cambiar el nombre del usuario

@@ -108,9 +108,23 @@ export const ruta = new Ruta(
   4.5
 );
 
-export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
+const usuariosArray: Usuario[] = [ userUno, userDos]
+
+// usuariosArray.forEach(elemento => {console.log(elemento.nombre)})
+
+
+
+export const coleccionUsuarios = new JsonColeccionUsuarios(usuariosArray);
 export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
 export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
 export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2]);
+
+// console.log(usuariosArray)
+
+// console.log(coleccionUsuarios)
+
+// coleccionUsuarios._listaElementos.forEach(elemento => {console.log(elemento.nombre)})
+  
+
 
 promptUsuario()

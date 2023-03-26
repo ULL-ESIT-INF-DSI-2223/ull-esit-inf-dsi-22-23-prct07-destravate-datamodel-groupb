@@ -8,15 +8,16 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
 type SchemaType = {
-    usuario: { nombre: string, 
-               tipoActividad: "bicicleta" | "correr", 
-               amigos: Usuario[], 
-               grupos: Grupo[],
-               estadisticasEntrenamiento: EstadisticasEntrenamiento,
-               rutasFavoritas: Ruta[],
-               retosActivos: Reto[],
-               historialRutas: HistorialRutas 
-               id: number }[]
+    usuario: { _nombre: string;
+               _tipoActividad: "bicicleta" | "correr";
+               _amigos: Usuario[]; 
+               _grupos: Grupo[];
+               _estadisticasEntrenamiento: EstadisticasEntrenamiento;
+               _rutasFavoritas: Ruta[];
+               _retosActivos: Reto[];
+               _historialRutas: HistorialRutas; 
+               _id: number;
+            }[]
 }
 
 export class JsonColeccionUsuarios extends ColeccionUsuarios {
@@ -25,12 +26,13 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
     constructor(listaUsuarios: Usuario[]) {
         super(listaUsuarios);
         this.database = lowdb(new FileSync("./Usuarios.json"));
-        if(this.database.has("usuario").value()) {
-            const dbItems = this.database.get("usuario").value();
-            dbItems.forEach(item => this._listaElementos.push(new Usuario(item.nombre, item.tipoActividad, 
-                item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutasFavoritas, item.retosActivos, 
-                item.historialRutas, item.id)));
-        } else {
+        if(this.database.has("usuario").value()) { //archivo creado
+            let dbItems = this.database.get("usuario").value();
+            console.log(dbItems[0]._nombre)
+            dbItems.forEach(item => this._listaElementos.push(new Usuario(item._nombre, item._tipoActividad, 
+              item._amigos, item._grupos, item._estadisticasEntrenamiento, item._rutasFavoritas, item._retosActivos, 
+              item._historialRutas, item._id)));
+        } else { //crear archivo
             this.database.set("usuario", listaUsuarios).write();
             listaUsuarios.forEach(item => this._listaElementos.push(item));
         }
@@ -67,7 +69,7 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
     }
 
     showUsuario() {
-        this._listaElementos.forEach((item) => console.log(item.id, item.nombre));
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre/*, item.estadisticasEntrenamiento.estadisticaSemanal[0], item.estadisticasEntrenamiento.estadisticaMensual[0], item.estadisticasEntrenamiento.estadisticaAnual[0]*/));
     }
 
     private storeUsuarios() {

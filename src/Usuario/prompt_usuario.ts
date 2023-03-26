@@ -16,7 +16,7 @@ export enum Comandos {
 }
 
 export async function promptAdd() {
-    console.clear();
+    // console.clear();
     coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
     {
@@ -119,7 +119,7 @@ export async function promptAdd() {
 }
 
 export async function promptRemove() {
-    console.clear();
+    // console.clear();
     coleccionUsuarios.showUsuario();
     const dato = await inquirer.prompt({
         type: "input",
@@ -137,7 +137,7 @@ export async function promptRemove() {
 }
 
 export async function promptModify() {
-    console.clear();
+    // console.clear();
     coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
         {
@@ -249,7 +249,7 @@ export async function promptModify() {
 }
 
 export async function promptSort() {
-    console.clear();
+    // console.clear();
     coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
         {
@@ -279,7 +279,7 @@ export async function promptSort() {
 }
 
 export function promptUsuario() {
-    console.clear();
+    // console.clear();
     coleccionUsuarios.showUsuario();
     inquirer.prompt({
         type: "list",
