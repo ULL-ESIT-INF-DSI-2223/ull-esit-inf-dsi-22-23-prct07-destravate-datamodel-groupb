@@ -37,7 +37,7 @@ enum OpcionesGrupo {
 }
 
 /** 
- * 
+ * Clase gestor. Permite a un usuario realizar diversas tareas en el sistema.
 */
 export class Gestor {
     private usuarioId: number;

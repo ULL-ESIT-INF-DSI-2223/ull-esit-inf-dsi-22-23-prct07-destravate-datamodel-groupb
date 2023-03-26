@@ -2,6 +2,7 @@ import { promptUsuario } from "./Usuario/prompt_usuario";
 import { promptRutas } from "./Ruta/prompt_ruta";
 import { promptRetos } from "./Reto/prompt_reto";
 import { promptGrupo } from "./Grupo/prompt_grupo";
+import { Gestor } from "./gestor";
 import * as inquirer from "inquirer";
 
 enum Opciones {
@@ -39,4 +40,7 @@ export function mainPrompt() {
     })
 }
 
-mainPrompt();
+//mainPrompt();
+
+const prueba = new Gestor();
+prueba.mainMenu();
