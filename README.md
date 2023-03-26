@@ -2841,9 +2841,15 @@ prueba.mainMenu();
 Este código importa varios módulos de diferentes archivos y define una enumeración llamada Opciones. Luego, define una función llamada mainPrompt() que utiliza la biblioteca inquirer para crear un menú que le pregunta al usuario qué desea hacer. Dependiendo de la opción que el usuario seleccione, se llamará a una función diferente para manejar la opción. Por último, crea una instancia de la clase Gestor y llama a su método mainMenu() para iniciar la aplicación. En resumen, este código es la lógica principal de una aplicación que utiliza un menú para permitir al usuario interactuar con diferentes funcionalidades.
 
 ### Clase Gestor
+Es la clase principal de la aplicación. Es responsable de proporcionar un menú para que los usuarios interactúen con el sistema. El menú se divide en varias secciones, como el menú principal, el menú de inicio de sesión, el menú de registro de usuario, el menú de usuario y el menú de grupo. Cada sección del menú tiene diferentes opciones que el usuario puede elegir.
 
+Dentro de la clase Gestor, se definen varios métodos que se llaman para mostrar diferentes partes del menú y realizar diferentes acciones. Por ejemplo, el método mainMenu() muestra el menú principal y permite al usuario elegir entre iniciar sesión, registrarse o salir del sistema. El método menuInicio() muestra el menú de inicio de sesión y permite al usuario ingresar su ID para iniciar sesión. El método menuRegistro() muestra el menú de registro de usuario y permite al usuario ingresar sus detalles para registrarse en el sistema.
+
+Además, la clase Gestor tiene algunas propiedades privadas, como usuarioId y usuario, que se utilizan para almacenar información sobre el usuario actualmente conectado. También hay algunas importaciones de módulos de otros archivos en el mismo directorio. En general, este código es una base para una aplicación más grande que utiliza diferentes módulos y clases para permitir que los usuarios interactúen con el sistema.
 
 ## Conclusión
+
+
 
 ## Referencias
 

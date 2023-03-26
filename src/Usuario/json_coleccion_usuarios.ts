@@ -123,7 +123,7 @@ Busca usuarios por nombre o cantidad de kilómetros recorridos.
     this.storeUsuarios();
     this.showUsuario();
   }
-
+/** Muestra los usuarios */
   showUsuario() {
     this._listaElementos.forEach((item) =>
       console.log(
