@@ -8,15 +8,15 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileAsync";
 
 type SchemaTypeUsuarios = {
-    usuario: { id: number, 
-               nombre: string, 
+    usuario: { nombre: string, 
                tipoActividad: "bicicleta" | "correr", 
                amigos: Usuario[], 
                grupos: Grupo[],
                estadisticasEntrenamiento: EstadisticasEntrenamiento,
                rutasFavoritas: Ruta[],
                retosActivos: Reto[],
-               historialRutas: HistorialRutas }[]
+               historialRutas: HistorialRutas 
+               id: number }[]
 }
 
 export class JsonColeccionUsuarios extends ColeccionUsuarios {
@@ -29,7 +29,7 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
             let dbItems = this.database.get("usuario").value();
             dbItems.forEach(item => this._listaElementos.push(new Usuario(item.nombre, item.tipoActividad, 
                 item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutasFavoritas, item.retosActivos, 
-                item.id, item.historialRutas)));
+                item.historialRutas, item.id)));
         } else {
             this.database.set("usuario", listaUsuarios).write();
             listaUsuarios.forEach(item => this._listaElementos.push(item));

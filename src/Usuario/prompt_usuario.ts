@@ -1,6 +1,4 @@
 import { Usuario } from "./usuario";
-import { ColeccionUsuarios } from "./coleccion_usuarios";
-import { JsonColeccionUsuarios } from "./json_coleccion_usuarios";
 import { Grupo } from "../Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 import { Ruta } from "../Ruta/rutas";

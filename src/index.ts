@@ -5,6 +5,7 @@ import { Reto } from "./Reto/retos";
 import { Grupo } from "./Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 import { JsonColeccionUsuarios } from "./Usuario/json_coleccion_usuarios";
+import { promptUsuario } from "./Usuario/prompt_usuario";
 
 export const estadistica_1 = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
 export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100]);
@@ -105,3 +106,5 @@ export const ruta = new Ruta(
 );
 
 export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
+
+promptUsuario();
