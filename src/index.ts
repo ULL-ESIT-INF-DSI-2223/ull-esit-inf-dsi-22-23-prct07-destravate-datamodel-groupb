@@ -55,8 +55,8 @@ export const userUno = new Usuario(
   estadistica_1,
   [ruta_1, ruta_2],
   [reto_1],
-  32,
   [],
+  32,
 );
 export const userDos = new Usuario(
   "Filemon",
@@ -66,8 +66,8 @@ export const userDos = new Usuario(
   estadistica_2,
   [ruta_2],
   [reto_2],
-  2,
-  []
+  [],
+  30
 );
 
 export const grupo_1 = new Grupo(

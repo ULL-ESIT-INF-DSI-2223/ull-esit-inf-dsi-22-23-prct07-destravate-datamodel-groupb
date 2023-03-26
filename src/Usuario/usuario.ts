@@ -37,8 +37,8 @@ export class Usuario {
     estadisticasEntrenamiento: EstadisticasEntrenamiento,
     rutas: Ruta[],
     retos: Reto[],
-    id = -1,
-    historialRutas: HistorialRutas
+    historialRutas: HistorialRutas,
+    id = -1
   ) {
     this._nombre = nombre;
     this._tipoActividad = tipoActividad;
