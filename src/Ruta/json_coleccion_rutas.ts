@@ -23,7 +23,7 @@ export class JsonColeccionRutas extends ColeccionRutas {
 
     constructor(listaRutas: Ruta[]) {
         super(listaRutas);
-        this.database = lowdb(new FileSync("Rutas.json"));
+        this.database = lowdb(new FileSync("./Rutas.json"));
         if(this.database.has("ruta").value()) {
             const dbItems = this.database.get("ruta").value();
             dbItems.forEach(item => this._listaElementos.push(new Ruta(item.id, item.nombre, 

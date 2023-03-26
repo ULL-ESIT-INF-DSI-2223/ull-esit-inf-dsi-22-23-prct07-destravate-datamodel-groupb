@@ -13,18 +13,6 @@ import { JsonColeccionRetos } from "./Reto/json_coleccion_retos";
 export const estadistica_1 = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
 export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100]);
 
-export const ruta = new Ruta(
-  1,
-  "Ruta de prueba",
-  new Coordenadas(0, 0, 0),
-  new Coordenadas(1, 1, 1),
-  10,
-  100,
-  [],
-  "bicicleta",
-  4.5
-);
-
 export const ruta_1 = new Ruta(
   1,
   "Ruta de prueba",
@@ -47,8 +35,6 @@ export const ruta_2 = new Ruta(
   "correr",
   4.8
 );
-
-export const reto = new Reto(152, "Reto de prueba", [ruta_1, ruta_2], "correr", []);
 
 export const reto_1 = new Reto(
   152,
@@ -108,8 +94,21 @@ export const grupo_2 = new Grupo(
   [["23-03-1999", [userUno], ruta_2]]
 );
 
+export  const reto = new Reto(152, "Reto de prueba", [ruta_1, ruta_2], "correr", []);
+
+export const ruta = new Ruta(
+  1,
+  "Ruta de prueba",
+  new Coordenadas(0, 0, 0),
+  new Coordenadas(1, 1, 1),
+  10,
+  100,
+  [],
+  "bicicleta",
+  4.5
+);
+
 export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
 export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
 export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
 export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2]);
-promptUsuario();

@@ -24,7 +24,7 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
 
     constructor(listaUsuarios: Usuario[]) {
         super(listaUsuarios);
-        this.database = lowdb(new FileSync("Usuarios.json"));
+        this.database = lowdb(new FileSync("./Usuarios.json"));
         if(this.database.has("usuario").value()) {
             const dbItems = this.database.get("usuario").value();
             dbItems.forEach(item => this._listaElementos.push(new Usuario(item.nombre, item.tipoActividad, 

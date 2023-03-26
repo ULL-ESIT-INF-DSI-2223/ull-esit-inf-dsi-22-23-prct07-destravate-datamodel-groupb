@@ -21,7 +21,7 @@ export class JsonColeccionGrupos extends ColeccionGrupos {
 
     constructor(listaGrupos: Grupo[]) {
         super(listaGrupos);
-        this.database = lowdb(new FileSync("Grupos.json"));
+        this.database = lowdb(new FileSync("./Grupos.json"));
         if(this.database.has("grupo").value()) {
             const dbItems = this.database.get("grupo").value();
             dbItems.forEach(item => this._listaElementos.push(new Grupo(item.id, item.nombre, item.participantes, 

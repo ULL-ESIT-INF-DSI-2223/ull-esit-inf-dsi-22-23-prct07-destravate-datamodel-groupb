@@ -19,7 +19,7 @@ export class JsonColeccionRetos extends ColeccionRetos {
 
     constructor(listaRetos: Reto[]) {
         super(listaRetos);
-        this.database = lowdb(new FileSync("Retos.json"));
+        this.database = lowdb(new FileSync("./Retos.json"));
         if(this.database.has("reto").value()) {
             const dbItems = this.database.get("reto").value();
             dbItems.forEach(item => this._listaElementos.push(new Reto(item.id, item.nombre, item.rutas, 
