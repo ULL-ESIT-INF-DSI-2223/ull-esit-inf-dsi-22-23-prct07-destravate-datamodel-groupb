@@ -57,7 +57,7 @@ export class Usuario {
    * @returns numero aleatorio generado dentro del rango de valores
    */
   getRandomArbitrary(min: number, max: number) {
-    return Math.random() * (max - min) + min;
+    return Math.trunc(Math.random() * (max - min) + min);
   }
 
   /** 

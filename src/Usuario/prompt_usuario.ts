@@ -17,7 +17,7 @@ export enum Comandos {
 
 export async function promptAdd() {
     console.clear();
-    coleccionUsuarios.showUsuario();
+    // coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
     {
         type: "input",
@@ -120,7 +120,7 @@ export async function promptAdd() {
 
 export async function promptRemove() {
     console.clear();
-    coleccionUsuarios.showUsuario();
+    // coleccionUsuarios.showUsuario();
     const dato = await inquirer.prompt({
         type: "input",
         name: "addIndex",
@@ -138,7 +138,7 @@ export async function promptRemove() {
 
 export async function promptModify() {
     console.clear();
-    coleccionUsuarios.showUsuario();
+    // coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
         {
             type: "input",
@@ -250,7 +250,7 @@ export async function promptModify() {
 
 export async function promptSort() {
     console.clear();
-    coleccionUsuarios.showUsuario();
+    // coleccionUsuarios.showUsuario();
     const datos = await inquirer.prompt([
         {
             type: "input",

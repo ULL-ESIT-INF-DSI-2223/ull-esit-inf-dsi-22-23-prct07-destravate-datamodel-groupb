@@ -1,3 +1,7 @@
 dist
 node_modules
 .nyc_output
+Grupos.json
+Retos.json
+Rutas.json
+Usuarios.json
