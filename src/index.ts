@@ -9,6 +9,7 @@ import { JsonColeccionGrupos } from "./Grupo/json_coleccion_grupos";
 import { JsonColeccionRutas } from "./Ruta/json_coleccion_rutas";
 import { JsonColeccionRetos } from "./Reto/json_coleccion_retos";
 
+
 export const estadistica_1 = new EstadisticasEntrenamiento(
   [2, 4],
   [5, 9],

@@ -24,8 +24,8 @@ export class ColeccionGrupos implements Coleccion<Grupo> {
   }
 
   /**
-   * Elimina un elemento de la colección.
-   * @param index índice del elemento a eliminar.
+   * Añade un nuevo elemento a la colección.
+   * @param item Elemento a añadir.
    */
   remove(index: number): void {
     this._listaElementos.splice(index, 1);

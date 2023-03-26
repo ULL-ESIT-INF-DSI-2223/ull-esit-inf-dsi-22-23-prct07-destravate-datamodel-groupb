@@ -9,12 +9,18 @@ import { Grupo, historialRutasGrupal } from "./Grupo/grupos";
 import { Ruta } from "./Ruta/rutas";
 import { Reto } from "./Reto/retos";
 
+/**
+ * Enumerable con opciones para el menú principal.
+ */
 enum OpcionesMain {
     Iniciar = "Iniciar sesión",
     Registro = "Registrarse",
     Salir = "Salir"
 }
 
+/**
+ * Enumerable con opciones para el menú gestor.
+ */
 enum OpcionesGestor {
     Perfil = "Ver mi perfil y usuarios",
     VerRutas = "Visualizar las rutas",
@@ -23,6 +29,9 @@ enum OpcionesGestor {
     Salir = "Salir"
 }
 
+/**
+ * Enumerable con opciones para el menú de usuario.
+ */
 enum OpcionesUsuario {
     VerUsuarios = "Visualizar Usuarios",
     Añadir = "Añadir amigos",
@@ -30,6 +39,9 @@ enum OpcionesUsuario {
     Salir = "Salir"
 }
 
+/**
+ * Enumerable con opciones para el menú de grupos.
+ */
 enum OpcionesGrupo {
     VerGrupos = "Visualizar grupos",
     Crear = "Crear grupos",
@@ -250,6 +262,9 @@ export class Gestor {
         })
     }
 
+    /**
+     * Permite registrarse a un usuario a la base de datos.
+     */
     async promptAddUser() {
         const datos = await inquirer.prompt([
           {
@@ -371,6 +386,9 @@ export class Gestor {
         }
       }
 
+      /**
+       * Permite a un usuario añadir un grupo a la base de datos.
+       */
       async promptAddGrupos() {
         const datos = await inquirer.prompt([
           {
@@ -455,6 +473,10 @@ export class Gestor {
         coleccionGrupos.addGrupo(new Grupo(id, nombre, usuarios, entrenamiento, clasificacion, rutas, historial));
       }
 
+      /**
+       * Permite a un usuario eliminar un grupo de la base de datos.
+       * @param Id Id del usuario que realiza la acción.
+       */
       async promptRemoveGrupos(Id: number) {
         console.clear();
         coleccionGrupos.showGrupo();

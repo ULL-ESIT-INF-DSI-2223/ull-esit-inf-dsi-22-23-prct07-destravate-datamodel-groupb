@@ -6,6 +6,9 @@ import { mainPrompt } from "../main";
 import { coleccionRetos, coleccionRutas, coleccionGrupos, coleccionUsuarios } from "..";
 import * as inquirer from "inquirer";
 
+/**
+ * Enumerable que almacena los comandos del prompt.
+ */
 enum Comandos {
   Añadir = "Añadir grupo",
   Eliminar = "Eliminar grupo",
@@ -13,7 +16,9 @@ enum Comandos {
   Ordenar = "Ordenar lista",
   Salir = "Salir al menú principal",
 }
-
+/**
+ * Añade un grupo a la colección.
+ */
 export async function promptAdd() {
   console.clear();
   coleccionGrupos.showGrupo();
@@ -102,6 +107,9 @@ export async function promptAdd() {
   promptGrupo();
 }
 
+/**
+ * Elimina un grupo de la colección.
+ */
 export async function promptRemove() {
     console.clear();
     coleccionGrupos.showGrupo();
@@ -122,6 +130,9 @@ export async function promptRemove() {
     }
   }
 
+  /**
+   * Modifica un grupo de la colección.
+   */
 export async function promptModify() {
     console.clear();
     coleccionGrupos.showGrupo();
@@ -220,6 +231,9 @@ export async function promptModify() {
     }
 }
 
+/**
+ * Ordena los elementos de la colección.
+ */
 export async function promptSort() {
   console.clear();
   coleccionGrupos.showGrupo();
@@ -259,6 +273,9 @@ export async function promptSort() {
   }
 }
 
+/**
+ * Menú principal para los grupos.
+ */
 export function promptGrupo(): void {
   console.clear();
   coleccionGrupos.showGrupo();

@@ -2840,6 +2840,9 @@ prueba.mainMenu();
 
 Este código importa varios módulos de diferentes archivos y define una enumeración llamada Opciones. Luego, define una función llamada mainPrompt() que utiliza la biblioteca inquirer para crear un menú que le pregunta al usuario qué desea hacer. Dependiendo de la opción que el usuario seleccione, se llamará a una función diferente para manejar la opción. Por último, crea una instancia de la clase Gestor y llama a su método mainMenu() para iniciar la aplicación. En resumen, este código es la lógica principal de una aplicación que utiliza un menú para permitir al usuario interactuar con diferentes funcionalidades.
 
+### Clase Gestor
+
+
 ## Conclusión
 
 ## Referencias

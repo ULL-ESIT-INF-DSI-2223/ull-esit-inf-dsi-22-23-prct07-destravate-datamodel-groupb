@@ -13,6 +13,9 @@ import {
 } from "..";
 import * as inquirer from "inquirer";
 
+/**
+ * Enumerable que almacena los comandos del prompt.
+ */
 enum Comandos {
   Añadir = "Añadir usuario",
   Eliminar = "Eliminar usuario",
@@ -21,6 +24,9 @@ enum Comandos {
   Salir = "Salir al menú principal",
 }
 
+/**
+ * funcion para añadir un usuario con inquire
+ */
 export async function promptAdd() {
   console.clear();
   coleccionUsuarios.showUsuario();
@@ -79,7 +85,9 @@ export async function promptAdd() {
       }
     })
   );
-  // Añadir grupos
+  /**
+   * añadir grupos
+   */
   const grupos: Grupo[] = [];
   const id_grupos: number[] = datos["addGrupos"].split(",").map(Number);
   id_grupos.forEach((id) =>
@@ -89,7 +97,9 @@ export async function promptAdd() {
       }
     })
   );
-  // Añadir datos entrenamiento
+    /**
+     * añadir datos de entrenamiento
+     */
   const datosE: number[] = datos["addEstadisticas"].split(",").map(Number);
   const entrenamiento: EstadisticasEntrenamiento =
     new EstadisticasEntrenamiento(
@@ -97,7 +107,9 @@ export async function promptAdd() {
       [datosE[2], datosE[3]],
       [datosE[4], datosE[5]]
     );
-  // Añadir rutas
+  /**
+   * añadir rutas
+   */
   const id_rutas: number[] = datos["addRetos"].split(",").map(Number);
   const rutas: Ruta[] = [];
   id_rutas.forEach((id) =>
@@ -107,7 +119,9 @@ export async function promptAdd() {
       }
     })
   );
-  // Añadir retos
+  /**
+   * añadir retos
+   */
   const id_retos: number[] = datos["addRutas"].split(",").map(Number);
   const retos: Reto[] = [];
   id_retos.forEach((id) =>
@@ -117,7 +131,9 @@ export async function promptAdd() {
       }
     })
   );
-  // Añadir historial
+  /**
+   * añadir historial
+   */
   const datos_historial = datos["addHistorial"].split(",");
   const historial: HistorialRutas = [];
   for (let i = 0; i < datos_historial.length; i += 2) {
@@ -148,7 +164,9 @@ export async function promptAdd() {
     promptUsuario();
   }
 }
-
+/**
+ * eliminar un usuario com inquire
+ */
 export async function promptRemove() {
   console.clear();
   coleccionUsuarios.showUsuario();
@@ -167,6 +185,9 @@ export async function promptRemove() {
   }
 }
 
+/**
+ * modificar un usuario con inquire
+ */
 export async function promptModify() {
   console.clear();
   coleccionUsuarios.showUsuario();
@@ -308,6 +329,9 @@ export async function promptModify() {
   }
 }
 
+/**
+ * funcion para ordenar los usuarios
+ */
 export async function promptSort() {
   console.clear();
   coleccionUsuarios.showUsuario();
@@ -347,6 +371,9 @@ export async function promptSort() {
   }
 }
 
+/**
+ * funcion para trabajar con los usuarios mediante inquire
+ */
 export function promptUsuario() {
   console.clear();
   coleccionUsuarios.showUsuario();

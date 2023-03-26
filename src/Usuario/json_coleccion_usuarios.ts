@@ -7,6 +7,11 @@ import { Reto } from "../Reto/retos";
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
+/**
+ * Define el tipo de objeto almacenado en la base de datos. Este tipo 
+ * es utilizado por el módulo de bajo nivel `lowdb` para realizar las 
+ * operaciones de lectura y escritura en el archivo JSON.
+ */
 type SchemaType = {
   usuario: {
     _nombre: string;
@@ -20,10 +25,23 @@ type SchemaType = {
     _id: number;
   }[];
 };
+/**
 
+Clase que implementa una colección de usuarios almacenada en un archivo JSON.
+@extends ColeccionUsuarios
+*/
 export class JsonColeccionUsuarios extends ColeccionUsuarios {
+  /*
+Base de datos de usuarios.
+@type {lowdb.LowdbSync<SchemaType>}
+@private
+*/
   private database: lowdb.LowdbSync<SchemaType>;
+/**
 
+Crea una instancia de la clase JsonColeccionUsuarios.
+@param {Array<Usuario>} listaUsuarios - Lista de usuarios.
+*/
   constructor(listaUsuarios: Usuario[]) {
     super([]);
     this.database = lowdb(new FileSync("./Usuarios.json"));
@@ -52,22 +70,41 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
       listaUsuarios.forEach((item) => this._listaElementos.push(item));
     }
   }
+/**
 
+Agrega un usuario a la colección.
+@param {Usuario} usuario - Usuario a agregar.
+*/
   addUsario(usuario: Usuario) {
     super.add(usuario);
     this.storeUsuarios();
   }
+/**
 
+Remueve un usuario de la colección.
+@param {number} index - Índice del usuario a remover.
+*/
   removeUsuario(index: number) {
     super.remove(index);
     this.storeUsuarios();
   }
+/**
 
+Modifica un usuario de la colección.
+@param {number} index - Índice del usuario a modificar.
+@param {Usuario} item - Usuario modificado.
+*/
   modifyUsuario(index: number, item: Usuario) {
     super.modify(index, item);
     this.storeUsuarios();
   }
+/**
 
+Busca usuarios por nombre o cantidad de kilómetros recorridos.
+@param {string} atributo - Atributo por el cual buscar (nombre o kilometros).
+@param {"asc" | "desc"} orden - Orden ascendente o descendente.
+@param {"sem" | "mes" | "año"} factor - Factor de tiempo a considerar.
+*/
   buscarUsuario(
     atributo: string,
     orden: "asc" | "desc",

@@ -13,6 +13,9 @@ import {
 } from "..";
 import * as inquirer from "inquirer";
 
+/**
+ * Enumerable que almacena los comandos del prompt.
+ */
 enum Comandos {
   Añadir = "Añadir Reto",
   Eliminar = "Eliminar Reto",
@@ -20,7 +23,9 @@ enum Comandos {
   Ordenar = "Ordenar lista",
   Salir = "Salir al menú principal",
 }
-
+/**
+ * funcion para añadir un reto con inquirer
+ */
 export async function promptAdd() {
   console.clear();
   coleccionRetos.showReto();
@@ -61,7 +66,9 @@ export async function promptAdd() {
   const nombre: string = datos["addNombre"];
   const actividad: string = datos["addTipo"];
 
-  //Añadir Ruta
+  /**
+   * añadir una ruta al reto
+   */
   const rutas: Ruta[] = [];
   const id_rutas: number[] = datos["addRuta"].split(",").map(Number);
   id_rutas.forEach((id) =>
@@ -72,7 +79,9 @@ export async function promptAdd() {
     })
   );
 
-  //añadir usuarios
+    /**
+     * añadir usarios al reto
+     */
   const usuarios: Usuario[] = [];
   const id_usuario: number[] = datos["addUsuarios"].split(",").map(Number);
   id_usuario.forEach((id) =>
@@ -93,6 +102,9 @@ export async function promptAdd() {
   }
 }
 
+/**
+ * funcion para eliminar retos
+ */
 export async function promptRemove() {
   console.clear();
   coleccionRetos.showReto();
@@ -111,6 +123,9 @@ export async function promptRemove() {
   }
 }
 
+/**
+ * funcion para modificar un reto
+ */
 export async function promptModify() {
   console.clear();
   coleccionRetos.showReto();
@@ -195,6 +210,9 @@ export async function promptModify() {
   }
 }
 
+/**
+ * funcion para ordenar los retos
+ */
 export async function promptSort() {
   console.clear();
   coleccionRetos.showReto();
@@ -225,6 +243,9 @@ export async function promptSort() {
   }
 }
 
+/**
+ * funcion para trabajar con los retos con inquire
+ */
 export function promptRetos(): void {
   console.clear();
   coleccionRetos.showReto();

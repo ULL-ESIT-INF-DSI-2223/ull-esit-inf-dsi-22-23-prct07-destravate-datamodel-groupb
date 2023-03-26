@@ -6,6 +6,9 @@ import { mainPrompt } from "../main";
 import { coleccionGrupos, coleccionRetos, coleccionRutas, coleccionUsuarios } from "..";
 import * as inquirer from "inquirer";
 
+/**
+ * Enumerable que almacena los comandos del prompt.
+ */
 enum Comandos {
     Añadir = "Añadir ruta",
     Eliminar = "Eliminar ruta",
@@ -14,6 +17,9 @@ enum Comandos {
     Salir = "Salir al menú principal"
 }
 
+/**
+ * Permite añadir una nueva ruta a la colección.
+ */
 export async function promptAdd() {
     console.clear();
     coleccionRutas.showRuta();
@@ -91,6 +97,9 @@ export async function promptAdd() {
     }
 }
 
+/**
+ * Elimina una ruta de la colección.
+ */
 export async function promptRemove() {
     console.clear();
     coleccionRutas.showRuta();
@@ -109,6 +118,9 @@ export async function promptRemove() {
     }
 }
 
+/**
+ * Modifica una ruta de la colección.
+ */
 export async function promptModify() {
     console.clear();
     coleccionRutas.showRuta();
@@ -195,6 +207,9 @@ export async function promptModify() {
     }
 }
 
+/**
+ * Ordena los elementos de la colección.
+ */
 export async function promptSort() {
     console.clear();
     coleccionRutas.showRuta();
@@ -219,6 +234,9 @@ export async function promptSort() {
     }
 }
 
+/**
+ * Menú principal para las rutas.
+ */
 export function promptRutas(): void {
     console.clear();
     coleccionRutas.showRuta();

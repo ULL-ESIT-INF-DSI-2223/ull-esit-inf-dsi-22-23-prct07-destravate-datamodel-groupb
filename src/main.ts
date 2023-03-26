@@ -5,6 +5,9 @@ import { promptGrupo } from "./Grupo/prompt_grupo";
 import { Gestor } from "./gestor";
 import * as inquirer from "inquirer";
 
+/**
+ * Enumerable con opciones para el menú main.
+ */
 enum Opciones {
     Usuario = "Editar usuarios",
     Ruta = "Editar rutas",
@@ -13,6 +16,9 @@ enum Opciones {
     Salir = "Salir"
   }
 
+/**
+ * main del proyecto
+ */
 export function mainPrompt() {
     console.clear();
     inquirer.prompt({
