@@ -67,8 +67,7 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
     }
 
     showUsuario() {
-        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.tipoActividad, 
-            item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutas, item.retos, item.historialRutas));
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre));
     }
 
     private storeUsuarios() {

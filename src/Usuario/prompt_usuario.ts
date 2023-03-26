@@ -79,7 +79,7 @@ export async function promptAdd() {
         }
     }));
     // Añadir datos entrenamiento
-    const datosE: number[] = datos["addEstadsiticas"].split(',').map(Number);
+    const datosE: number[] = datos["addEstadisticas"].split(',').map(Number);
     const entrenamiento: EstadisticasEntrenamiento = new EstadisticasEntrenamiento([datosE[0], datosE[1]], [datosE[2], datosE[3]], [datosE[4], datosE[5]]);
     // Añadir rutas
     const id_rutas: number[] = datos["addRetos"].split(',').map(Number);
@@ -205,7 +205,7 @@ export async function promptModify() {
             }
         }));
         // Añadir datos entrenamiento
-        const datosE: number[] = datos["addEstadsiticas"].split(',').map(Number);
+        const datosE: number[] = datos["addEstadisticas"].split(',').map(Number);
         const entrenamiento: EstadisticasEntrenamiento = new EstadisticasEntrenamiento([datosE[0], datosE[1]], [datosE[2], datosE[3]], [datosE[4], datosE[5]]);
         // Añadir rutas
         const id_rutas: number[] = datos["addRetos"].split(',').map(Number);
