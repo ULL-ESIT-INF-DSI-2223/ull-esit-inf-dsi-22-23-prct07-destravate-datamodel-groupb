@@ -5,8 +5,8 @@ import { coleccionRetos } from ".";
 import { coleccionRutas } from ".";
 import { coleccionUsuarios } from ".";
 import { promptAdd, promptModify } from "./Usuario/prompt_usuario";
-import { promptAddG } from "./Grupo/prompt_grupo";
-import { promptSort } from "./Ruta/prompt_ruta";
+import { promptAddG, promptRemoveG } from "./Grupo/prompt_grupo";
+import { promptRemove, promptSort } from "./Ruta/prompt_ruta";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 
 enum OpcionesMain {
@@ -241,9 +241,12 @@ export class Gestor {
                     break;
                 case OpcionesGrupo.Crear:
                     promptAddG();
+                    coleccionGrupos._listaElementos[coleccionGrupos._listaElementos.length - 1].participantes.push(this.usuario);
+                    this.menuGrupos();
                     break;
-                case OpcionesGrupo.Borrar:
-                    
+                case OpcionesGrupo.Borrar: // El usuario ubicado en la posicion 0 puede borrar el grupo.
+                    promptRemoveG(this.usuarioId);
+                    this.menuGrupos();
                     break;
                 case OpcionesGrupo.Salir:
                     this.menuUsuario();

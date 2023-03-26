@@ -2317,22 +2317,528 @@ En particular, los setters para _rutas, _tipo y _usuarios recalculan automática
 El codigo de esta clase es:
 
 ```ts
+import { Coleccion } from "../coleccion";
+import { Reto } from "./retos";
 
+/**
+ * Clase que representa a una colección de retos.
+ */
+export class ColeccionRetos implements Coleccion<Reto> {
+  _listaElementos: Reto[];
+
+  /**
+   * Constructor de clase.
+   * @param listaElementos Lista de elementos de la colección.
+   */
+  constructor(listaElementos: Reto[]) {
+    this._listaElementos = listaElementos;
+  }
+
+  /**
+   * Añade un nuevo elemento a la colección.
+   * @param item Elemento a añadir.
+   */
+  add(item: Reto): void {
+    this._listaElementos.push(item);
+  }
+
+  /**
+   * Elimina un elemento de la colección.
+   * @param index índice del elemento a eliminar.
+   */
+  remove(index: number): void {
+    this._listaElementos.splice(index, 1);
+  }
+
+  /**
+   * Modifica un elemento de la colección.
+   * @param index índice del elemento a modificar.
+   * @param item Elemento con nuevas características.
+   */
+  modify(index: number, item: Reto): void {
+    this._listaElementos[index] = item;
+  }
+
+  /**
+   * Ordena los elementos de la colección según su nombre.
+   * @param orden Orden ascendente o descendente.
+   */
+  buscarNombre(orden: "asc" | "desc") {
+    this._listaElementos.sort((a, b) => a.nombre.localeCompare(b.nombre));
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
+  }
+
+  /**
+   * Ordena los elementos de la colección según la cantidad de kilómetros totales.
+   * @param orden Orden ascendente o descendente.
+   */
+  buscarKilometros(orden: "asc" | "desc") {
+    this._listaElementos.sort((a, b) => a.kilometros - b.kilometros);
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
+  }
+
+  /**
+   * Ordena los elementos de la colección según la cantidad de usuarios.
+   * @param orden Orden ascendente o descendente.
+   */
+  buscarCantidadUsuarios(orden: "asc" | "desc") {
+    this._listaElementos.sort((a, b) => a.usuarios.length - b.usuarios.length);
+    if (orden == "desc") {
+      this._listaElementos.reverse();
+    }
+  }
+}
 ```
+
+Este código define una clase llamada "ColeccionRetos" que implementa la interfaz "Coleccion". La clase tiene una propiedad "_listaElementos" que almacena una lista de elementos de tipo "Reto". Además, la clase tiene cuatro métodos que permiten añadir, eliminar, modificar y ordenar elementos de la lista de retos según su nombre, la cantidad de kilómetros totales o la cantidad de usuarios. La clase es genérica, lo que significa que puede trabajar con cualquier tipo de elemento que implemente la interfaz "Reto".
 
 ### Clase JsonColeccionRetos
 El codigo de esta clase es:
 
 ```ts
+import { ColeccionRetos } from "./coleccion_retos";
+import { Ruta } from "../Ruta/rutas";
+import { Usuario } from "../Usuario/usuario";
+import * as lowdb from "lowdb";
+import * as FileSync from "lowdb/adapters/FileSync";
+import { Reto } from "./retos";
 
+type SchemaType = {
+    reto: { _id: number,
+            _nombre: string,
+            _rutas: Ruta[],
+            _tipo: "bicicleta" | "correr",
+            _kilometros: number,
+            _usuarios: Usuario[] }[]
+}
+
+export class JsonColeccionRetos extends ColeccionRetos {
+    private database: lowdb.LowdbSync<SchemaType>;
+
+    constructor(listaRetos: Reto[]) {
+        super([]);
+        this.database = lowdb(new FileSync("./Retos.json"));
+        if(this.database.has("reto").value()) {
+            const dbItems = this.database.get("reto").value();
+            dbItems.forEach(item => this._listaElementos.push(new Reto(item._id, item._nombre, item._rutas, 
+                item._tipo, item._usuarios)));
+        } else {
+            this.database.set("reto", listaRetos).write();
+            listaRetos.forEach(item => this._listaElementos.push(item));
+        }
+    }
+
+    addReto(reto: Reto) {
+        super.add(reto);
+        this.storeRetos();
+    }
+
+    removeReto(index: number) {
+        super.remove(index);
+        this.storeRetos();
+    }
+
+    modifyReto(index: number, item: Reto) {
+        super.modify(index, item);
+        this.storeRetos();
+    }
+
+    buscarReto(atributo: string, orden: "asc" | "desc") {
+        switch (atributo) {
+            case "nombre":
+                super.buscarNombre(orden);
+                break;
+            case "cantidad":
+                super.buscarCantidadUsuarios(orden);
+                break;
+            case "kilometros":
+                super.buscarKilometros(orden);
+                break;
+            default:
+                break;
+        }
+        this.storeRetos();
+        this.showReto();
+    }
+
+    showReto() {
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, 
+            item.tipo, item.kilometros));
+    }
+
+    private storeRetos() {
+        this.database.set("reto", [...this._listaElementos.values()]).write();
+    }
+} 
 ```
 
-### Fichero 
+El código define una clase JsonColeccionRetos que extiende la clase ColeccionRetos. La clase JsonColeccionRetos tiene un constructor que recibe una lista de retos y crea una instancia de la base de datos lowdb utilizando el adaptador FileSync para almacenar la información de los retos en un archivo Retos.json.
+
+El constructor también verifica si hay algún reto almacenado en la base de datos y, si existe, los agrega a la lista de elementos de la colección. Si no hay retos almacenados en la base de datos, los retos se agregan a la base de datos y a la lista de elementos de la colección.
+
+La clase JsonColeccionRetos también tiene métodos para agregar, eliminar y modificar retos. Estos métodos heredan las funciones correspondientes de la clase ColeccionRetos y también llaman a storeRetos() para actualizar los cambios en la base de datos.
+
+La clase JsonColeccionRetos también tiene un método buscarReto que ordena los elementos de la colección según el atributo especificado (nombre, cantidad o kilometros) en orden ascendente o descendente y llama a storeRetos() y showReto() para actualizar los cambios y mostrar la información del reto.
+
+El método showReto simplemente recorre la lista de elementos de la colección y muestra información específica de cada reto (su id, nombre, tipo y kilómetros). El método storeRetos se encarga de almacenar la lista de elementos de la colección en la base de datos utilizando el método write() de lowdb.
+
+### Fichero prompt_reto
+El codigo de esta clase es:
+
+```ts
+import { Usuario } from "../Usuario/usuario";
+import { Grupo } from "../Grupo/grupos";
+import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento";
+import { Ruta } from "../Ruta/rutas";
+import { Reto } from "../Reto/retos";
+import { HistorialRutas } from "../Usuario/usuario";
+import { mainPrompt } from "../main";
+import {
+  coleccionGrupos,
+  coleccionRetos,
+  coleccionRutas,
+  coleccionUsuarios,
+} from "..";
+import * as inquirer from "inquirer";
+
+enum Comandos {
+  Añadir = "Añadir Reto",
+  Eliminar = "Eliminar Reto",
+  Modificar = "Modificar Reto",
+  Ordenar = "Ordenar lista",
+  Salir = "Salir al menú principal",
+}
+
+export async function promptAdd() {
+  console.clear();
+  coleccionRetos.showReto();
+  const datos = await inquirer.prompt([
+    {
+      type: "input",
+      name: "addId",
+      message: "Inserte ID: ",
+    },
+    {
+      type: "input",
+      name: "addNombre",
+      message: "Inserte nombre: ",
+    },
+    {
+      type: "input",
+      name: "addRuta",
+      message: "Inserte ruta: ",
+    },
+    {
+      type: "input",
+      name: "addTipo",
+      message: "Inserte tipo de actividad: ",
+    },
+    {
+      type: "input",
+      name: "addKilometros",
+      message: "Inserte longitud del reto: ",
+    },
+    {
+      type: "input",
+      name: "addUsuarios",
+      message: "Inserte usuarios del reto: ",
+    },
+  ]);
+
+  const id: number = datos["addId"];
+  const nombre: string = datos["addNombre"];
+  const actividad: string = datos["addTipo"];
+
+  //Añadir Ruta
+  const rutas: Ruta[] = [];
+  const id_rutas: number[] = datos["addRuta"].split(",").map(Number);
+  id_rutas.forEach((id) =>
+    coleccionRutas._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        rutas.push(item);
+      }
+    })
+  );
+
+  //añadir usuarios
+  const usuarios: Usuario[] = [];
+  const id_usuario: number[] = datos["addUsuarios"].split(",").map(Number);
+  id_usuario.forEach((id) =>
+    coleccionUsuarios._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        usuarios.push(item);
+      }
+    })
+  );
+
+  if (actividad == "bicicleta" || actividad == "correr") {
+    coleccionRetos.addReto(new Reto(id, nombre, rutas, actividad, usuarios));
+    console.log("Reto creado.");
+    promptRetos();
+  } else {
+    console.log("ERROR: Datos no correctos.");
+    promptRetos();
+  }
+}
+
+export async function promptRemove() {
+  console.clear();
+  coleccionRetos.showReto();
+  const dato = await inquirer.prompt({
+    type: "input",
+    name: "addIndex",
+    message: "Inserte el índice del elemento: ",
+  });
+  if (Number(dato["addIndex"]) < coleccionRetos._listaElementos.length) {
+    coleccionRetos.removeReto(Number(dato["addIndex"]));
+    console.log("Reto eliminado.");
+    promptRetos();
+  } else {
+    console.log("ERROR: índice fuera de los límites.");
+    promptRetos();
+  }
+}
+
+export async function promptModify() {
+  console.clear();
+  coleccionRetos.showReto();
+  const datos = await inquirer.prompt([
+    {
+      type: "input",
+      name: "addId",
+      message: "Inserte ID: ",
+    },
+    {
+      type: "input",
+      name: "addNombre",
+      message: "Inserte nombre: ",
+    },
+    {
+      type: "input",
+      name: "addRuta",
+      message: "Inserte ruta: ",
+    },
+    {
+      type: "input",
+      name: "addTipo",
+      message: "Inserte tipo de actividad: ",
+    },
+    {
+      type: "input",
+      name: "addKilometros",
+      message: "Inserte longitud del reto: ",
+    },
+    {
+      type: "input",
+      name: "addUsuarios",
+      message: "Inserte usuarios del reto: ",
+    },
+    {
+      type: "input",
+      name: "addIndice",
+      message: "Inserte el indice del elemento: ",
+    }  
+  ]);
+
+  const id: number = datos["addId"];
+  const nombre: string = datos["addNombre"];
+  const actividad: string = datos["addTipo"];
+
+  //Añadir Ruta
+  const rutas: Ruta[] = [];
+  const id_rutas: number[] = datos["addRuta"].split(",").map(Number);
+  id_rutas.forEach((id) =>
+    coleccionRutas._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        rutas.push(item);
+      }
+    })
+  );
+
+  //añadir usuarios
+  const usuarios: Usuario[] = [];
+  const id_usuario: number[] = datos["addUsuarios"].split(",").map(Number);
+  id_usuario.forEach((id) =>
+    coleccionUsuarios._listaElementos.forEach((item) => {
+      if (item.id == id) {
+        usuarios.push(item);
+      }
+    })
+  );
+
+  if (
+    (actividad == "bicicleta" || actividad == "correr") &&
+    Number(datos["addIndice"]) < coleccionUsuarios._listaElementos.length
+  ) {
+    coleccionRetos.modifyReto(Number(datos["addIndice"]), new Reto(id, nombre, rutas, actividad, usuarios));
+    console.log("Reto creado.");
+    promptRetos();
+  } else {
+    if (actividad != "bicicleta" && actividad != "correr") {
+      console.log("ERROR: Tipo de actividad no válido.");
+    } else {
+      console.log("ERROR: Índice fuera de la colección.");
+    }
+    promptRetos();
+  }
+}
+
+export async function promptSort() {
+  console.clear();
+  coleccionRetos.showReto();
+  const datos = await inquirer.prompt([
+    {
+      type: "input",
+      name: "addFactor",
+      message:
+        "Inserte el factor de búsqueda (nombre o kilometros o usuarios): ",
+    },
+    {
+      type: "input",
+      name: "addOrden",
+      message: "Inserte el orden de búsqueda (asc o desc): ",
+    },
+  ]);
+  if (
+    (datos["addFactor"] == "nombre" ||
+      datos["addFactor"] == "kilometros" ||
+      datos["addFactor"] == "usuarios") &&
+    (datos["addOrden"] == "asc" || datos["addOrden"] == "desc")
+  ) {
+    coleccionRetos.buscarReto(datos["addFactor"], datos["addOrden"]);
+    promptRetos();
+  } else {
+    console.log("ERROR: Parámetros no válidos.");
+    promptRetos();
+  }
+}
+
+export function promptRetos(): void {
+  console.clear();
+  coleccionRetos.showReto();
+  inquirer
+    .prompt({
+      type: "list",
+      name: "command",
+      message: "¿Qué deseas hacer?: ",
+      choices: Object.values(Comandos),
+    })
+    .then((answers) => {
+      switch (answers["command"]) {
+        case Comandos.Añadir:
+          promptAdd();
+          break;
+        case Comandos.Eliminar:
+          promptRemove();
+          break;
+        case Comandos.Modificar:
+          promptModify();
+          break;
+        case Comandos.Ordenar:
+          promptSort();
+          break;
+        case Comandos.Salir:
+          mainPrompt();
+          break;
+      }
+    });
+}
+```
+
+Este código es un programa de línea de comandos para la gestión de retos de actividad física. Se importan varios módulos y clases necesarios para el programa, como Usuario, Grupo, EstadisticasEntrenamiento, Ruta, Reto, HistorialRutas, y mainPrompt. El programa también utiliza la librería inquirer para interactuar con el usuario mediante la consola.
+
+El programa define un enum llamado Comandos con cuatro opciones: Añadir, Eliminar, Modificar y Ordenar lista. También define tres funciones asincrónicas para cada uno de estos comandos: promptAdd, promptRemove y promptModify.
+
+La función promptAdd permite al usuario agregar un nuevo reto a la lista de retos existentes. Pide al usuario que ingrese un ID, un nombre, una ruta, un tipo de actividad, la longitud del reto y los usuarios asociados al reto. Luego, crea un objeto Reto con los datos proporcionados y lo agrega a la lista de retos.
+
+La función promptRemove permite al usuario eliminar un reto existente de la lista. Pide al usuario que ingrese el índice del reto que desea eliminar y luego lo elimina de la lista.
+
+La función promptModify permite al usuario modificar un reto existente en la lista. Pide al usuario que ingrese el ID, nombre, ruta, tipo de actividad, longitud del reto, usuarios asociados y el índice del elemento que desea modificar. Luego, actualiza los datos del reto correspondiente a ese índice con los nuevos datos proporcionados por el usuario.
+
+### Interfaz coleccion 
+El codigo de esta clase es:
+
+```ts
+export interface Coleccion<T> {
+  _listaElementos: T[];
+  add(item: T): void;
+  remove(index: number): void;
+  modify(index: number, item: T): void;
+}
+```
+
+Este código define una interfaz llamada Coleccion que tiene tres métodos y una propiedad. La propiedad _listaElementos es un arreglo de elementos de tipo T.
+
+Los tres métodos definidos en la interfaz son:
+
+add(item: T): void; : Este método toma un parámetro de tipo T y lo agrega a la propiedad _listaElementos.
+remove(index: number): void;: Este método toma un parámetro de tipo number que representa el índice del elemento que se debe eliminar de la propiedad _listaElementos.
+modify(index: number, item: T): void;: Este método toma dos parámetros: un parámetro de tipo number que representa el índice del elemento que se debe modificar y un parámetro de tipo T que representa el nuevo valor para el elemento en la posición dada.
+
+### Clase Gestor
 El codigo de esta clase es:
 
 ```ts
 
 ```
+
+### Fichero main
+El codigo de esta clase es:
+
+```ts
+import { promptUsuario } from "./Usuario/prompt_usuario";
+import { promptRutas } from "./Ruta/prompt_ruta";
+import { promptRetos } from "./Reto/prompt_reto";
+import { promptGrupo } from "./Grupo/prompt_grupo";
+import { Gestor } from "./gestor";
+import * as inquirer from "inquirer";
+
+enum Opciones {
+    Usuario = "Editar usuarios",
+    Ruta = "Editar rutas",
+    Reto = "Editar retos",
+    Grupo = "Editar grupos",
+    Salir = "Salir"
+  }
+
+export function mainPrompt() {
+    console.clear();
+    inquirer.prompt({
+        type: "list",
+        name: "command",
+        message: "¿Qué deseas hacer?: ",
+        choices: Object.values(Opciones),
+    }).then((answers) => {
+        switch(answers["command"]) {
+            case Opciones.Usuario:
+                promptUsuario();
+                break;
+            case Opciones.Ruta:
+                promptRutas();
+                break;
+            case Opciones.Reto:
+                promptRetos();
+                break;
+            case Opciones.Grupo:
+                promptGrupo();
+                break;
+            case Opciones.Salir:
+                return;
+        }
+    })
+}
+
+//mainPrompt();
+
+const prueba = new Gestor();
+prueba.mainMenu();
+```
+
+Este código importa varios módulos de diferentes archivos y define una enumeración llamada Opciones. Luego, define una función llamada mainPrompt() que utiliza la biblioteca inquirer para crear un menú que le pregunta al usuario qué desea hacer. Dependiendo de la opción que el usuario seleccione, se llamará a una función diferente para manejar la opción. Por último, crea una instancia de la clase Gestor y llama a su método mainMenu() para iniciar la aplicación. En resumen, este código es la lógica principal de una aplicación que utiliza un menú para permitir al usuario interactuar con diferentes funcionalidades.
 
 ## Conclusión
 

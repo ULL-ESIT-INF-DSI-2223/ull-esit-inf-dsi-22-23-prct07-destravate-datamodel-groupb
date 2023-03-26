@@ -102,7 +102,7 @@ export async function promptAddG() {
   promptGrupo();
 }
 
-export async function promptRemoveG() {
+export async function promptRemoveG(Id = -1) {
     console.clear();
     coleccionGrupos.showGrupo();
     const dato = await inquirer.prompt({
@@ -110,13 +110,19 @@ export async function promptRemoveG() {
       name: "addIndex",
       message: "Inserte el índice del elemento: ",
     });
-    if (Number(dato["addIndex"]) < coleccionGrupos._listaElementos.length) {
+    if (Number(dato["addIndex"]) < coleccionGrupos._listaElementos.length || Id == -1 || 
+    Id == coleccionGrupos._listaElementos[coleccionGrupos._listaElementos.length - 1].participantes[0].id) {
         coleccionGrupos.removeGrupo(Number(dato["addIndex"]));
       console.log("Grupo eliminado.");
       promptGrupo();
     } else {
-      console.log("ERROR: índice fuera de los límites.");
-      promptGrupo();
+      if(Number(dato["addIndex"]) >= coleccionGrupos._listaElementos.length) {
+        console.log("ERROR: índice fuera de los límites.");
+        promptGrupo();
+      } else {
+        console.log("ERROR: usuario no tiene permisos.");
+        promptGrupo();
+      }
     }
   }
 

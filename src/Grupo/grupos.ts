@@ -15,7 +15,7 @@ export type historialRutasGrupal = [string, Usuario[], Ruta][];
 export class Grupo {
   private _id: number;
   private _nombre: string;
-  private _participantes: Usuario[];
+  private _participantes: Usuario[]; // El participante ubicado en la primera posicion es el propietario.
   private _estadisticasGrupal: EstadisticasEntrenamiento;
   private _clasificacion: number[];
   private _rutasFavoritas: Ruta[];
