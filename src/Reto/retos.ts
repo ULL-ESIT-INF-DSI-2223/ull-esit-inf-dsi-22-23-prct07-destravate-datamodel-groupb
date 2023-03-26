@@ -31,7 +31,7 @@ export class Reto {
     this._nombre = nombre;
     this._rutas = rutas;
     this._tipo = tipo;
-    this._rutas.forEach((ruta) => {
+    rutas.forEach((ruta) => {
       this._kilometros += ruta.longitud;
     });
     this._usuarios = usuarios;
