@@ -14,7 +14,7 @@ enum Comandos {
   Salir = "Salir al menú principal",
 }
 
-export async function promptAddG() {
+export async function promptAdd() {
   console.clear();
   coleccionGrupos.showGrupo();
   const datos = await inquirer.prompt([
@@ -102,7 +102,7 @@ export async function promptAddG() {
   promptGrupo();
 }
 
-export async function promptRemoveG(Id = -1) {
+export async function promptRemove() {
     console.clear();
     coleccionGrupos.showGrupo();
     const dato = await inquirer.prompt({
@@ -110,8 +110,7 @@ export async function promptRemoveG(Id = -1) {
       name: "addIndex",
       message: "Inserte el índice del elemento: ",
     });
-    if (Number(dato["addIndex"]) < coleccionGrupos._listaElementos.length || Id == -1 || 
-    Id == coleccionGrupos._listaElementos[coleccionGrupos._listaElementos.length - 1].participantes[0].id) {
+    if (Number(dato["addIndex"]) < coleccionGrupos._listaElementos.length) {
         coleccionGrupos.removeGrupo(Number(dato["addIndex"]));
       console.log("Grupo eliminado.");
       promptGrupo();
@@ -119,14 +118,11 @@ export async function promptRemoveG(Id = -1) {
       if(Number(dato["addIndex"]) >= coleccionGrupos._listaElementos.length) {
         console.log("ERROR: índice fuera de los límites.");
         promptGrupo();
-      } else {
-        console.log("ERROR: usuario no tiene permisos.");
-        promptGrupo();
       }
     }
   }
 
-export async function promptModifyG() {
+export async function promptModify() {
     console.clear();
     coleccionGrupos.showGrupo();
     const datos = await inquirer.prompt([
@@ -224,7 +220,7 @@ export async function promptModifyG() {
     }
 }
 
-export async function promptSortG() {
+export async function promptSort() {
   console.clear();
   coleccionGrupos.showGrupo();
   const datos = await inquirer.prompt([
@@ -276,16 +272,16 @@ export function promptGrupo(): void {
     .then((answers) => {
       switch (answers["command"]) {
         case Comandos.Añadir:
-          promptAddG();
+          promptAdd();
           break;
         case Comandos.Eliminar:
-          promptRemoveG();
+          promptRemove();
           break;
         case Comandos.Modificar:
-          promptModifyG();
+          promptModify();
           break;
         case Comandos.Ordenar:
-          promptSortG();
+          promptSort();
           break;
         case Comandos.Salir:
           mainPrompt();
