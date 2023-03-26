@@ -31,9 +31,13 @@ export class Reto {
     this._nombre = nombre;
     this._rutas = rutas;
     this._tipo = tipo;
-    rutas.forEach((ruta) => {
-      this._kilometros += ruta.longitud;
-    });
+    if(this._rutas != undefined) {
+      this._rutas.forEach((ruta) => {
+        this._kilometros += ruta.longitud;
+      });
+    } else {
+      this._kilometros = 0;
+    }
     this._usuarios = usuarios;
   }
 

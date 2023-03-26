@@ -48,7 +48,7 @@ export class Usuario {
     this._rutasFavoritas = rutas;
     this._retosActivos = retos;
     this._historialRutas = historialRutas;
-    id < 0 ? (this._id = id) : (this._id = this.getRandomArbitrary(0, 50));
+    id > 0 ? (this._id = id) : (this._id = this.getRandomArbitrary(0, 50));
   }
   /**
    * metodo para generar un id
