@@ -341,7 +341,7 @@ export const reto_2 = new Reto(
   []
 );
 &nbsp;
-export const userUno = new Usuario(
+export const user1 = new Usuario(
   "Mortadelo",
   "bicicleta",
   [],
@@ -352,10 +352,10 @@ export const userUno = new Usuario(
   32,
   [],
 );
-export const userDos = new Usuario(
+export const user2 = new Usuario(
   "Filemon",
   "correr",
-  [userUno],
+  [user1],
   [],
   estadistica_2,
   [ruta_2],
@@ -367,21 +367,21 @@ export const userDos = new Usuario(
 export const grupo_1 = new Grupo(
   1,
   "acrobacias",
-  [userDos, userUno],
+  [user2, user1],
   estadistica_2,
   [],
   [ruta_1],
-  [["23-03-2023", [userUno, userDos], ruta_1]]
+  [["23-03-2023", [user1, user2], ruta_1]]
 );
 &nbsp;
 export const grupo_2 = new Grupo(
   1,
   "suerte por la orejas",
-  [userUno],
+  [user1],
   estadistica_1,
   [],
   [ruta_1, ruta_2],
-  [["23-03-1999", [userUno], ruta_2]]
+  [["23-03-1999", [user1], ruta_2]]
 );
 &nbsp;
 export  const reto = new Reto(152, "Reto de prueba", [ruta_1, ruta_2], "correr", []);
@@ -401,15 +401,15 @@ export const ruta = new Ruta(
 &nbsp;
 // console.log(grupo.nombre)
 &nbsp;
-// console.log(userUno.grupos)
-// console.log(userUno.addGrupo([25,26]))
-// console.log(userUno.grupos)
-// console.log(userUno.addGrupo([25,26]))
-// console.log(userUno.grupos)
-// console.log(userUno.deleteGrupo([25,26]))
-// console.log(userUno.grupos)
-// console.log(userUno.deleteGrupo([25,26]))
-// console.log(userUno.grupos)
+// console.log(user1.grupos)
+// console.log(user1.addGrupo([25,26]))
+// console.log(user1.grupos)
+// console.log(user1.addGrupo([25,26]))
+// console.log(user1.grupos)
+// console.log(user1.deleteGrupo([25,26]))
+// console.log(user1.grupos)
+// console.log(user1.deleteGrupo([25,26]))
+// console.log(user1.grupos)
 &nbsp;</pre></td></tr></table></pre>
 
       <div class="push"></div>

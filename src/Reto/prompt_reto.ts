@@ -4,6 +4,7 @@ import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento
 import { Ruta } from "../Ruta/rutas";
 import { Reto } from "../Reto/retos";
 import { HistorialRutas } from "../Usuario/usuario";
+import { mainPrompt } from "../main";
 import {
   coleccionGrupos,
   coleccionRetos,
@@ -250,7 +251,7 @@ export function promptRetos(): void {
           promptSort();
           break;
         case Comandos.Salir:
-          // Vuelve al prompt de inicio
+          mainPrompt();
           break;
       }
     });

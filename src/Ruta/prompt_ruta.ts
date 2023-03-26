@@ -2,6 +2,7 @@ import { Ruta } from "./rutas";
 import { Usuario } from "../Usuario/usuario";
 import { Coordenadas } from "./coordenadas";
 import { ColeccionRutas } from "./coleccion_rutas";
+import { mainPrompt } from "../main";
 import { coleccionGrupos, coleccionRetos, coleccionRutas, coleccionUsuarios } from "..";
 import * as inquirer from "inquirer";
 
@@ -241,7 +242,7 @@ export function promptRutas(): void {
                 promptSort();
                 break;
             case Comandos.Salir:
-                // Vuelve al prompt de inicio
+                mainPrompt();
                 break;
         }
     });

@@ -23,6 +23,11 @@ export const estadistica_2 = new EstadisticasEntrenamiento(
   [50, 60],
   [90, 100]
 );
+export const estadistica_3 = new EstadisticasEntrenamiento(
+  [200, 300],
+  [500, 600],
+  [900, 1000]
+);
 
 export const ruta_1 = new Ruta(
   1,
@@ -145,7 +150,7 @@ export const reto_1 = new Reto(
 export const reto_2 = new Reto(152, "Reto del malagueño", [ruta_1], "correr", []);
 export const reto_3 = new Reto(152, "Reto del guanche", [ruta_1], "correr", []);
 
-export const userUno = new Usuario(
+export const user1 = new Usuario(
   "Mortadelo",
   "bicicleta",
   [],
@@ -156,10 +161,46 @@ export const userUno = new Usuario(
   [],
   32
 );
-export const userDos = new Usuario(
+export const user2 = new Usuario(
   "Filemon",
   "correr",
-  [userUno],
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_9],
+  [reto_2],
+  [],
+  30
+);
+
+export const user3 = new Usuario(
+  "Ancor",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2, ruta_7],
+  [reto_2, reto_3],
+  [],
+  30
+);
+
+export const user4 = new Usuario(
+  "Juan Carlos",
+  "correr",
+  [user3],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user5 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
   [],
   estadistica_2,
   [ruta_2],
@@ -168,24 +209,194 @@ export const userDos = new Usuario(
   30
 );
 
+export const user6 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user7 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user8 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user9 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user10 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user11 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user13 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user14 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user15 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user16 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user17 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user18 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user19 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_3,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+export const user20 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_1,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
+
+
 export const grupo_1 = new Grupo(
   1,
   "acrobacias",
-  [userDos, userUno],
+  [user2, user1],
   estadistica_2,
   [],
   [ruta_1],
-  [["23-03-2023", [userUno, userDos], ruta_1]]
+  [["23-03-2023", [user1, user2], ruta_1]]
 );
 
 export const grupo_2 = new Grupo(
   1,
   "suerte por la orejas",
-  [userUno],
+  [user1],
   estadistica_1,
   [],
   [ruta_1, ruta_2],
-  [["23-03-1999", [userUno], ruta_2]]
+  [["23-03-1999", [user1], ruta_2]]
 );
 
 export const reto = new Reto(
@@ -208,12 +419,7 @@ export const ruta = new Ruta(
   4.5
 );
 
-export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
+export const coleccionUsuarios = new JsonColeccionUsuarios([user1, user2]);
 export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
 export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
 export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2, reto_3]);
-
-// promptUsuario()
-// promptRetos();
-// promptRutas()
-promptGrupo()

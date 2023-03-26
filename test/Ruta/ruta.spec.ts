@@ -1,7 +1,7 @@
 import "mocha";
 import { expect } from "chai";
 import { Coordenadas } from "../../src/Ruta/coordenadas";
-import { ruta, userUno } from "../../src/index";
+import { ruta, user1 } from "../../src/index";
 
 describe("Clase Ruta", () => {
   it("Cambiar Id de ruta", () => {
@@ -73,10 +73,10 @@ describe("Clase Ruta", () => {
   });
 
   it("Cambio Lista de usuarios", () => {
-    ruta.usuarios = [userUno];
+    ruta.usuarios = [user1];
   });
   it("Lista de usuarios", () => {
-    expect(ruta.usuarios).to.deep.equal([userUno]);
+    expect(ruta.usuarios).to.deep.equal([user1]);
   });
   it("Lista de usuarios mal", () => {
     expect(ruta.usuarios).to.not.deep.equal([]);

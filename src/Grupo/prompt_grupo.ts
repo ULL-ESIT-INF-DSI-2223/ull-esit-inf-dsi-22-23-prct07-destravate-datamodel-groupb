@@ -2,6 +2,7 @@ import { Grupo, historialRutasGrupal } from "./grupos";
 import { Ruta } from "../Ruta/rutas";
 import { Usuario } from "../Usuario/usuario";
 import { EstadisticasEntrenamiento } from "../Usuario/estadisticas_entrenamiento";
+import { mainPrompt } from "../main";
 import { coleccionRetos, coleccionRutas, coleccionGrupos, coleccionUsuarios } from "..";
 import * as inquirer from "inquirer";
 
@@ -280,7 +281,7 @@ export function promptGrupo(): void {
           promptSort();
           break;
         case Comandos.Salir:
-          // Vuelve al prompt de inicio
+          mainPrompt();
           break;
       }
     });
