@@ -64,12 +64,12 @@ export async function promptAdd() {
         message: "Inserte la calificacion media: ",
     }]);
 
-    const id: number = Number(datos["addId"]);
+    const id = Number(datos["addId"]);
     const nombre: string = datos["addNombre"];
     const geolocI: Coordenadas = datos["addGeolocInicio"].split(',').map(Number);
     const geolocF: Coordenadas = datos["addGeolocFin"].split(',').map(Number);
-    const longitud: number = Number(datos["addLongitud"]);
-    const desnivel: number = Number(datos["addDesnivel"]);
+    const longitud = Number(datos["addLongitud"]);
+    const desnivel = Number(datos["addDesnivel"]);
     // Añadir usuarios
     const usuarios: Usuario[] = [];
     const id_usuarios: number[] = datos["addUsuarios"].split(',').map(Number);
@@ -79,7 +79,7 @@ export async function promptAdd() {
         }
     }));
     const actividad: string = datos["addActividad"];
-    const calificacion: number = Number(datos["addCalificacion"]);
+    const calificacion = Number(datos["addCalificacion"]);
 
     if(actividad == "bicicleta" || actividad == "correr") {
         coleccionRutas.addRuta(new Ruta(id, nombre, geolocI, geolocF, longitud, desnivel, usuarios, actividad, calificacion));
@@ -164,12 +164,12 @@ export async function promptModify() {
         message: "Inserte el indice del elemento: ",
     }]);
 
-    const id: number = Number(datos["addId"]);
+    const id = Number(datos["addId"]);
     const nombre: string = datos["addNombre"];
     const geolocI: Coordenadas = datos["addGeolocInicio"].split(',').map(Number);
     const geolocF: Coordenadas = datos["addGeolocFin"].split(',').map(Number);
-    const longitud: number = Number(datos["addLongitud"]);
-    const desnivel: number = Number(datos["addDesnivel"]);
+    const longitud = Number(datos["addLongitud"]);
+    const desnivel = Number(datos["addDesnivel"]);
     // Añadir usuarios
     const usuarios: Usuario[] = [];
     const id_usuarios: number[] = datos["addUsuarios"].split(',').map(Number);
@@ -179,7 +179,7 @@ export async function promptModify() {
         }
     }));
     const actividad: string = datos["addActividad"];
-    const calificacion: number = Number(datos["addCalificacion"]);
+    const calificacion = Number(datos["addCalificacion"]);
 
     if((actividad == "bicicleta" || actividad == "correr") && (Number(datos["addIndice"]) < coleccionRutas._listaElementos.length)) {
         coleccionRutas.modifyRuta(Number(datos["addIndice"]), new Ruta(id, nombre, geolocI, geolocF, longitud, desnivel, usuarios, actividad, calificacion));

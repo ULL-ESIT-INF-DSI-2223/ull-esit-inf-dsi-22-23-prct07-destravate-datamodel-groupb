@@ -103,7 +103,7 @@ export class Gestor {
      */
     menuRegistro() {
         console.clear();
-        promptAdd()
+        promptAdd();
         coleccionUsuarios._listaElementos.forEach((usuario) => {
             if(usuario.id == this.usuarioId) {
                 this.usuario = usuario;
@@ -159,7 +159,7 @@ export class Gestor {
                     this.menuUsuario();
                     break;
                 case OpcionesGestor.Grupos:
-                    
+                    this.menuGrupos();
                     break;
                 case OpcionesGestor.Salir:
                     return;
@@ -220,5 +220,34 @@ export class Gestor {
               break;
           }
         });
-    }  
+    }
+
+    /**
+     * Menú en el que un usuario puede añadir, borrar o ver grupos.
+     */
+    menuGrupos() {
+        console.clear();
+        inquirer.prompt({
+            type: "list",
+            name: "command",
+            message: "Qué deseas hacer?: ",
+            choices: Object.values(OpcionesGrupo),
+        }).then((answers) => {
+            switch (answers["command"]) {
+                case OpcionesGrupo.VerGrupos:
+                    coleccionGrupos.showGrupo();
+                    this.menuGrupos();
+                    break;
+                case OpcionesGrupo.Crear:
+                    
+                    break;
+                case OpcionesGrupo.Borrar:
+                    
+                    break;
+                case OpcionesGrupo.Salir:
+                    this.menuUsuario();
+                    break;
+            }
+        })
+    }
 }

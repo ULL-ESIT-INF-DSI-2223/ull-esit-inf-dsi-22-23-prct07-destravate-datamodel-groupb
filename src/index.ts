@@ -416,7 +416,7 @@ export const grupo_4 = new Grupo(
   estadistica_1,
   [],
   [ruta_1, ruta_2],
-  [["23-03-1999", [user1, user4, user10], ruta_2]]
+  [["23-03-1999", [user1, user4, ], ruta_2]]
 );
 
 export const grupo_5 = new Grupo(
@@ -429,6 +429,25 @@ export const grupo_5 = new Grupo(
   [["23-03-1999", [user1], ruta_2]]
 );
 
+export const reto = new Reto(
+  152,
+  "Reto de prueba",
+  [ruta_1, ruta_2],
+  "correr",
+  []
+);
+
+export const ruta = new Ruta(
+  1,
+  "Ruta de prueba",
+  new Coordenadas(0, 0, 0),
+  new Coordenadas(1, 1, 1),
+  10,
+  100,
+  [],
+  "bicicleta",
+  4.5
+);
 
 export const coleccionUsuarios = new JsonColeccionUsuarios([user1, user2]);
 export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);

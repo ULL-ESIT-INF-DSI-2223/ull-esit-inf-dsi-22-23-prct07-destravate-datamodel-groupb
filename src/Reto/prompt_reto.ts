@@ -10,7 +10,6 @@ import {
   coleccionRetos,
   coleccionRutas,
   coleccionUsuarios,
-  reto,
 } from "..";
 import * as inquirer from "inquirer";
 

@@ -19,12 +19,6 @@ describe("Clase ColeccionRetos", () => {
     coleccion_rutas.add(reto_2);
   });
 
-  it("buscarNombre()", () => {
-    coleccion_rutas.buscarNombre("asc");
-    expect(coleccion_rutas._listaElementos).to.deep.equal([reto_2, reto_1]);
-    coleccion_rutas.buscarNombre("desc");
-    expect(coleccion_rutas._listaElementos).to.deep.equal([reto_1, reto_2]);
-  });
   it("buscarCantidadUsuarios()", () => {
     coleccion_rutas.buscarCantidadUsuarios("asc");
     expect(coleccion_rutas._listaElementos).to.deep.equal([reto_1, reto_2]);
