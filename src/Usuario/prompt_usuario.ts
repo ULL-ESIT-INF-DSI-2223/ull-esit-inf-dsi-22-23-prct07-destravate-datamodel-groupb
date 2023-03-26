@@ -4,7 +4,7 @@ import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 import { Ruta } from "../Ruta/rutas";
 import { Reto } from "../Reto/retos";
 import { HistorialRutas } from "../Usuario/usuario";
-import { coleccionUsuarios } from "..";
+import { coleccionGrupos, coleccionRetos, coleccionRutas, coleccionUsuarios } from "..";
 import * as inquirer from "inquirer";
 
 export enum Comandos {
@@ -57,16 +57,47 @@ export async function promptAdd() {
     {
         type: "input",
         name: "addHistorial",
-        message: "Inserte el historial de rutas: ",
+        message: "Inserte el historial de rutas (fecha): ",
     }]);
 
     const nombre: string = datos["addNombre"];
     const actividad: string = datos["addActividad"];
-    const amigos: Usuario[] = datos["addAmigos"].split(',').map(Number);
-    const grupos: Grupo[] = datos["addGrupos"].split(',').map(Number);
-    const entrenamiento: EstadisticasEntrenamiento = datos["addEstadsiticas"].split(',').map(Number);
-    const rutas: Ruta[] = datos["addRetos"].split(',').map(Number);
-    const retos: Reto[] = datos["addRutas"].split(',').map(Number);
+    // Añadir amigos
+    const amigos: Usuario[] = [];
+    const id_amigos: number[] = datos["addAmigos"].split(',').map(Number);
+    id_amigos.forEach((id) => coleccionUsuarios._listaElementos.forEach(item => {
+        if(item.id == id) {
+            amigos.push(item);
+        }
+    }));
+    // Añadir grupos
+    const grupos: Grupo[] = [];
+    const id_grupos: number[] = datos["addGrupos"].split(',').map(Number);
+    id_grupos.forEach((id) => coleccionGrupos._listaElementos.forEach(item => {
+        if(item.id == id) {
+            grupos.push(item);
+        }
+    }));
+    // Añadir datos entrenamiento
+    const datosE: number[] = datos["addEstadsiticas"].split(',').map(Number);
+    const entrenamiento: EstadisticasEntrenamiento = new EstadisticasEntrenamiento([datosE[0], datosE[1]], [datosE[2], datosE[3]], [datosE[4], datosE[5]]);
+    // Añadir rutas
+    const id_rutas: number[] = datos["addRetos"].split(',').map(Number);
+    const rutas: Ruta[] = [];
+    id_rutas.forEach((id) => coleccionRutas._listaElementos.forEach(item => {
+        if(item.id == id) {
+            rutas.push(item);
+        }
+    }));
+    // Añadir retos
+    const id_retos: number[] = datos["addRutas"].split(',').map(Number);
+    const retos: Reto[] = [];
+    id_retos.forEach((id) => coleccionRetos._listaElementos.forEach(item => {
+        if(item.id == id) {
+            retos.push(item);
+        }
+    }));
+    // Añadir historial
     const historial: HistorialRutas = datos["addHistorial"].split(',');
 
     if(actividad == "bicicleta" || actividad == "correr") {

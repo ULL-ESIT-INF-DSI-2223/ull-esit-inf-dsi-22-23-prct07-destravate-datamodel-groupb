@@ -6,6 +6,9 @@ import { Grupo } from "./Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 import { JsonColeccionUsuarios } from "./Usuario/json_coleccion_usuarios";
 import { promptUsuario } from "./Usuario/prompt_usuario";
+import { JsonColeccionGrupos } from "./Grupo/json_coleccion_grupos";
+import { JsonColeccionRutas } from "./Ruta/json_coleccion_rutas";
+import { JsonColeccionRetos } from "./Reto/json_coleccion_retos";
 
 export const estadistica_1 = new EstadisticasEntrenamiento([2, 4], [5, 9], [10, 20]);
 export const estadistica_2 = new EstadisticasEntrenamiento([20,30],[50,60],[90,100]);
@@ -106,5 +109,6 @@ export const ruta = new Ruta(
 );
 
 export const coleccionUsuarios = new JsonColeccionUsuarios([userUno, userDos]);
-
-promptUsuario();
+export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
+export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
+export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2]);

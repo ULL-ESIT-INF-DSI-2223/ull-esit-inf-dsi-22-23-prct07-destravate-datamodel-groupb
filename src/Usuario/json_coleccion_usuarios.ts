@@ -5,9 +5,9 @@ import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 import { Ruta } from "../Ruta/rutas";
 import { Reto } from "../Reto/retos";
 import * as lowdb from "lowdb";
-import * as FileSync from "lowdb/adapters/FileAsync";
+import * as FileSync from "lowdb/adapters/FileSync";
 
-type SchemaTypeUsuarios = {
+type SchemaType = {
     usuario: { nombre: string, 
                tipoActividad: "bicicleta" | "correr", 
                amigos: Usuario[], 
@@ -20,13 +20,13 @@ type SchemaTypeUsuarios = {
 }
 
 export class JsonColeccionUsuarios extends ColeccionUsuarios {
-    private database: lowdb.LowdbSync<SchemaTypeUsuarios>;
+    private database: lowdb.LowdbSync<SchemaType>;
 
-    constructor(private listaUsuarios: Usuario[]) {
+    constructor(listaUsuarios: Usuario[]) {
         super(listaUsuarios);
         this.database = lowdb(new FileSync("Usuarios.json"));
         if(this.database.has("usuario").value()) {
-            let dbItems = this.database.get("usuario").value();
+            const dbItems = this.database.get("usuario").value();
             dbItems.forEach(item => this._listaElementos.push(new Usuario(item.nombre, item.tipoActividad, 
                 item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutasFavoritas, item.retosActivos, 
                 item.historialRutas, item.id)));
