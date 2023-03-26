@@ -57,7 +57,7 @@ export async function promptAdd() {
     {
         type: "input",
         name: "addHistorial",
-        message: "Inserte el historial de rutas (fecha): ",
+        message: "Inserte el historial de rutas (fecha, id_ruta): ",
     }]);
 
     const nombre: string = datos["addNombre"];
@@ -98,7 +98,15 @@ export async function promptAdd() {
         }
     }));
     // Añadir historial
-    const historial: HistorialRutas = datos["addHistorial"].split(',');
+    const datos_historial = datos["addHistorial"].split(',');
+    const historial: HistorialRutas = [];
+    for(let i = 0; i < datos_historial.length; i += 2){
+        coleccionRutas._listaElementos.forEach(item => {
+            if(item.id == datos_historial[i + 1]) {
+                historial.push([datos_historial[i], item]);
+            }
+        })
+    }
 
     if(actividad == "bicicleta" || actividad == "correr") {
         coleccionUsuarios.addUsario(new Usuario(nombre, actividad, amigos, grupos, entrenamiento, rutas, retos, historial));
@@ -131,8 +139,113 @@ export async function promptRemove() {
 export async function promptModify() {
     console.clear();
     coleccionUsuarios.showUsuario();
-    console.log("Por implementar...")
-    promptUsuario();
+    const datos = await inquirer.prompt([
+        {
+            type: "input",
+            name: "addNombre",
+            message: "Inserte el nombre: ",
+        },
+        {
+            type: "input",
+            name: "addActividad",
+            message: "Inserte el tipo de actividad: ",
+        },
+        {
+            type: "input",
+            name: "addAmigos",
+            message: "Inserte los ids de los amigos: ",
+        },
+        {
+            type: "input",
+            name: "addGrupos",
+            message: "Inserte los ids de los grupos: ",
+        },
+        {
+            type: "input",
+            name: "addEstadisticas",
+            message: "Inserte las estadísticas de entrenamiento: ",
+        },
+        {
+            type: "input",
+            name: "addRutas",
+            message: "Inserte los id de las rutas favoritas: ",
+        },
+        {
+            type: "input",
+            name: "addRetos",
+            message: "Inserte los ids de los retos: ",
+        },
+        {
+            type: "input",
+            name: "addHistorial",
+            message: "Inserte el historial de rutas (fecha, id_ruta): ",
+        },
+        {
+            type: "input",
+            name: "addIndice",
+            message: "Inserte el indice del elemento: ",
+        }]);
+    
+        const nombre: string = datos["addNombre"];
+        const actividad: string = datos["addActividad"];
+        // Añadir amigos
+        const amigos: Usuario[] = [];
+        const id_amigos: number[] = datos["addAmigos"].split(',').map(Number);
+        id_amigos.forEach((id) => coleccionUsuarios._listaElementos.forEach(item => {
+            if(item.id == id) {
+                amigos.push(item);
+            }
+        }));
+        // Añadir grupos
+        const grupos: Grupo[] = [];
+        const id_grupos: number[] = datos["addGrupos"].split(',').map(Number);
+        id_grupos.forEach((id) => coleccionGrupos._listaElementos.forEach(item => {
+            if(item.id == id) {
+                grupos.push(item);
+            }
+        }));
+        // Añadir datos entrenamiento
+        const datosE: number[] = datos["addEstadsiticas"].split(',').map(Number);
+        const entrenamiento: EstadisticasEntrenamiento = new EstadisticasEntrenamiento([datosE[0], datosE[1]], [datosE[2], datosE[3]], [datosE[4], datosE[5]]);
+        // Añadir rutas
+        const id_rutas: number[] = datos["addRetos"].split(',').map(Number);
+        const rutas: Ruta[] = [];
+        id_rutas.forEach((id) => coleccionRutas._listaElementos.forEach(item => {
+            if(item.id == id) {
+                rutas.push(item);
+            }
+        }));
+        // Añadir retos
+        const id_retos: number[] = datos["addRutas"].split(',').map(Number);
+        const retos: Reto[] = [];
+        id_retos.forEach((id) => coleccionRetos._listaElementos.forEach(item => {
+            if(item.id == id) {
+                retos.push(item);
+            }
+        }));
+        // Añadir historial
+        const datos_historial = datos["addHistorial"].split(',');
+        const historial: HistorialRutas = [];
+        for(let i = 0; i < datos_historial.length; i += 2){
+            coleccionRutas._listaElementos.forEach(item => {
+                if(item.id == datos_historial[i + 1]) {
+                    historial.push([datos_historial[i], item]);
+                }
+            })
+        }
+    
+        if((actividad == "bicicleta" || actividad == "correr") && (Number(datos["addIndice"]) < coleccionUsuarios._listaElementos.length)) {
+            coleccionUsuarios.addUsario(new Usuario(nombre, actividad, amigos, grupos, entrenamiento, rutas, retos, historial));
+            console.log("Usuario creado.");
+            promptUsuario()
+        } else {
+            if(actividad != "bicicleta" && actividad != "correr") {
+                console.log("ERROR: Tipo de actividad no válido.");
+            } else {
+                console.log("ERROR: Índice fuera de la colección.")
+            }
+            promptUsuario();
+        }
 }
 
 export async function promptSort() {

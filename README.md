@@ -861,5 +861,3 @@ describe("index test", () => {
 ## Referencias
 
 1. https://programmingwithjon.medium.com/your-first-typescript-project-part-3-8c84a6145d7e
-
-2. https://openai.com/blog/chatgpt
