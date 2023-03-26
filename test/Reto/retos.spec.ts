@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import {reto, ruta_1, ruta_2, userUno}from "../../src/index"
+import { reto, ruta_1, ruta_2, userUno } from "../../src/index";
 
 describe("Clase Reto", () => {
   it("Id del reto", () => {

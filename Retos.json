@@ -44,12 +44,12 @@
         }
       ],
       "_tipo": "correr",
-      "_kilometros": 37,
+      "_kilometros": null,
       "_usuarios": []
     },
     {
       "_id": 152,
-      "_nombre": "Reto de nuevo",
+      "_nombre": "Reto del guanche",
       "_rutas": [
         {
           "_id": 1,
@@ -72,7 +72,7 @@
         }
       ],
       "_tipo": "correr",
-      "_kilometros": 10,
+      "_kilometros": null,
       "_usuarios": []
     }
   ]

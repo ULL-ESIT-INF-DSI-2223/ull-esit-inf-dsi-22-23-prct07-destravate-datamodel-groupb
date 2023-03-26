@@ -7,18 +7,9 @@
       "_amigos": [],
       "_grupos": [],
       "_estadisticasEntrenamiento": {
-        "_estadisticaSemanal": [
-          2,
-          4
-        ],
-        "_estadisticaMensual": [
-          5,
-          9
-        ],
-        "_estadisticaAnual": [
-          10,
-          20
-        ]
+        "_estadisticaSemanal": [2, 4],
+        "_estadisticaMensual": [5, 9],
+        "_estadisticaAnual": [10, 20]
       },
       "_rutasFavoritas": [
         {
@@ -123,18 +114,9 @@
           "_amigos": [],
           "_grupos": [],
           "_estadisticasEntrenamiento": {
-            "_estadisticaSemanal": [
-              2,
-              4
-            ],
-            "_estadisticaMensual": [
-              5,
-              9
-            ],
-            "_estadisticaAnual": [
-              10,
-              20
-            ]
+            "_estadisticaSemanal": [2, 4],
+            "_estadisticaMensual": [5, 9],
+            "_estadisticaAnual": [10, 20]
           },
           "_rutasFavoritas": [
             {
@@ -230,18 +212,9 @@
       ],
       "_grupos": [],
       "_estadisticasEntrenamiento": {
-        "_estadisticaSemanal": [
-          20,
-          30
-        ],
-        "_estadisticaMensual": [
-          50,
-          60
-        ],
-        "_estadisticaAnual": [
-          90,
-          100
-        ]
+        "_estadisticaSemanal": [20, 30],
+        "_estadisticaMensual": [50, 60],
+        "_estadisticaAnual": [90, 100]
       },
       "_rutasFavoritas": [
         {

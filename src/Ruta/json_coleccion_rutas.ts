@@ -76,8 +76,7 @@ export class JsonColeccionRutas extends ColeccionRutas {
 
     showRuta() {
         this._listaElementos.forEach((item) => console.log(item.id, item.nombre, 
-            item.geolocalizacionInicio, item.geolocalizacionFin, item.longitud, item.desnivelMedio, 
-            item.usuarios, item.tipoActividad, item.calificacionMedia));
+            item.longitud, item.desnivelMedio, item.tipoActividad, item.calificacionMedia));
     }
 
     private storeRutas() {

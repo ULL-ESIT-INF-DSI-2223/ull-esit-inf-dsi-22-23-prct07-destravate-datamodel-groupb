@@ -1,6 +1,6 @@
 import "mocha";
 import { expect } from "chai";
-import { grupo_1, userDos, ruta_1, ruta_2 } from "../../src/index"
+import { grupo_1, userDos, ruta_1, ruta_2 } from "../../src/index";
 import { EstadisticasEntrenamiento } from "../../src/Usuario/estadisticas_entrenamiento";
 
 describe("grupo test", () => {
@@ -56,6 +56,8 @@ describe("grupo test", () => {
     grupo_1.historialRutas = [["10-01-2022", [userDos], ruta_2]];
   });
   it("get historial", () => {
-    expect(grupo_1.historialRutas).to.deep.equal([["10-01-2022", [userDos], ruta_2]]);
+    expect(grupo_1.historialRutas).to.deep.equal([
+      ["10-01-2022", [userDos], ruta_2],
+    ]);
   });
 });

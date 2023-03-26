@@ -66,8 +66,7 @@ export class JsonColeccionGrupos extends ColeccionGrupos {
     }
 
     showGrupo() {
-        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.participantes, 
-            item.estadisticasGrupal, item.clasificacion, item.rutasFavoritas, item.historialRutas));
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.clasificacion));
     }
 
     private storeGrupos() {

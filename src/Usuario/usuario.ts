@@ -3,7 +3,7 @@ import { Reto } from "../Reto/retos";
 import { Grupo } from "../Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./estadisticas_entrenamiento";
 
-export type HistorialRutas = [string, Ruta][]
+export type HistorialRutas = [string, Ruta][];
 /**
  * Clase para la creación de usuarios
  */
@@ -60,9 +60,9 @@ export class Usuario {
     return Math.trunc(Math.random() * (max - min) + min);
   }
 
-  /** 
+  /**
    * Devuelve el ID del usuario.
-  */
+   */
   get id(): number {
     return this._id;
   }
@@ -75,8 +75,8 @@ export class Usuario {
     return this._nombre;
   }
 
-  getNombre(): string{
-    return this._nombre
+  getNombre(): string {
+    return this._nombre;
   }
   /**
    * metodo para cambiar el nombre del usuario
@@ -197,16 +197,16 @@ export class Usuario {
     }
   }
 
-  /** 
+  /**
    * Devuelve las estadísticas de entrenamiento.
-  */
+   */
   get estadisticasEntrenamiento(): EstadisticasEntrenamiento {
     return this._estadisticasEntrenamiento;
   }
 
-  /** 
+  /**
    * Establece nuevas estadísticas de entrenamiento.
-  */
+   */
   set estadisticasEntrenamiento(nuevasEstadisticas: EstadisticasEntrenamiento) {
     this._estadisticasEntrenamiento = nuevasEstadisticas;
   }
@@ -307,9 +307,9 @@ export class Usuario {
     }
   }
 
-  /**  
+  /**
    * Devuelve el historial de rutas del usuario.
-  */
+   */
   get historialRutas(): HistorialRutas {
     return this._historialRutas;
   }

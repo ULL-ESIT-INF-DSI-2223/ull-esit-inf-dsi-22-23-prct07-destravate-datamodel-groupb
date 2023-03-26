@@ -64,11 +64,11 @@ export class JsonColeccionRetos extends ColeccionRetos {
     }
 
     showReto() {
-        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.rutas, 
-            item.tipo, item.usuarios));
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, 
+            item.tipo, item.kilometros));
     }
 
     private storeRetos() {
         this.database.set("reto", [...this._listaElementos.values()]).write();
     }
-}
+}// 
