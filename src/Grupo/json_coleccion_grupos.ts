@@ -20,7 +20,7 @@ export class JsonColeccionGrupos extends ColeccionGrupos {
     private database: lowdb.LowdbSync<SchemaType>;
 
     constructor(listaGrupos: Grupo[]) {
-        super(listaGrupos);
+        super([]);
         this.database = lowdb(new FileSync("./Grupos.json"));
         if(this.database.has("grupo").value()) {
             const dbItems = this.database.get("grupo").value();

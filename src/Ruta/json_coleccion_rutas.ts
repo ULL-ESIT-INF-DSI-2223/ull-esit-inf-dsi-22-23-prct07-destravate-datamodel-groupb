@@ -22,7 +22,7 @@ export class JsonColeccionRutas extends ColeccionRutas {
     private database: lowdb.LowdbSync<SchemaType>;
 
     constructor(listaRutas: Ruta[]) {
-        super(listaRutas);
+        super([]);
         this.database = lowdb(new FileSync("./Rutas.json"));
         if(this.database.has("ruta").value()) {
             const dbItems = this.database.get("ruta").value();
