@@ -12,6 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.3.3",
+    "lowdb": "^1.0.0",
+    "prompt-sync": "^4.2.0"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/inquirer": "^7.3.3",
@@ -30,10 +35,5 @@
     "tsc-watch": "^6.0.0",
     "typedoc": "^0.23.28",
     "typescript": "^5.0.2"
-  },
-  "dependencies": {
-    "inquirer": "^7.3.3",
-    "lowdb": "^1.0.0",
-    "prompt-sync": "^4.2.0"
   }
 }
