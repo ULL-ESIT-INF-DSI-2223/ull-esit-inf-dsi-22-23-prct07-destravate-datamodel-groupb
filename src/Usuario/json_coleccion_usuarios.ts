@@ -7,8 +7,9 @@ import { Reto } from "../Reto/retos";
 import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileAsync";
 
-type SchemaType = {
-    usuario: { id: number, nombre: string, 
+type SchemaTypeUsuarios = {
+    usuario: { id: number, 
+               nombre: string, 
                tipoActividad: "bicicleta" | "correr", 
                amigos: Usuario[], 
                grupos: Grupo[],
@@ -19,5 +20,58 @@ type SchemaType = {
 }
 
 export class JsonColeccionUsuarios extends ColeccionUsuarios {
-    private database: lowdb.LowdbSync<SchemaType>;
+    private database: lowdb.LowdbSync<SchemaTypeUsuarios>;
+
+    constructor(private listaUsuarios: Usuario[]) {
+        super(listaUsuarios);
+        this.database = lowdb(new FileSync("Usuarios.json"));
+        if(this.database.has("usuario").value()) {
+            let dbItems = this.database.get("usuario").value();
+            dbItems.forEach(item => this._listaElementos.push(new Usuario(item.nombre, item.tipoActividad, 
+                item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutasFavoritas, item.retosActivos, 
+                item.id, item.historialRutas)));
+        } else {
+            this.database.set("usuario", listaUsuarios).write();
+            listaUsuarios.forEach(item => this._listaElementos.push(item));
+        }
+    }
+
+    addUsario(usuario: Usuario) {
+        super.add(usuario);
+        this.storeUsuarios();
+    }
+
+    removeUsuario(index: number) {
+        super.remove(index);
+        this.storeUsuarios();
+    }
+
+    modifyUsuario(index: number, item: Usuario) {
+        super.modify(index, item);
+        this.storeUsuarios();
+    }
+
+    buscarUsuario(atributo: string, orden: "asc" | "desc", factor: "sem" | "mes" | "año") {
+        switch (atributo) {
+            case "nombre":
+                super.buscarNombre(orden);
+                break;
+            case "kilometros":
+                super.buscarKilometros(orden, factor)
+                break;
+            default:
+                break;
+        }
+        this.storeUsuarios();
+        this.showUsuario();
+    }
+
+    showUsuario() {
+        this._listaElementos.forEach((item) => console.log(item.id, item.nombre, item.tipoActividad, 
+            item.amigos, item.grupos, item.estadisticasEntrenamiento, item.rutas, item.retos, item.historialRutas));
+    }
+
+    private storeUsuarios() {
+        this.database.set("usuario", [...this._listaElementos.values()]).write();
+    }
 }

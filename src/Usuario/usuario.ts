@@ -60,6 +60,13 @@ export class Usuario {
     return Math.random() * (max - min) + min;
   }
 
+  /** 
+   * Devuelve el ID del usuario.
+  */
+  get id(): number {
+    return this._id;
+  }
+
   /**
    * getter para obteenr el nombre del usuario
    * @returns nombre del usuario
