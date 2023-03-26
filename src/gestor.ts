@@ -79,10 +79,11 @@ export class Gestor {
 
     /**
      * Menú de inicio de sesión.
+     * Desde aquí un usuario puede iniciar sesión.
      */
-    menuInicio() {
+    async menuInicio() {
         console.clear();
-        inquirer.prompt({
+        await inquirer.prompt({
             type: "input",
             name: "addId",
             message: "Introduzca su ID: ",
@@ -91,18 +92,19 @@ export class Gestor {
                 if(usuario.id == Number(answer["addId"])) {
                     this.usuarioId = Number(answer["addId"]);
                     this.usuario = usuario;
-                    this.menuUsuario()
+                    this.menuUsuario();
                 }
             });
         });
         console.log("Usuario no encontrado...");
+
         this.menuInicio();
     }
 
     /**
      * Menu de registro de usuario.
      */
-    menuRegistro() {
+    async menuRegistro() {
         console.clear();
         promptAdd();
         coleccionUsuarios._listaElementos.forEach((usuario) => {
@@ -117,21 +119,21 @@ export class Gestor {
      * Menu del usuario.
      * Llega aquí al iniciar sesión satisfactoriamente o registrarse.
      */
-    menuUsuario() {
+    async menuUsuario() {
         console.clear();
         inquirer.prompt({
             type: "list",
             name: "command",
             message: "Hola, ¿qué deseas hacer?: ",
             choices: Object.values(OpcionesGestor),
-        }).then((answers) => {
+        }).then(async (answers) => {
             switch(answers["command"]) {
                 case OpcionesGestor.Perfil:
                     this.menuPerfil()
                     break;
                 case OpcionesGestor.VerRutas: // Ver las rutas existentes en el sistema
                     coleccionRutas.showRuta();
-                    inquirer.prompt({
+                    await inquirer.prompt({
                         type: "list",
                         name: "command",
                         message: "Presione una tecla para continuar: ",
@@ -152,7 +154,7 @@ export class Gestor {
                         })
                     });
                     console.log("ERROR: Grupo no encontrado.")
-                    inquirer.prompt({
+                    await inquirer.prompt({
                         type: "list",
                         name: "command",
                         message: "Presione una tecla para continuar: ",
@@ -171,7 +173,7 @@ export class Gestor {
     /**
      * Menú donde se puede ver usuarios, añadir o elimiar amigos.
      */
-    menuPerfil(){
+    async menuPerfil(){
         console.clear()
         inquirer
         .prompt({
@@ -180,12 +182,12 @@ export class Gestor {
           message: "¿Qué deseas hacer?: ",
           choices: Object.values(OpcionesUsuario),
         })
-        .then((answers) => {
+        .then(async (answers) => {
           switch (answers["command"]) {
             case OpcionesUsuario.VerUsuarios: // Visualizar los usuarios del sistema
                 coleccionUsuarios.showUsuario();
-                inquirer.prompt({
-                    type: "input",
+                await inquirer.prompt({
+                    type: "list",
                     name: "command",
                     message: "Presione una tecla para continuar: ",
                 });

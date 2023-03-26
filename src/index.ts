@@ -5,13 +5,9 @@ import { Reto } from "./Reto/retos";
 import { Grupo } from "./Grupo/grupos";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
 import { JsonColeccionUsuarios } from "./Usuario/json_coleccion_usuarios";
-import { promptUsuario } from "./Usuario/prompt_usuario";
 import { JsonColeccionGrupos } from "./Grupo/json_coleccion_grupos";
 import { JsonColeccionRutas } from "./Ruta/json_coleccion_rutas";
 import { JsonColeccionRetos } from "./Reto/json_coleccion_retos";
-import { promptRetos } from "./Reto/prompt_reto";
-import { promptRutas } from "./Ruta/prompt_ruta"
-import { promptGrupo } from "./Grupo/prompt_grupo";
 
 export const estadistica_1 = new EstadisticasEntrenamiento(
   [2, 4],
@@ -283,6 +279,18 @@ export const user11 = new Usuario(
   30
 );
 
+export const user12 = new Usuario(
+  "Filemon",
+  "correr",
+  [user1],
+  [],
+  estadistica_2,
+  [ruta_2],
+  [reto_2],
+  [],
+  30
+);
+
 export const user13 = new Usuario(
   "Filemon",
   "correr",
@@ -451,7 +459,7 @@ export const ruta = new Ruta(
   4.5
 );
 
-export const coleccionUsuarios = new JsonColeccionUsuarios([user1, user2]);
-export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2]);
-export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2]);
+export const coleccionUsuarios = new JsonColeccionUsuarios([user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14, user15, user16, user17, user18, user19, user20]);
+export const coleccionGrupos = new JsonColeccionGrupos([grupo_1, grupo_2, grupo_3, grupo_4, grupo_5]);
+export const coleccionRutas = new JsonColeccionRutas([ruta_1, ruta_2, ruta_3, ruta_4, ruta_5, ruta_6, ruta_7, ruta_8, ruta_9, ruta_10 ]);
 export const coleccionRetos = new JsonColeccionRetos([reto_1, reto_2, reto_3]);
