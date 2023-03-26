@@ -7,13 +7,13 @@ import * as lowdb from "lowdb";
 import * as FileSync from "lowdb/adapters/FileSync";
 
 type SchemaType = {
-    grupo: { id: number,
-             nombre: string,
-             participantes: Usuario[],
-             estadisticasGrupal: EstadisticasEntrenamiento,
-             clasificacion: number[],
-             rutasFavoritas: Ruta[],
-             historialRutas: historialRutasGrupal }[]
+    grupo: { _id: number,
+             _nombre: string,
+             _participantes: Usuario[],
+             _estadisticasGrupal: EstadisticasEntrenamiento,
+             _clasificacion: number[],
+             _rutasFavoritas: Ruta[],
+             _historialRutas: historialRutasGrupal }[]
 }
 
 export class JsonColeccionGrupos extends ColeccionGrupos {
@@ -24,8 +24,8 @@ export class JsonColeccionGrupos extends ColeccionGrupos {
         this.database = lowdb(new FileSync("./Grupos.json"));
         if(this.database.has("grupo").value()) {
             const dbItems = this.database.get("grupo").value();
-            dbItems.forEach(item => this._listaElementos.push(new Grupo(item.id, item.nombre, item.participantes, 
-                item.estadisticasGrupal, item.clasificacion, item.rutasFavoritas, item.historialRutas)));
+            dbItems.forEach(item => this._listaElementos.push(new Grupo(item._id, item._nombre, item._participantes, 
+                item._estadisticasGrupal, item._clasificacion, item._rutasFavoritas, item._historialRutas)));
         } else {
             this.database.set("grupo", listaGrupos).write();
             listaGrupos.forEach(item => this._listaElementos.push(item));

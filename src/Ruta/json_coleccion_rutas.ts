@@ -7,15 +7,15 @@ import * as FileSync from "lowdb/adapters/FileSync";
 
 
 type SchemaType = {
-    ruta: { id: number,
-            nombre: string,
-            geolocalizacionInicio: Coordenadas,
-            geolocalizacionFin: Coordenadas,
-            longitud: number,
-            desnivelMedio: number,
-            usuarios: Usuario[],
-            tipoActividad: "bicicleta" | "correr",
-            calificacionMedia: number }[]
+    ruta: { _id: number,
+            _nombre: string,
+            _geolocalizacionInicio: Coordenadas,
+            _geolocalizacionFin: Coordenadas,
+            _longitud: number,
+            _desnivelMedio: number,
+            _usuarios: Usuario[],
+            _tipoActividad: "bicicleta" | "correr",
+            _calificacionMedia: number }[]
 }
 
 export class JsonColeccionRutas extends ColeccionRutas {
@@ -26,9 +26,9 @@ export class JsonColeccionRutas extends ColeccionRutas {
         this.database = lowdb(new FileSync("./Rutas.json"));
         if(this.database.has("ruta").value()) {
             const dbItems = this.database.get("ruta").value();
-            dbItems.forEach(item => this._listaElementos.push(new Ruta(item.id, item.nombre, 
-                item.geolocalizacionInicio, item.geolocalizacionFin, item.longitud, item.desnivelMedio, 
-                item.usuarios, item.tipoActividad, item.calificacionMedia)));
+            dbItems.forEach(item => this._listaElementos.push(new Ruta(item._id, item._nombre, 
+                item._geolocalizacionInicio, item._geolocalizacionFin, item._longitud, item._desnivelMedio, 
+                item._usuarios, item._tipoActividad, item._calificacionMedia)));
         } else {
             this.database.set("ruta", listaRutas).write();
             listaRutas.forEach(item => this._listaElementos.push(item));

@@ -6,12 +6,12 @@ import * as FileSync from "lowdb/adapters/FileSync";
 import { Reto } from "./retos";
 
 type SchemaType = {
-    reto: { id: number,
-            nombre: string,
-            rutas: Ruta[],
-            tipo: "bicicleta" | "correr",
-            kilometros: number,
-            usuarios: Usuario[] }[]
+    reto: { _id: number,
+            _nombre: string,
+            _rutas: Ruta[],
+            _tipo: "bicicleta" | "correr",
+            _kilometros: number,
+            _usuarios: Usuario[] }[]
 }
 
 export class JsonColeccionRetos extends ColeccionRetos {
@@ -22,8 +22,8 @@ export class JsonColeccionRetos extends ColeccionRetos {
         this.database = lowdb(new FileSync("./Retos.json"));
         if(this.database.has("reto").value()) {
             const dbItems = this.database.get("reto").value();
-            dbItems.forEach(item => this._listaElementos.push(new Reto(item.id, item.nombre, item.rutas, 
-                item.tipo, item.usuarios)));
+            dbItems.forEach(item => this._listaElementos.push(new Reto(item._id, item._nombre, item._rutas, 
+                item._tipo, item._usuarios)));
         } else {
             this.database.set("reto", listaRetos).write();
             listaRetos.forEach(item => this._listaElementos.push(item));
