@@ -390,7 +390,37 @@ export const grupo_1 = new Grupo(
 );
 
 export const grupo_2 = new Grupo(
-  1,
+  2,
+  "suerte por la orejas",
+  [user1],
+  estadistica_1,
+  [],
+  [ruta_1, ruta_2],
+  [["23-03-1999", [user3, user14], ruta_2]]
+);
+
+export const grupo_3 = new Grupo(
+  3,
+  "el club de la sal",
+  [user1],
+  estadistica_1,
+  [],
+  [ruta_1, ruta_2],
+  [["23-03-1999", [user15, user20, user17], ruta_2]]
+);
+
+export const grupo_4 = new Grupo(
+  4,
+  "suerte por la orejas",
+  [user1],
+  estadistica_1,
+  [],
+  [ruta_1, ruta_2],
+  [["23-03-1999", [user1, user4, user10], ruta_2]]
+);
+
+export const grupo_5 = new Grupo(
+  5,
   "suerte por la orejas",
   [user1],
   estadistica_1,

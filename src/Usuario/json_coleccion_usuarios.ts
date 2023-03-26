@@ -29,7 +29,7 @@ export class JsonColeccionUsuarios extends ColeccionUsuarios {
     this.database = lowdb(new FileSync("./Usuarios.json"));
     if (this.database.has("usuario").value()) {
       //archivo creado
-      let dbItems = this.database.get("usuario").value();
+      const dbItems = this.database.get("usuario").value();
       // console.log(dbItems[0]._nombre)
       dbItems.forEach((item) =>
         this._listaElementos.push(
