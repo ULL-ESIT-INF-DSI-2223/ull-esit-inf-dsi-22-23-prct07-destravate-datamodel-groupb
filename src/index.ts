@@ -168,7 +168,7 @@ export const user2 = new Usuario(
   [ruta_9],
   [reto_2],
   [],
-  30
+  2
 );
 
 export const user3 = new Usuario(
@@ -180,23 +180,23 @@ export const user3 = new Usuario(
   [ruta_2, ruta_7],
   [reto_2, reto_3],
   [],
-  30
+  3
 );
 
 export const user4 = new Usuario(
   "Juan Carlos",
-  "correr",
+  "bicicleta",
   [user3],
   [],
   estadistica_1,
   [ruta_2],
   [reto_2],
   [],
-  30
+  4
 );
 
 export const user5 = new Usuario(
-  "Filemon",
+  "Sara",
   "correr",
   [user1],
   [],
@@ -204,11 +204,11 @@ export const user5 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  5
 );
 
 export const user6 = new Usuario(
-  "Filemon",
+  "Gara",
   "correr",
   [user1],
   [],
@@ -216,11 +216,11 @@ export const user6 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  6
 );
 
 export const user7 = new Usuario(
-  "Filemon",
+  "Jorge",
   "correr",
   [user1],
   [],
@@ -228,11 +228,11 @@ export const user7 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  7
 );
 
 export const user8 = new Usuario(
-  "Filemon",
+  "Patricia",
   "correr",
   [user1],
   [],
@@ -240,11 +240,11 @@ export const user8 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  8
 );
 
 export const user9 = new Usuario(
-  "Filemon",
+  "Saruman",
   "correr",
   [user1],
   [],
@@ -252,11 +252,11 @@ export const user9 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  9
 );
 
 export const user10 = new Usuario(
-  "Filemon",
+  "Steven",
   "correr",
   [user1],
   [],
@@ -264,11 +264,11 @@ export const user10 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  10
 );
 
 export const user11 = new Usuario(
-  "Filemon",
+  "Guillermo",
   "correr",
   [user1],
   [],
@@ -276,11 +276,11 @@ export const user11 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  11
 );
 
 export const user12 = new Usuario(
-  "Filemon",
+  "Nira",
   "correr",
   [user1],
   [],
@@ -288,11 +288,11 @@ export const user12 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  12
 );
 
 export const user13 = new Usuario(
-  "Filemon",
+  "Saldore",
   "correr",
   [user1],
   [],
@@ -300,11 +300,11 @@ export const user13 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  13
 );
 
 export const user14 = new Usuario(
-  "Filemon",
+  "Carla",
   "correr",
   [user1],
   [],
@@ -312,11 +312,11 @@ export const user14 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  14
 );
 
 export const user15 = new Usuario(
-  "Filemon",
+  "ricardo",
   "correr",
   [user1],
   [],
@@ -324,11 +324,11 @@ export const user15 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  15
 );
 
 export const user16 = new Usuario(
-  "Filemon",
+  "luis",
   "correr",
   [user1],
   [],
@@ -336,11 +336,11 @@ export const user16 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  16
 );
 
 export const user17 = new Usuario(
-  "Filemon",
+  "cristo",
   "correr",
   [user1],
   [],
@@ -348,11 +348,11 @@ export const user17 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  17
 );
 
 export const user18 = new Usuario(
-  "Filemon",
+  "pablo",
   "correr",
   [user1],
   [],
@@ -360,11 +360,11 @@ export const user18 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  18
 );
 
 export const user19 = new Usuario(
-  "Filemon",
+  "orlando",
   "correr",
   [user1],
   [],
@@ -372,11 +372,11 @@ export const user19 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  19
 );
 
 export const user20 = new Usuario(
-  "Filemon",
+  "airam",
   "correr",
   [user1],
   [],
@@ -384,7 +384,7 @@ export const user20 = new Usuario(
   [ruta_2],
   [reto_2],
   [],
-  30
+  20
 );
 
 

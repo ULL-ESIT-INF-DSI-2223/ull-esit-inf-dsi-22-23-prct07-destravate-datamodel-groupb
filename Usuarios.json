@@ -1,15 +1,24 @@
 {
   "usuario": [
     {
-      "_id": 32,
+      "_id": 1,
       "_nombre": "Mortadelo",
       "_tipoActividad": "bicicleta",
       "_amigos": [],
       "_grupos": [],
       "_estadisticasEntrenamiento": {
-        "_estadisticaSemanal": [2, 4],
-        "_estadisticaMensual": [5, 9],
-        "_estadisticaAnual": [10, 20]
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
       },
       "_rutasFavoritas": [
         {
@@ -103,20 +112,29 @@
       "_historialRutas": []
     },
     {
-      "_id": 30,
+      "_id": 2,
       "_nombre": "Filemon",
       "_tipoActividad": "correr",
       "_amigos": [
         {
-          "_id": 32,
+          "_id": 1,
           "_nombre": "Mortadelo",
           "_tipoActividad": "bicicleta",
           "_amigos": [],
           "_grupos": [],
           "_estadisticasEntrenamiento": {
-            "_estadisticaSemanal": [2, 4],
-            "_estadisticaMensual": [5, 9],
-            "_estadisticaAnual": [10, 20]
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
           },
           "_rutasFavoritas": [
             {
@@ -212,23 +230,32 @@
       ],
       "_grupos": [],
       "_estadisticasEntrenamiento": {
-        "_estadisticaSemanal": [20, 30],
-        "_estadisticaMensual": [50, 60],
-        "_estadisticaAnual": [90, 100]
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
       },
       "_rutasFavoritas": [
         {
-          "_id": 2,
+          "_id": 9,
           "_nombre": "Ruta por el teide",
           "_geolocalizacionInicio": {
-            "_latitud": 6,
-            "_longitud": 7,
-            "_altitud": 5
+            "_latitud": 7,
+            "_longitud": 8,
+            "_altitud": 9
           },
           "_geolocalizacionFin": {
-            "_latitud": 12,
-            "_longitud": 14,
-            "_altitud": 6
+            "_latitud": 5,
+            "_longitud": 3,
+            "_altitud": 4
           },
           "_longitud": 27,
           "_desnivelMedio": 217,
@@ -240,7 +267,7 @@
       "_retosActivos": [
         {
           "_id": 152,
-          "_nombre": "Reto de nuevo",
+          "_nombre": "Reto del malagueño",
           "_rutas": [
             {
               "_id": 1,
@@ -268,6 +295,4625 @@
         }
       ],
       "_historialRutas": []
+    },
+    {
+      "_id": 3,
+      "_nombre": "Ancor",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        },
+        {
+          "_id": 7,
+          "_nombre": "Ruta sureña",
+          "_geolocalizacionInicio": {
+            "_latitud": 0,
+            "_longitud": 0,
+            "_altitud": 0
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 21,
+            "_longitud": 10,
+            "_altitud": 1
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        },
+        {
+          "_id": 152,
+          "_nombre": "Reto del guanche",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 4,
+      "_nombre": "Juan Carlos",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 3,
+          "_nombre": "Ancor",
+          "_tipoActividad": "correr",
+          "_amigos": [
+            {
+              "_id": 1,
+              "_nombre": "Mortadelo",
+              "_tipoActividad": "bicicleta",
+              "_amigos": [],
+              "_grupos": [],
+              "_estadisticasEntrenamiento": {
+                "_estadisticaSemanal": [
+                  2,
+                  4
+                ],
+                "_estadisticaMensual": [
+                  5,
+                  9
+                ],
+                "_estadisticaAnual": [
+                  10,
+                  20
+                ]
+              },
+              "_rutasFavoritas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_retosActivos": [
+                {
+                  "_id": 152,
+                  "_nombre": "Reto de prueba",
+                  "_rutas": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Ruta de prueba",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 0,
+                        "_longitud": 0,
+                        "_altitud": 0
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 1,
+                        "_longitud": 1,
+                        "_altitud": 1
+                      },
+                      "_longitud": 10,
+                      "_desnivelMedio": 55,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.5
+                    },
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_tipo": "correr",
+                  "_kilometros": 37,
+                  "_usuarios": []
+                }
+              ],
+              "_historialRutas": []
+            }
+          ],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              200,
+              300
+            ],
+            "_estadisticaMensual": [
+              500,
+              600
+            ],
+            "_estadisticaAnual": [
+              900,
+              1000
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            },
+            {
+              "_id": 7,
+              "_nombre": "Ruta sureña",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 21,
+                "_longitud": 10,
+                "_altitud": 1
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto del malagueño",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 10,
+              "_usuarios": []
+            },
+            {
+              "_id": 152,
+              "_nombre": "Reto del guanche",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 10,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 5,
+      "_nombre": "Sara",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 6,
+      "_nombre": "Gara",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 7,
+      "_nombre": "Jorge",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 8,
+      "_nombre": "Patricia",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 9,
+      "_nombre": "Saruman",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 10,
+      "_nombre": "Steven",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 11,
+      "_nombre": "Guillermo",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 12,
+      "_nombre": "Nira",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 13,
+      "_nombre": "Saldore",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 14,
+      "_nombre": "Carla",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 15,
+      "_nombre": "ricardo",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 16,
+      "_nombre": "luis",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 17,
+      "_nombre": "cristo",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 18,
+      "_nombre": "pablo",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          20,
+          30
+        ],
+        "_estadisticaMensual": [
+          50,
+          60
+        ],
+        "_estadisticaAnual": [
+          90,
+          100
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 19,
+      "_nombre": "orlando",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          200,
+          300
+        ],
+        "_estadisticaMensual": [
+          500,
+          600
+        ],
+        "_estadisticaAnual": [
+          900,
+          1000
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 20,
+      "_nombre": "airam",
+      "_tipoActividad": "correr",
+      "_amigos": [
+        {
+          "_id": 1,
+          "_nombre": "Mortadelo",
+          "_tipoActividad": "bicicleta",
+          "_amigos": [],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto de prueba",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 37,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          2,
+          4
+        ],
+        "_estadisticaMensual": [
+          5,
+          9
+        ],
+        "_estadisticaAnual": [
+          10,
+          20
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [
+        {
+          "_id": 152,
+          "_nombre": "Reto del malagueño",
+          "_rutas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            }
+          ],
+          "_tipo": "correr",
+          "_kilometros": 10,
+          "_usuarios": []
+        }
+      ],
+      "_historialRutas": []
+    },
+    {
+      "_id": 36,
+      "_nombre": "Manolo",
+      "_tipoActividad": "correr",
+      "_amigos": [],
+      "_grupos": [],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          1,
+          2
+        ],
+        "_estadisticaMensual": [
+          3,
+          4
+        ],
+        "_estadisticaAnual": [
+          5,
+          6
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 2,
+          "_nombre": "Ruta por el teide",
+          "_geolocalizacionInicio": {
+            "_latitud": 6,
+            "_longitud": 7,
+            "_altitud": 5
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 12,
+            "_longitud": 14,
+            "_altitud": 6
+          },
+          "_longitud": 27,
+          "_desnivelMedio": 217,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.8
+        }
+      ],
+      "_retosActivos": [],
+      "_historialRutas": [
+        [
+          "12-04-20",
+          {
+            "_id": 4,
+            "_nombre": "Ruta por las teresitas",
+            "_geolocalizacionInicio": {
+              "_latitud": 11,
+              "_longitud": 12,
+              "_altitud": 13
+            },
+            "_geolocalizacionFin": {
+              "_latitud": 21,
+              "_longitud": 22,
+              "_altitud": 23
+            },
+            "_longitud": 27,
+            "_desnivelMedio": 217,
+            "_usuarios": [],
+            "_tipoActividad": "correr",
+            "_calificacionMedia": 4.8
+          }
+        ]
+      ]
+    },
+    {
+      "_id": 35,
+      "_nombre": "Paco",
+      "_tipoActividad": "bicicleta",
+      "_amigos": [
+        {
+          "_id": 15,
+          "_nombre": "ricardo",
+          "_tipoActividad": "correr",
+          "_amigos": [
+            {
+              "_id": 1,
+              "_nombre": "Mortadelo",
+              "_tipoActividad": "bicicleta",
+              "_amigos": [],
+              "_grupos": [],
+              "_estadisticasEntrenamiento": {
+                "_estadisticaSemanal": [
+                  2,
+                  4
+                ],
+                "_estadisticaMensual": [
+                  5,
+                  9
+                ],
+                "_estadisticaAnual": [
+                  10,
+                  20
+                ]
+              },
+              "_rutasFavoritas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_retosActivos": [
+                {
+                  "_id": 152,
+                  "_nombre": "Reto de prueba",
+                  "_rutas": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Ruta de prueba",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 0,
+                        "_longitud": 0,
+                        "_altitud": 0
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 1,
+                        "_longitud": 1,
+                        "_altitud": 1
+                      },
+                      "_longitud": 10,
+                      "_desnivelMedio": 55,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.5
+                    },
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_tipo": "correr",
+                  "_kilometros": 37,
+                  "_usuarios": []
+                }
+              ],
+              "_historialRutas": []
+            }
+          ],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              20,
+              30
+            ],
+            "_estadisticaMensual": [
+              50,
+              60
+            ],
+            "_estadisticaAnual": [
+              90,
+              100
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto del malagueño",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 10,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        },
+        {
+          "_id": 18,
+          "_nombre": "pablo",
+          "_tipoActividad": "correr",
+          "_amigos": [
+            {
+              "_id": 1,
+              "_nombre": "Mortadelo",
+              "_tipoActividad": "bicicleta",
+              "_amigos": [],
+              "_grupos": [],
+              "_estadisticasEntrenamiento": {
+                "_estadisticaSemanal": [
+                  2,
+                  4
+                ],
+                "_estadisticaMensual": [
+                  5,
+                  9
+                ],
+                "_estadisticaAnual": [
+                  10,
+                  20
+                ]
+              },
+              "_rutasFavoritas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_retosActivos": [
+                {
+                  "_id": 152,
+                  "_nombre": "Reto de prueba",
+                  "_rutas": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Ruta de prueba",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 0,
+                        "_longitud": 0,
+                        "_altitud": 0
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 1,
+                        "_longitud": 1,
+                        "_altitud": 1
+                      },
+                      "_longitud": 10,
+                      "_desnivelMedio": 55,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.5
+                    },
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_tipo": "correr",
+                  "_kilometros": 37,
+                  "_usuarios": []
+                }
+              ],
+              "_historialRutas": []
+            }
+          ],
+          "_grupos": [],
+          "_estadisticasEntrenamiento": {
+            "_estadisticaSemanal": [
+              20,
+              30
+            ],
+            "_estadisticaMensual": [
+              50,
+              60
+            ],
+            "_estadisticaAnual": [
+              90,
+              100
+            ]
+          },
+          "_rutasFavoritas": [
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_retosActivos": [
+            {
+              "_id": 152,
+              "_nombre": "Reto del malagueño",
+              "_rutas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                }
+              ],
+              "_tipo": "correr",
+              "_kilometros": 10,
+              "_usuarios": []
+            }
+          ],
+          "_historialRutas": []
+        }
+      ],
+      "_grupos": [
+        {
+          "_id": 2,
+          "_nombre": "suerte por la orejas",
+          "_participantes": [
+            {
+              "_id": 1,
+              "_nombre": "Mortadelo",
+              "_tipoActividad": "bicicleta",
+              "_amigos": [],
+              "_grupos": [],
+              "_estadisticasEntrenamiento": {
+                "_estadisticaSemanal": [
+                  2,
+                  4
+                ],
+                "_estadisticaMensual": [
+                  5,
+                  9
+                ],
+                "_estadisticaAnual": [
+                  10,
+                  20
+                ]
+              },
+              "_rutasFavoritas": [
+                {
+                  "_id": 1,
+                  "_nombre": "Ruta de prueba",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 0,
+                    "_longitud": 0,
+                    "_altitud": 0
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 1,
+                    "_longitud": 1,
+                    "_altitud": 1
+                  },
+                  "_longitud": 10,
+                  "_desnivelMedio": 55,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.5
+                },
+                {
+                  "_id": 2,
+                  "_nombre": "Ruta por el teide",
+                  "_geolocalizacionInicio": {
+                    "_latitud": 6,
+                    "_longitud": 7,
+                    "_altitud": 5
+                  },
+                  "_geolocalizacionFin": {
+                    "_latitud": 12,
+                    "_longitud": 14,
+                    "_altitud": 6
+                  },
+                  "_longitud": 27,
+                  "_desnivelMedio": 217,
+                  "_usuarios": [],
+                  "_tipoActividad": "correr",
+                  "_calificacionMedia": 4.8
+                }
+              ],
+              "_retosActivos": [
+                {
+                  "_id": 152,
+                  "_nombre": "Reto de prueba",
+                  "_rutas": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Ruta de prueba",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 0,
+                        "_longitud": 0,
+                        "_altitud": 0
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 1,
+                        "_longitud": 1,
+                        "_altitud": 1
+                      },
+                      "_longitud": 10,
+                      "_desnivelMedio": 55,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.5
+                    },
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_tipo": "correr",
+                  "_kilometros": 37,
+                  "_usuarios": []
+                }
+              ],
+              "_historialRutas": []
+            }
+          ],
+          "_estadisticasGrupal": {
+            "_estadisticaSemanal": [
+              2,
+              4
+            ],
+            "_estadisticaMensual": [
+              5,
+              9
+            ],
+            "_estadisticaAnual": [
+              10,
+              20
+            ]
+          },
+          "_clasificacion": [],
+          "_rutasFavoritas": [
+            {
+              "_id": 1,
+              "_nombre": "Ruta de prueba",
+              "_geolocalizacionInicio": {
+                "_latitud": 0,
+                "_longitud": 0,
+                "_altitud": 0
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 1,
+                "_longitud": 1,
+                "_altitud": 1
+              },
+              "_longitud": 10,
+              "_desnivelMedio": 55,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.5
+            },
+            {
+              "_id": 2,
+              "_nombre": "Ruta por el teide",
+              "_geolocalizacionInicio": {
+                "_latitud": 6,
+                "_longitud": 7,
+                "_altitud": 5
+              },
+              "_geolocalizacionFin": {
+                "_latitud": 12,
+                "_longitud": 14,
+                "_altitud": 6
+              },
+              "_longitud": 27,
+              "_desnivelMedio": 217,
+              "_usuarios": [],
+              "_tipoActividad": "correr",
+              "_calificacionMedia": 4.8
+            }
+          ],
+          "_historialRutas": [
+            [
+              "23-03-1999",
+              [
+                {
+                  "_id": 3,
+                  "_nombre": "Ancor",
+                  "_tipoActividad": "correr",
+                  "_amigos": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Mortadelo",
+                      "_tipoActividad": "bicicleta",
+                      "_amigos": [],
+                      "_grupos": [],
+                      "_estadisticasEntrenamiento": {
+                        "_estadisticaSemanal": [
+                          2,
+                          4
+                        ],
+                        "_estadisticaMensual": [
+                          5,
+                          9
+                        ],
+                        "_estadisticaAnual": [
+                          10,
+                          20
+                        ]
+                      },
+                      "_rutasFavoritas": [
+                        {
+                          "_id": 1,
+                          "_nombre": "Ruta de prueba",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 0,
+                            "_longitud": 0,
+                            "_altitud": 0
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 1,
+                            "_longitud": 1,
+                            "_altitud": 1
+                          },
+                          "_longitud": 10,
+                          "_desnivelMedio": 55,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.5
+                        },
+                        {
+                          "_id": 2,
+                          "_nombre": "Ruta por el teide",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 6,
+                            "_longitud": 7,
+                            "_altitud": 5
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 12,
+                            "_longitud": 14,
+                            "_altitud": 6
+                          },
+                          "_longitud": 27,
+                          "_desnivelMedio": 217,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.8
+                        }
+                      ],
+                      "_retosActivos": [
+                        {
+                          "_id": 152,
+                          "_nombre": "Reto de prueba",
+                          "_rutas": [
+                            {
+                              "_id": 1,
+                              "_nombre": "Ruta de prueba",
+                              "_geolocalizacionInicio": {
+                                "_latitud": 0,
+                                "_longitud": 0,
+                                "_altitud": 0
+                              },
+                              "_geolocalizacionFin": {
+                                "_latitud": 1,
+                                "_longitud": 1,
+                                "_altitud": 1
+                              },
+                              "_longitud": 10,
+                              "_desnivelMedio": 55,
+                              "_usuarios": [],
+                              "_tipoActividad": "correr",
+                              "_calificacionMedia": 4.5
+                            },
+                            {
+                              "_id": 2,
+                              "_nombre": "Ruta por el teide",
+                              "_geolocalizacionInicio": {
+                                "_latitud": 6,
+                                "_longitud": 7,
+                                "_altitud": 5
+                              },
+                              "_geolocalizacionFin": {
+                                "_latitud": 12,
+                                "_longitud": 14,
+                                "_altitud": 6
+                              },
+                              "_longitud": 27,
+                              "_desnivelMedio": 217,
+                              "_usuarios": [],
+                              "_tipoActividad": "correr",
+                              "_calificacionMedia": 4.8
+                            }
+                          ],
+                          "_tipo": "correr",
+                          "_kilometros": 37,
+                          "_usuarios": []
+                        }
+                      ],
+                      "_historialRutas": []
+                    }
+                  ],
+                  "_grupos": [],
+                  "_estadisticasEntrenamiento": {
+                    "_estadisticaSemanal": [
+                      200,
+                      300
+                    ],
+                    "_estadisticaMensual": [
+                      500,
+                      600
+                    ],
+                    "_estadisticaAnual": [
+                      900,
+                      1000
+                    ]
+                  },
+                  "_rutasFavoritas": [
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    },
+                    {
+                      "_id": 7,
+                      "_nombre": "Ruta sureña",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 0,
+                        "_longitud": 0,
+                        "_altitud": 0
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 21,
+                        "_longitud": 10,
+                        "_altitud": 1
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_retosActivos": [
+                    {
+                      "_id": 152,
+                      "_nombre": "Reto del malagueño",
+                      "_rutas": [
+                        {
+                          "_id": 1,
+                          "_nombre": "Ruta de prueba",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 0,
+                            "_longitud": 0,
+                            "_altitud": 0
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 1,
+                            "_longitud": 1,
+                            "_altitud": 1
+                          },
+                          "_longitud": 10,
+                          "_desnivelMedio": 55,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.5
+                        }
+                      ],
+                      "_tipo": "correr",
+                      "_kilometros": 10,
+                      "_usuarios": []
+                    },
+                    {
+                      "_id": 152,
+                      "_nombre": "Reto del guanche",
+                      "_rutas": [
+                        {
+                          "_id": 1,
+                          "_nombre": "Ruta de prueba",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 0,
+                            "_longitud": 0,
+                            "_altitud": 0
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 1,
+                            "_longitud": 1,
+                            "_altitud": 1
+                          },
+                          "_longitud": 10,
+                          "_desnivelMedio": 55,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.5
+                        }
+                      ],
+                      "_tipo": "correr",
+                      "_kilometros": 10,
+                      "_usuarios": []
+                    }
+                  ],
+                  "_historialRutas": []
+                },
+                {
+                  "_id": 14,
+                  "_nombre": "Carla",
+                  "_tipoActividad": "correr",
+                  "_amigos": [
+                    {
+                      "_id": 1,
+                      "_nombre": "Mortadelo",
+                      "_tipoActividad": "bicicleta",
+                      "_amigos": [],
+                      "_grupos": [],
+                      "_estadisticasEntrenamiento": {
+                        "_estadisticaSemanal": [
+                          2,
+                          4
+                        ],
+                        "_estadisticaMensual": [
+                          5,
+                          9
+                        ],
+                        "_estadisticaAnual": [
+                          10,
+                          20
+                        ]
+                      },
+                      "_rutasFavoritas": [
+                        {
+                          "_id": 1,
+                          "_nombre": "Ruta de prueba",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 0,
+                            "_longitud": 0,
+                            "_altitud": 0
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 1,
+                            "_longitud": 1,
+                            "_altitud": 1
+                          },
+                          "_longitud": 10,
+                          "_desnivelMedio": 55,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.5
+                        },
+                        {
+                          "_id": 2,
+                          "_nombre": "Ruta por el teide",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 6,
+                            "_longitud": 7,
+                            "_altitud": 5
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 12,
+                            "_longitud": 14,
+                            "_altitud": 6
+                          },
+                          "_longitud": 27,
+                          "_desnivelMedio": 217,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.8
+                        }
+                      ],
+                      "_retosActivos": [
+                        {
+                          "_id": 152,
+                          "_nombre": "Reto de prueba",
+                          "_rutas": [
+                            {
+                              "_id": 1,
+                              "_nombre": "Ruta de prueba",
+                              "_geolocalizacionInicio": {
+                                "_latitud": 0,
+                                "_longitud": 0,
+                                "_altitud": 0
+                              },
+                              "_geolocalizacionFin": {
+                                "_latitud": 1,
+                                "_longitud": 1,
+                                "_altitud": 1
+                              },
+                              "_longitud": 10,
+                              "_desnivelMedio": 55,
+                              "_usuarios": [],
+                              "_tipoActividad": "correr",
+                              "_calificacionMedia": 4.5
+                            },
+                            {
+                              "_id": 2,
+                              "_nombre": "Ruta por el teide",
+                              "_geolocalizacionInicio": {
+                                "_latitud": 6,
+                                "_longitud": 7,
+                                "_altitud": 5
+                              },
+                              "_geolocalizacionFin": {
+                                "_latitud": 12,
+                                "_longitud": 14,
+                                "_altitud": 6
+                              },
+                              "_longitud": 27,
+                              "_desnivelMedio": 217,
+                              "_usuarios": [],
+                              "_tipoActividad": "correr",
+                              "_calificacionMedia": 4.8
+                            }
+                          ],
+                          "_tipo": "correr",
+                          "_kilometros": 37,
+                          "_usuarios": []
+                        }
+                      ],
+                      "_historialRutas": []
+                    }
+                  ],
+                  "_grupos": [],
+                  "_estadisticasEntrenamiento": {
+                    "_estadisticaSemanal": [
+                      2,
+                      4
+                    ],
+                    "_estadisticaMensual": [
+                      5,
+                      9
+                    ],
+                    "_estadisticaAnual": [
+                      10,
+                      20
+                    ]
+                  },
+                  "_rutasFavoritas": [
+                    {
+                      "_id": 2,
+                      "_nombre": "Ruta por el teide",
+                      "_geolocalizacionInicio": {
+                        "_latitud": 6,
+                        "_longitud": 7,
+                        "_altitud": 5
+                      },
+                      "_geolocalizacionFin": {
+                        "_latitud": 12,
+                        "_longitud": 14,
+                        "_altitud": 6
+                      },
+                      "_longitud": 27,
+                      "_desnivelMedio": 217,
+                      "_usuarios": [],
+                      "_tipoActividad": "correr",
+                      "_calificacionMedia": 4.8
+                    }
+                  ],
+                  "_retosActivos": [
+                    {
+                      "_id": 152,
+                      "_nombre": "Reto del malagueño",
+                      "_rutas": [
+                        {
+                          "_id": 1,
+                          "_nombre": "Ruta de prueba",
+                          "_geolocalizacionInicio": {
+                            "_latitud": 0,
+                            "_longitud": 0,
+                            "_altitud": 0
+                          },
+                          "_geolocalizacionFin": {
+                            "_latitud": 1,
+                            "_longitud": 1,
+                            "_altitud": 1
+                          },
+                          "_longitud": 10,
+                          "_desnivelMedio": 55,
+                          "_usuarios": [],
+                          "_tipoActividad": "correr",
+                          "_calificacionMedia": 4.5
+                        }
+                      ],
+                      "_tipo": "correr",
+                      "_kilometros": 10,
+                      "_usuarios": []
+                    }
+                  ],
+                  "_historialRutas": []
+                }
+              ],
+              {
+                "_id": 2,
+                "_nombre": "Ruta por el teide",
+                "_geolocalizacionInicio": {
+                  "_latitud": 6,
+                  "_longitud": 7,
+                  "_altitud": 5
+                },
+                "_geolocalizacionFin": {
+                  "_latitud": 12,
+                  "_longitud": 14,
+                  "_altitud": 6
+                },
+                "_longitud": 27,
+                "_desnivelMedio": 217,
+                "_usuarios": [],
+                "_tipoActividad": "correr",
+                "_calificacionMedia": 4.8
+              }
+            ]
+          ]
+        }
+      ],
+      "_estadisticasEntrenamiento": {
+        "_estadisticaSemanal": [
+          1,
+          2
+        ],
+        "_estadisticaMensual": [
+          3,
+          4
+        ],
+        "_estadisticaAnual": [
+          5,
+          6
+        ]
+      },
+      "_rutasFavoritas": [
+        {
+          "_id": 1,
+          "_nombre": "Ruta de prueba",
+          "_geolocalizacionInicio": {
+            "_latitud": 0,
+            "_longitud": 0,
+            "_altitud": 0
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 1,
+            "_longitud": 1,
+            "_altitud": 1
+          },
+          "_longitud": 10,
+          "_desnivelMedio": 55,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.5
+        }
+      ],
+      "_retosActivos": [],
+      "_historialRutas": [
+        [
+          "02-05-19",
+          {
+            "_id": 6,
+            "_nombre": "Ruta por anaga",
+            "_geolocalizacionInicio": {
+              "_latitud": 0,
+              "_longitud": 0,
+              "_altitud": 0
+            },
+            "_geolocalizacionFin": {
+              "_latitud": 19,
+              "_longitud": 18,
+              "_altitud": 17
+            },
+            "_longitud": 27,
+            "_desnivelMedio": 217,
+            "_usuarios": [],
+            "_tipoActividad": "correr",
+            "_calificacionMedia": 4.8
+          }
+        ]
+      ]
     }
   ]
 }

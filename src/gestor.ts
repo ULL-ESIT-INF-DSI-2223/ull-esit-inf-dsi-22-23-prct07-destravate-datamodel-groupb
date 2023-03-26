@@ -1,5 +1,5 @@
 import * as inquirer from "inquirer";
-import { Usuario } from "./Usuario/usuario";
+import { HistorialRutas, Usuario } from "./Usuario/usuario";
 import { coleccionGrupos } from ".";
 import { coleccionRetos } from ".";
 import { coleccionRutas } from ".";
@@ -8,6 +8,9 @@ import { promptAdd, promptModify } from "./Usuario/prompt_usuario";
 import { promptAddG, promptRemoveG } from "./Grupo/prompt_grupo";
 import { promptRemove, promptSort } from "./Ruta/prompt_ruta";
 import { EstadisticasEntrenamiento } from "./Usuario/estadisticas_entrenamiento";
+import { Grupo } from "./Grupo/grupos";
+import { Ruta } from "./Ruta/rutas";
+import { Reto } from "./Reto/retos";
 
 enum OpcionesMain {
     Iniciar = "Iniciar sesión",
@@ -83,6 +86,7 @@ export class Gestor {
      */
     async menuInicio() {
         console.clear();
+        let userFound = false;
         await inquirer.prompt({
             type: "input",
             name: "addId",
@@ -92,27 +96,29 @@ export class Gestor {
                 if(usuario.id == Number(answer["addId"])) {
                     this.usuarioId = Number(answer["addId"]);
                     this.usuario = usuario;
+                    userFound = true;
                     this.menuUsuario();
                 }
             });
         });
-        console.log("Usuario no encontrado...");
-
-        this.menuInicio();
+        if(userFound == false) {
+            console.log("Usuario no encontrado...");
+            this.menuInicio();
+        }
     }
 
     /**
      * Menu de registro de usuario.
      */
     async menuRegistro() {
-        console.clear();
-        promptAdd();
+        console.clear()
+        await this.promptAddUser();
         coleccionUsuarios._listaElementos.forEach((usuario) => {
             if(usuario.id == this.usuarioId) {
                 this.usuario = usuario;
             }
         });
-        this.menuInicio();
+        this.mainMenu();
     }
 
     /**
@@ -182,15 +188,11 @@ export class Gestor {
           message: "¿Qué deseas hacer?: ",
           choices: Object.values(OpcionesUsuario),
         })
-        .then(async (answers) => {
+        .then((answers) => {
           switch (answers["command"]) {
             case OpcionesUsuario.VerUsuarios: // Visualizar los usuarios del sistema
                 coleccionUsuarios.showUsuario();
-                await inquirer.prompt({
-                    type: "list",
-                    name: "command",
-                    message: "Presione una tecla para continuar: ",
-                });
+                this.menuPerfil();
                 break;
             case OpcionesUsuario.Añadir: // Añadir un usuario a tu lista de amigos
                 inquirer.prompt({
@@ -204,6 +206,7 @@ export class Gestor {
                         }
                     }) 
                 })
+              this.menuPerfil();
               break;
             case OpcionesUsuario.Eliminar:
                 inquirer.prompt({
@@ -256,4 +259,125 @@ export class Gestor {
             }
         })
     }
+
+    async promptAddUser() {
+        const datos = await inquirer.prompt([
+          {
+            type: "input",
+            name: "addNombre",
+            message: "Inserte el nombre: ",
+          },
+          {
+            type: "input",
+            name: "addActividad",
+            message: "Inserte el tipo de actividad: ",
+          },
+          {
+            type: "input",
+            name: "addAmigos",
+            message: "Inserte los ids de los amigos: ",
+          },
+          {
+            type: "input",
+            name: "addGrupos",
+            message: "Inserte los ids de los grupos: ",
+          },
+          {
+            type: "input",
+            name: "addEstadisticas",
+            message: "Inserte las estadísticas de entrenamiento: ",
+          },
+          {
+            type: "input",
+            name: "addRutas",
+            message: "Inserte los id de las rutas favoritas: ",
+          },
+          {
+            type: "input",
+            name: "addRetos",
+            message: "Inserte los ids de los retos: ",
+          },
+          {
+            type: "input",
+            name: "addHistorial",
+            message: "Inserte el historial de rutas (fecha, id_ruta): ",
+          },
+        ]);
+      
+        const nombre: string = datos["addNombre"];
+        const actividad: string = datos["addActividad"];
+        // Añadir amigos
+        const amigos: Usuario[] = [];
+        const id_amigos: number[] = datos["addAmigos"].split(",").map(Number);
+        id_amigos.forEach((id) =>
+          coleccionUsuarios._listaElementos.forEach((item) => {
+            if (item.id == id) {
+              amigos.push(item);
+            }
+          })
+        );
+        // Añadir grupos
+        const grupos: Grupo[] = [];
+        const id_grupos: number[] = datos["addGrupos"].split(",").map(Number);
+        id_grupos.forEach((id) =>
+          coleccionGrupos._listaElementos.forEach((item) => {
+            if (item.id == id) {
+              grupos.push(item);
+            }
+          })
+        );
+        // Añadir datos entrenamiento
+        const datosE: number[] = datos["addEstadisticas"].split(",").map(Number);
+        const entrenamiento: EstadisticasEntrenamiento =
+          new EstadisticasEntrenamiento(
+            [datosE[0], datosE[1]],
+            [datosE[2], datosE[3]],
+            [datosE[4], datosE[5]]
+          );
+        // Añadir rutas
+        const id_rutas: number[] = datos["addRetos"].split(",").map(Number);
+        const rutas: Ruta[] = [];
+        id_rutas.forEach((id) =>
+          coleccionRutas._listaElementos.forEach((item) => {
+            if (item.id == id) {
+              rutas.push(item);
+            }
+          })
+        );
+        // Añadir retos
+        const id_retos: number[] = datos["addRutas"].split(",").map(Number);
+        const retos: Reto[] = [];
+        id_retos.forEach((id) =>
+          coleccionRetos._listaElementos.forEach((item) => {
+            if (item.id == id) {
+              retos.push(item);
+            }
+          })
+        );
+        // Añadir historial
+        const datos_historial = datos["addHistorial"].split(",");
+        const historial: HistorialRutas = [];
+        for (let i = 0; i < datos_historial.length; i += 2) {
+          coleccionRutas._listaElementos.forEach((item) => {
+            if (item.id == datos_historial[i + 1]) {
+              historial.push([datos_historial[i], item]);
+            }
+          });
+        }
+      
+        if (actividad == "bicicleta" || actividad == "correr") {
+          coleccionUsuarios.addUsario(
+            new Usuario(
+              nombre,
+              actividad,
+              amigos,
+              grupos,
+              entrenamiento,
+              rutas,
+              retos,
+              historial
+            )
+          );
+        }
+      }
 }

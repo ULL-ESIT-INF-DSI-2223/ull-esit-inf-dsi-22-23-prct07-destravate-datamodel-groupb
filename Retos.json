@@ -44,7 +44,35 @@
         }
       ],
       "_tipo": "correr",
-      "_kilometros": null,
+      "_kilometros": 37,
+      "_usuarios": []
+    },
+    {
+      "_id": 152,
+      "_nombre": "Reto del malagueño",
+      "_rutas": [
+        {
+          "_id": 1,
+          "_nombre": "Ruta de prueba",
+          "_geolocalizacionInicio": {
+            "_latitud": 0,
+            "_longitud": 0,
+            "_altitud": 0
+          },
+          "_geolocalizacionFin": {
+            "_latitud": 1,
+            "_longitud": 1,
+            "_altitud": 1
+          },
+          "_longitud": 10,
+          "_desnivelMedio": 55,
+          "_usuarios": [],
+          "_tipoActividad": "correr",
+          "_calificacionMedia": 4.5
+        }
+      ],
+      "_tipo": "correr",
+      "_kilometros": 10,
       "_usuarios": []
     },
     {
@@ -72,7 +100,7 @@
         }
       ],
       "_tipo": "correr",
-      "_kilometros": null,
+      "_kilometros": 10,
       "_usuarios": []
     }
   ]
